@@ -1,0 +1,11 @@
+deps
+harmony_family_room.conf
+harmony_family_room_harmony.conf
+home-assistant.log
+home-assistant_v2.db
+nest.conf
+plex.conf
+secrets.yaml
+tts
+.HA_VERSION
+.uuid

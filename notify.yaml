@@ -1,0 +1,8 @@
+- platform: pushbullet
+  name: Pushbullet
+  api_key: !secret pushbullet_api_key
+
+- platform: pushover
+  name: Pushover
+  api_key: !secret pushover_api_key
+  user_key: !secret pushover_user_key
