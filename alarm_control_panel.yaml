@@ -1,0 +1,8 @@
+# https://ethitter.com/2016/08/smartthings-smart-home-monitor-shm-mqtt-home-assistant/
+- platform: mqtt
+  state_topic: "smartthings/alarm system status/alarmSystemStatus"
+  command_topic: "smartthings/alarm system status/alarmSystemStatus"
+  name: "Smartthings Home Monitor"
+  payload_disarm: "off"
+  payload_arm_home: "stay"
+  payload_arm_away: "away"

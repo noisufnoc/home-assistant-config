@@ -21,6 +21,7 @@ http:
   # base_url: example.duckdns.org:8123
 
 # Includes
+alarm_control_panel: !include alarm_control_panel.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
 remote: !include remote.yaml
@@ -47,5 +48,6 @@ nest:
 ifttt:
   key: !secret ifttt_key
 
+# https://home-assistant.io/blog/2016/02/09/Smarter-Smart-Things-with-MQTT-and-Home-Assistant/    
 mqtt:
   broker: localhost
