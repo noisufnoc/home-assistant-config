@@ -22,6 +22,7 @@ http:
 
 # Includes
 alarm_control_panel: !include alarm_control_panel.yaml
+binary_sensor: !include binary_sensor.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
 light: !include light.yaml
