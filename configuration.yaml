@@ -15,10 +15,7 @@ homeassistant:
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
 
 # Includes
 alarm_control_panel: !include alarm_control_panel.yaml
@@ -54,3 +51,7 @@ ifttt:
 # https://home-assistant.io/blog/2016/02/09/Smarter-Smart-Things-with-MQTT-and-Home-Assistant/    
 mqtt:
   broker: localhost
+
+splunk:
+  token: !secret splunk_token
+  host: fwd01.noisufnoc.net
