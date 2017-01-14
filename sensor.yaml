@@ -68,8 +68,23 @@
     - download
     - upload
 
-# ST Door Temp
+# ST Temp Sensors
 - platform: mqtt
   state_topic: "smartthings/Sliding Glass Door/temperature"
   name: "Glass Door Temp"
+  unit_of_measurement: "°F"
+
+- platform: mqtt
+  state_topic: "smartthings/Front Door/temperature"
+  name: "Front Door Temp"
+  unit_of_measurement: "°F"
+
+- platform: mqtt
+  state_topic: "smartthings/Mud Room Door/temperature"
+  name: "Mud Room Door Temp"
+  unit_of_measurement: "°F"
+
+- platform: mqtt
+  state_topic: "smartthings/Utility Room Leak Sensor/temperature"
+  name: "Utility Room Temp"
   unit_of_measurement: "°F"

@@ -17,6 +17,8 @@ frontend:
 http:
   api_password: !secret api_password
   use_x_forwarded_for: True
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
 
 # Includes
 alarm_control_panel: !include alarm_control_panel.yaml

@@ -4,3 +4,31 @@
   payload_on: "open"
   payload_off: "closed"
   sensor_class: opening
+
+- platform: mqtt
+  state_topic: "smartthings/Mud Room Door/contact"
+  name: "Mud Room Door State"
+  payload_on: "open"
+  payload_off: "closed"
+  sensor_class: opening
+
+- platform: mqtt
+  state_topic: "smartthings/Front Door/contact"
+  name: "Front Door State"
+  payload_on: "open"
+  payload_off: "closed"
+  sensor_class: opening
+
+- platform: mqtt
+  state_topic: "smartthings/Motion Sensor/motion"
+  name: "Mud Room Motion Sensor"
+  payload_on: "active"
+  payload_off: "inactive"
+  sensor_class: motion
+
+- platform: mqtt
+  state_topic: "smartthings/Utility Room Leak Sensor/water"
+  name: "Utility Room Leak Sensor"
+  payload_on: "wet"
+  payload_off: "dry"
+  sensor_class: moisture
