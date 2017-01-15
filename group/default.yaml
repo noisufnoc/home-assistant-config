@@ -1,0 +1,7 @@
+# I don't know how to do this
+#
+#default_view:
+#  view: yes
+#  icon: mdi:home
+#  entities:
+#   - group.House_Environment

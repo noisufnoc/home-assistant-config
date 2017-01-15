@@ -1,0 +1,6 @@
+environment:
+  view: yes
+  name: Environment
+  entities:
+   - sun.sun
+   - group.House_Environment

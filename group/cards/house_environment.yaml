@@ -1,0 +1,4 @@
+house_environment:
+  name: House Information
+  entities:
+   - sensor.utility_room_temp
