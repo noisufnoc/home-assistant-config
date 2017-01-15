@@ -1,0 +1,10 @@
+nest_status:
+  name: Nest Thermostat Status
+  entities:
+  - binary_sensor.kitchen_thermostat_fan
+  - binary_sensor.kitchen_thermostat_has_leaf
+  - binary_sensor.kitchen_thermostat_is_locked
+  - binary_sensor.kitchen_thermostat_is_using_emergency_heat
+  - binary_sensor.kitchen_thermostat_online
+  - sensor.kitchen_thermostat_hvac_state
+  - sensor.kitchen_thermostat_operation_mode

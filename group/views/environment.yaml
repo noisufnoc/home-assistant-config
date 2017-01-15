@@ -7,4 +7,5 @@ environment:
    - group.environmental_sensors
    - climate.kitchen
    - group.wunderground
+   - group.nest_status
    - camera.radar
