@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: noisufnocHome
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret elevation
   # metric for Metric, imperial for Imperial
@@ -33,6 +33,8 @@ remote: !include remote.yaml
 notify: !include notify.yaml
 logger: !include logger.yaml
 camera: !include camera.yaml
+zone: !include_dir_list zone/
+
 # Enables
 updater:
 discovery:
