@@ -32,7 +32,7 @@ light: !include light.yaml
 remote: !include remote.yaml
 notify: !include notify.yaml
 logger: !include logger.yaml
-
+camera: !include camera.yaml
 # Enables
 updater:
 discovery:

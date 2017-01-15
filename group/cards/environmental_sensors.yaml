@@ -1,0 +1,10 @@
+environmental_sensors:
+  name: Environmental Sensors
+  entities:
+   - sensor.front_door_temp
+   - sensor.glass_door_temp
+   - sensor.mud_room_door_temp
+   - sensor.utility_room_temp
+   - sensor.motion_sensor_temp
+   - sensor.kitchen_thermostat_temperature
+   - sensor.kitchen_thermostat_humidity

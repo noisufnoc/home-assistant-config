@@ -1,5 +1,8 @@
  sensor.speedtest_download:
    icon: mdi:download
 
+ sensor.kitchen_thermostat_humidity:
+   icon: mdi:water-percent
+
  sensor.pws_weather:
    friendly_name: Current Weather

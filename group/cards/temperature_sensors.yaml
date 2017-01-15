@@ -1,7 +1,0 @@
-temperature_sensors:
-  name: Temperature Sensors
-  entities:
-   - sensor.front_door_temp
-   - sensor.glass_door_temp
-   - sensor.mud_room_door_temp
-   - sensor.utility_room_temp

@@ -88,3 +88,8 @@
   state_topic: "smartthings/Utility Room Leak Sensor/temperature"
   name: "Utility Room Temp"
   unit_of_measurement: "°F"
+
+- platform: mqtt
+  state_topic: "smartthings/Motion Sensor/temperature"
+  name: "Motion Sensor Temp"
+  unit_of_measurement: "°F"

@@ -3,7 +3,8 @@ environment:
   name: Environment
   entities:
    - sun.sun
-   - sensor.PWS_weather
-   - group.temperature_sensors
+   - sensor.pws_weather
+   - group.environmental_sensors
    - climate.kitchen
    - group.wunderground
+   - camera.radar
