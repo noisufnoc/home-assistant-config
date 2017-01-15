@@ -46,3 +46,6 @@
  sensor.upstairs_nest_protect_co_status:
    icon: mdi:skull
 
+ climate.kitchen:
+   friendly_name: Nest Thermostat
+   entity_picture: /local/nest.png

@@ -32,3 +32,21 @@
   payload_on: "wet"
   payload_off: "dry"
   sensor_class: moisture
+
+- platform: template 
+  sensors:
+    co:
+      friendly_name: 'CO'
+      sensor_class: 'gas'
+      value_template: >-
+        {%- if is_state("sensor.upstairs_nest_protect_co_status", "Ok") 
+            and is_state("sensor.downstairs_nest_protect_co_status", "Ok")
+            and is_state("sensor.basement_nest_protect_co_status", "Ok") -%}
+        Off
+        {%- else -%}
+        On
+        {%- endif %}
+      entity_id:
+        - sensor.upstairs_nest_protect_co_status
+        - sensor.downstairs_nest_protect_co_status
+        - sensor.basement_nest_protect_co_status
