@@ -1,0 +1,5 @@
+ sensor.speedtest_download:
+   icon: mdi:download
+
+ sensor.pws_weather:
+   friendly_name: Current Weather

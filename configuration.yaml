@@ -11,6 +11,8 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
+  customize: !include customize.yaml
+
 # Enables the frontend
 frontend:
 

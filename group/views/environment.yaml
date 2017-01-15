@@ -3,4 +3,7 @@ environment:
   name: Environment
   entities:
    - sun.sun
-   - group.House_Environment
+   - sensor.PWS_weather
+   - group.temperature_sensors
+   - climate.kitchen
+   - group.wunderground
