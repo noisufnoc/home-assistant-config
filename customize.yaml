@@ -6,3 +6,43 @@
 
  sensor.pws_weather:
    friendly_name: Current Weather
+
+ media_player.roku_1gj37n063373:
+   friendly_name: Down The Stairs
+
+ media_player.roku_5s464a339212:
+   friendly_name: Streaming Stick
+
+ media_player.roku_13c1c8145119:
+   friendly_name: OG Master Bedroom
+
+ media_player.roku_13d1ag024543:
+   friendly_name: Playroom
+
+ sensor.basement_nest_protect_battery_health:
+   icon: mdi:battery
+
+ sensor.downstairs_nest_protect_battery_health:
+   icon: mdi:battery
+
+ sensor.upstairs_nest_protect_battery_health:
+   icon: mdi:battery
+
+ sensor.basement_nest_protect_smoke_status:
+   icon: mdi:fire
+
+ sensor.downstairs_nest_protect_smoke_status:
+   icon: mdi:fire
+
+ sensor.upstairs_nest_protect_smoke_status:
+   icon: mdi:fire
+
+ sensor.basement_nest_protect_co_status:
+   icon: mdi:skull
+
+ sensor.downstairs_nest_protect_co_status:
+   icon: mdi:skull
+
+ sensor.upstairs_nest_protect_co_status:
+   icon: mdi:skull
+

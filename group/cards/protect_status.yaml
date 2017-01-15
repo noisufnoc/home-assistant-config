@@ -1,0 +1,6 @@
+protect_status:
+  name: Nest Protect Online Status
+  entities:
+   - binary_sensor.upstairs_nest_protect_online
+   - binary_sensor.downstairs_nest_protect_online
+   - binary_sensor.basement_nest_protect_online

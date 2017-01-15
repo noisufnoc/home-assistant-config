@@ -1,0 +1,6 @@
+protect_battery:
+  name: Nest Protect Battery Status
+  entities:
+    - sensor.upstairs_nest_protect_battery_health
+    - sensor.downstairs_nest_protect_battery_health
+    - sensor.basement_nest_protect_battery_health

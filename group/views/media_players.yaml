@@ -1,0 +1,14 @@
+media_players:
+  view: yes
+  name: "Media Players"
+  entities:
+    - media_player.roku_13c1c8145119
+    - media_player.roku_13d1ag024543
+    - media_player.roku_1gj37n063373
+    - media_player.roku_5s464a339212
+    - media_player.want_house
+    - media_player.down_the_stairs
+    - media_player.famroom
+    - media_player.garage
+    - media_player.kitchen_home
+    - remote.family_room_harmony

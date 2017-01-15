@@ -1,0 +1,4 @@
+leak_sensors:
+  name: Water Leak Sensors
+  entities:
+   - binary_sensor.utility_room_leak_sensor

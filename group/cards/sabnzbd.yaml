@@ -1,0 +1,9 @@
+sabnzbd:
+  name: SABnzbd
+  entities:
+   - sensor.sabnzbd_status
+   - sensor.sabnzbd_disk
+   - sensor.sabnzbd_disk_free
+   - sensor.sabnzbd_left
+   - sensor.sabnzbd_queue
+   - sensor.sabnzbd_speed

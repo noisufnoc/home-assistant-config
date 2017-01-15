@@ -1,0 +1,9 @@
+safety:
+  view: yes
+  name: "Safety"
+  entities:
+    - group.protect_status
+    - group.protect_battery
+    - group.protect_smoke
+    - group.protect_co
+    - group.leak_sensors
