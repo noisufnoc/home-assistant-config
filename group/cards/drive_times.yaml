@@ -1,0 +1,4 @@
+drive_times:
+  name: Driving Times
+  entities:
+   - sensor.home_to_school

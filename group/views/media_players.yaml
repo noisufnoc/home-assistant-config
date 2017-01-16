@@ -2,6 +2,7 @@ media_players:
   view: yes
   name: "Media Players"
   entities:
+    - sensor.plex
     - media_player.roku_13c1c8145119
     - media_player.roku_13d1ag024543
     - media_player.roku_1gj37n063373

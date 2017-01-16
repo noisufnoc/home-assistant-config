@@ -1,0 +1,5 @@
+family:
+  view: yes
+  name: "Family"
+  entities:
+    - group.drive_times

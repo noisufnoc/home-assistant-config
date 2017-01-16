@@ -49,3 +49,6 @@
  climate.kitchen:
    friendly_name: Nest Thermostat
    entity_picture: /local/nest.png
+
+ sensor.home_to_school:
+   icon: mdi:car

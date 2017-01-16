@@ -2,8 +2,11 @@ safety:
   view: yes
   name: "Safety"
   entities:
+    - alarm_control_panel.smartthings_home_monitor
     - group.protect_status
     - group.protect_battery
     - group.protect_smoke
     - group.protect_co
     - group.leak_sensors
+    - group.door_state
+    - group.motion
