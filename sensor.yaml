@@ -99,3 +99,9 @@
   state_topic: "smartthings/Motion Sensor/temperature"
   name: "Motion Sensor Temp"
   unit_of_measurement: "°F"
+
+- platform: mqtt
+  state_topic: "smartthings/Aeon Home Energy Meter/energy"
+  name: "Energy Meter"
+  unit_of_mesurement: "kva"
+
