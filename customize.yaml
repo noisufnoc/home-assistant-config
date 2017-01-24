@@ -52,3 +52,6 @@
 
  sensor.home_to_school:
    icon: mdi:car
+
+ sensor.mike_to_home:
+   icon: mdi:car

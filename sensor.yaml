@@ -74,6 +74,12 @@
   origin: zone.home
   destination: zone.school
 
+- platform: google_travel_time
+  name: Mike to Home
+  api_key: !secret google_travel_time_api_key
+  origin: device_tracker.mike_clark
+  destination: zone.home
+
 # ST Temp Sensors
 - platform: mqtt
   state_topic: "smartthings/Sliding Glass Door/temperature"

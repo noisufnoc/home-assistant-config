@@ -1,4 +1,4 @@
-family_room:
+family_room_view:
   view: yes
   name: "Family Room"
   entities:

@@ -2,4 +2,4 @@ rooms:
   view: yes
   name: "Rooms"
   entities:
-    - media_player.roku_13d1ag024543
+    - group.family_room

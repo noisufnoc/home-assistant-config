@@ -1,0 +1,5 @@
+#- platform: nmap_tracker
+#  hosts: 10.0.0.100-200
+#  track_new_devices: False
+
+- platform: owntracks
