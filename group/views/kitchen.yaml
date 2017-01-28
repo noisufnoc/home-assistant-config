@@ -1,0 +1,5 @@
+kitchen:
+  view: yes
+  name: Kitchen
+  entities:
+   - climate.kitchen

@@ -1,0 +1,5 @@
+garage:
+  view: yes
+  name: Garage
+  entities:
+   - media_player.garage

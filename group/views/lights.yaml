@@ -1,0 +1,6 @@
+lights:
+  view: yes
+  name: "Lights"
+  entities:
+    - switch.fireplace_lights
+    - switch.family_room_light
