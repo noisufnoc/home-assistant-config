@@ -1,8 +1,0 @@
-family_room:
-  name: Family Room
-  entities:
-   - light.family_room_light
-   - light.fireplace_lights
-   - sensor.glass_door_temp
-   - media_player.roku_1gj37n063373
-   - remote.family_room_harmony

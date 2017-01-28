@@ -5,3 +5,6 @@ family_room_view:
     - sensor.glass_door_temp
     - media_player.roku_1gj37n063373
     - remote.family_room_harmony
+    - light.fireplace_lights
+    - switch.fireplace_lights
+    - switch.family_room_light 

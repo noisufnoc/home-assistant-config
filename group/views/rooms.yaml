@@ -1,5 +1,0 @@
-rooms:
-  view: yes
-  name: "Rooms"
-  entities:
-    - group.family_room
