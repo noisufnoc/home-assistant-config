@@ -4,3 +4,4 @@ family:
   entities:
     - device_tracker.mike_clark
     - group.drive_times
+    - camera.mikes_location

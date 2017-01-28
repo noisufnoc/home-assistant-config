@@ -3,6 +3,7 @@ safety:
   name: "Safety"
   entities:
     - alarm_control_panel.smartthings_home_monitor
+    - sensor.energy_meter
     - group.protect_status
     - group.protect_battery
     - group.protect_smoke
