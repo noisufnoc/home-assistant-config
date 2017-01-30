@@ -97,6 +97,11 @@
   unit_of_measurement: "°F"
 
 - platform: mqtt
+  state_topic: "smartthings/Garage Door/temperature"
+  name: "Garage Door Temp"
+  unit_of_measurement: "°F"
+
+- platform: mqtt
   state_topic: "smartthings/Utility Room Leak Sensor/temperature"
   name: "Utility Room Temp"
   unit_of_measurement: "°F"
