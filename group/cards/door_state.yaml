@@ -4,3 +4,4 @@ door_state:
    - binary_sensor.front_door_state
    - binary_sensor.mud_room_door_state
    - binary_sensor.sliding_door_state
+   - binary_sensor.garage_door_state
