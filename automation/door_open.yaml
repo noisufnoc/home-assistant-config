@@ -14,4 +14,4 @@ action:
   entity_id: media_player.kitchen_home
   data_template:
     message: >
-        Who the fuck left the {{ trigger.to_state.attributes.friendly_name }} open
+        Someone left the {{ trigger.to_state.attributes.friendly_name }} open
