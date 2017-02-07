@@ -1,8 +1,0 @@
-mike_clark:
-  hide_if_away: false
-  mac: !secret mike_clark_mac
-  name: Mike
-  picture:  
-  gravatar: !secret mike_clark_gravatar
-  track: true
-  vendor:

@@ -35,6 +35,7 @@ notify: !include notify.yaml
 logger: !include logger.yaml
 camera: !include camera.yaml
 zone: !include_dir_list zone/
+automation: !include_dir_list automation/
 
 # Enables
 updater:

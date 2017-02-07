@@ -6,6 +6,6 @@ family_room_view:
     - media_player.roku_1gj37n063373
     - remote.family_room_harmony
     - light.fireplace_lights
-    - light.family_room_light
+    - light.family_room_lamp
     - switch.fireplace_lights
-    - switch.family_room_light 
+    - switch.family_room_lamp 

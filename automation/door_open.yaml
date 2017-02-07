@@ -1,0 +1,17 @@
+alias: 'Notify if any doors left open for 10 minutes'
+trigger:
+  platform: state
+  entity_id:
+    - binary_sensor.front_door_state
+    - binary_sensor.garage_door_state
+    - binary_sensor.mud_room_door_state
+    - binary_sensor.sliding_door_state
+  state: 'on'
+  for:
+    hours: 10
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data_template:
+    message: >
+        Who the fuck left the {{ trigger.to_state.attributes.friendly_name }} open
