@@ -1,0 +1,7 @@
+check_doors:
+  sequence:
+  - service: tts.google_say
+    entity_id: media_player.kitchen_home
+    data_template:
+      message: >
+        The garage door is {{ states.binary_sensor.garage_door_state.state }}!
