@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Fireplace Lights"
+state_topic: "smartthings/Fireplace Lights/switch"
+command_topic: "smartthings/Fireplace Lights/switch"
+brightness_state_topic: "smartthings/Fireplace Lights/level"
+brightness_command_topic: "smartthings/Fireplace Lights/level"
+payload_on: "on"
+payload_off: "off"
+retain: true

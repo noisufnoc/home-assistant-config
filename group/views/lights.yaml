@@ -2,5 +2,6 @@ lights:
   view: yes
   name: "Lights"
   entities:
-    - switch.fireplace_lights
-    - switch.family_room_light
+    - light.fireplace_lights
+    - light.family_room_lamp
+    - light.deck_lights

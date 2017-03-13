@@ -1,0 +1,7 @@
+platform: mqtt
+name: "Deck Lights"
+state_topic: "smartthings/Deck Lights/switch"
+command_topic: "smartthings/Deck Lights/switch"
+payload_on: "on"
+payload_off: "off"
+retain: true

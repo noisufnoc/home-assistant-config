@@ -12,4 +12,4 @@ media_players:
     - media_player.famroom
     - media_player.garage
     - media_player.kitchen_home
-    - remote.family_room_harmony
+      #  - remote.family_room_harmony

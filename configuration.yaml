@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: noisufnocHome
+  name: noisufnoc
   # Location required to calculate the time the sun rises and sets
   latitude: !secret home_latitude
   longitude: !secret home_longitude
@@ -29,8 +29,7 @@ sensor: !include sensor.yaml
 device_tracker: !include device_tracker.yaml
 group: !include_dir_merge_named group/
 script: !include_dir_merge_named script/
-switch: !include switch.yaml
-light: !include light.yaml
+light: !include_dir_list lights/
 remote: !include remote.yaml
 notify: !include notify.yaml
 logger: !include logger.yaml
@@ -45,6 +44,7 @@ conversation:
 history:
 logbook:
 sun:
+config:
 
 # Things that didnt get put into an included yaml file...
         
