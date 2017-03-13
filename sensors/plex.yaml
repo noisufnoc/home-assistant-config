@@ -1,0 +1,4 @@
+platform: plex
+host: plex.noisufnoc.net
+username: noisufnoc
+password: !secret plex_password

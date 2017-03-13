@@ -1,0 +1,10 @@
+platform: sabnzbd
+host: tv.noisufnoc.net
+api_key: !secret sabnzbd_api_key
+monitored_variables:
+  - 'current_status'
+  - 'speed'
+  - 'queue_size'
+  - 'queue_remaining'
+  - 'disk_size'
+  - 'disk_free'
