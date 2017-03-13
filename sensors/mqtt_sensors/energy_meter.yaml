@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Aeon Home Energy Meter/energy"
+name: "Energy Meter"
+unit_of_mesurement: "kva"

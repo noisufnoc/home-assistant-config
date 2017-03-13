@@ -25,7 +25,7 @@ http:
 # Includes
 alarm_control_panel: !include alarm_control_panel.yaml
 binary_sensor: !include binary_sensor.yaml
-sensor: !include sensor.yaml
+sensor: !include_dir_list sensors/
 device_tracker: !include device_tracker.yaml
 group: !include_dir_merge_named group/
 script: !include_dir_merge_named script/

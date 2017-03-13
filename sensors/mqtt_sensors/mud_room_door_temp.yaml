@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Mud Room Door/temperature"
+name: "Mud Room Door Temp"
+unit_of_measurement: "°F"

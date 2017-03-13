@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Front Door/temperature"
+name: "Front Door Temp"
+unit_of_measurement: "°F"

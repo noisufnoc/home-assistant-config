@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Sliding Glass Door/temperature"
+name: "Glass Door Temp"
+unit_of_measurement: "°F"

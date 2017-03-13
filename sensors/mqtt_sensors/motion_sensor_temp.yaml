@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Motion Sensor/temperature"
+name: "Motion Sensor Temp"
+unit_of_measurement: "°F"

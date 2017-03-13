@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Utility Room Leak Sensor/temperature"
+name: "Utility Room Temp"
+unit_of_measurement: "°F"
