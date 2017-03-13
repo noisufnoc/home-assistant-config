@@ -1,5 +1,6 @@
 motion:
   name: Motion
   entities:
+   - binary_sensor.home_motion
    - binary_sensor.multisensor_motion_sensor
    - binary_sensor.mud_room_motion_sensor
