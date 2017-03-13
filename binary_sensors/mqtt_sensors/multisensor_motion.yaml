@@ -1,0 +1,6 @@
+platform: mqtt
+state_topic: "smartthings/Aeon Multisensor 6/motion"
+name: "Multisensor Motion Sensor"
+payload_on: "active"
+payload_off: "inactive"
+sensor_class: motion

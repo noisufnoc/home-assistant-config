@@ -1,0 +1,6 @@
+platform: mqtt
+state_topic: "smartthings/Motion Sensor/motion"
+name: "Mud Room Motion Sensor"
+payload_on: "active"
+payload_off: "inactive"
+sensor_class: motion
