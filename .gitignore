@@ -2,6 +2,7 @@ www
 deps
 harmony_family_room.conf
 harmony_family_room_harmony.conf
+html5_push_registrations.conf
 known_devices.yaml
 home-assistant.log
 home-assistant_v2.db
