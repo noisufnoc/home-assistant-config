@@ -1,0 +1,11 @@
+alias: 'Minimote Button 3 Press'
+trigger:
+  platform: mqtt
+  topic: smartthings/Kyse's Aeon Minimote/button
+  payload: '{"button": 3, "action": "pushed"}'
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data_template:
+    message: >
+        Steven Pressed The Button!
