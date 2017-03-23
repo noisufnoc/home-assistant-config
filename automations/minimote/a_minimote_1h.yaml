@@ -1,4 +1,4 @@
-alias: 'Minimote A:: Button 1 - Held'
+alias: 'Minimote A: Button 1 - Held'
 trigger:
   platform: mqtt
   topic: smartthings/minimote a/button
