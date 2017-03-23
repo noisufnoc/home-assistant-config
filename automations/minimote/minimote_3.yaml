@@ -1,7 +1,7 @@
 alias: 'Minimote Button 3 Press'
 trigger:
   platform: mqtt
-  topic: smartthings/Kyse's Aeon Minimote/button
+  topic: smartthings/noisufnoc's aeon minimote/button
   payload: '{"button": 3, "action": "pushed"}'
 action:
   service: tts.google_say

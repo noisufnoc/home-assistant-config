@@ -1,7 +1,7 @@
 alias: 'Minimote Button 1 Held'
 trigger:
   platform: mqtt
-  topic: smartthings/Kyse's Aeon Minimote/button
+  topic: smartthings/noisufnoc's aeon minimote/button
   payload: '{"button": 1, "action": "held"}'
 action:
   service: light.toggle
