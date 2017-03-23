@@ -1,7 +1,7 @@
-alias: 'Minimote Button 1 Press'
+alias: 'Minimote A Button 1 - Pressed'
 trigger:
   platform: mqtt
-  topic: smartthings/noisufnoc's aeon minimote/button
+  topic: smartthings/minimote a/button
   payload: '{"button": 1, "action": "pushed"}'
 action:
   service: light.turn_on
