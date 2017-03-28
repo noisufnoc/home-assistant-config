@@ -1,0 +1,6 @@
+platform: mqtt
+state_topic: "smartthings/Office Door/contact"
+name: "Office Door State"
+payload_on: "open"
+payload_off: "closed"
+sensor_class: opening
