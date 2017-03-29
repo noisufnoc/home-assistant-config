@@ -1,0 +1,8 @@
+exterior_doors:
+  name: Exterior Doors
+  entities:
+   - binary_sensor.front_door
+   - binary_sensor.mud_room_door
+   - binary_sensor.sliding_door
+   - binary_sensor.garage_door
+   - binary_sensor.garage_rear_door

@@ -1,0 +1,4 @@
+interior_doors:
+  name: Interior Doors
+  entities:
+   - binary_sensor.office_door

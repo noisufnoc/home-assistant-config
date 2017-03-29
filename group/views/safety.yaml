@@ -9,5 +9,6 @@ safety:
     - group.protect_smoke
     - group.protect_co
     - group.leak_sensors
-    - group.door_state
+    - group.interior_doors
+    - group.exterior_doors
     - group.motion
