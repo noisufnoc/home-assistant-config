@@ -3,3 +3,6 @@ garage:
   name: Garage
   entities:
    - media_player.garage
+   - binary_sensor.garage_door
+   - binary_sensor.garage_rear_door
+   - sensor.garage_door_temp
