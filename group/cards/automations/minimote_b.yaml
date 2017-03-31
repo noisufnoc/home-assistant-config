@@ -1,0 +1,11 @@
+minimote_b:
+  name: Minimote B
+  entities:
+   - automation.minimote_b_button_1__held
+   - automation.minimote_b_button_1__pressed
+   - automation.minimote_b_button_2__held
+   - automation.minimote_b_button_2__pressed
+   - automation.minimote_b_button_3__held
+   - automation.minimote_b_button_3__pressed
+   - automation.minimote_b_button_4__held
+   - automation.minimote_b_button_4__pressed
