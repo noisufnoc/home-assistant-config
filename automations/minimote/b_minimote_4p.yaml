@@ -1,0 +1,11 @@
+alias: 'Minimote B: Button 4 - Pressed'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote b/button
+  payload: '{"button": 4, "action": "pushed"}'
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data_template:
+    message: >
+        Don't push the button!
