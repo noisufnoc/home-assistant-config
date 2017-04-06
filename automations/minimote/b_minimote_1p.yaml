@@ -6,4 +6,4 @@ trigger:
 action:
   service: light.turn_on
   data:
-    entity_id: light.family_room_lamp
+    entity_id: light.ashleys_nightstand

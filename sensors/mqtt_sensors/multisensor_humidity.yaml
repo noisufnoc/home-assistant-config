@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Aeon Multisensor 6/humidity"
+name: "Multisensor Humidity"
+unit_of_measurement: "%"

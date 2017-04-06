@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Aeon Multisensor 6/illuminance"
+name: "Multisensor Illuminance"
+unit_of_measurement: "lux"
