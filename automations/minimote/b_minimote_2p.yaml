@@ -4,6 +4,6 @@ trigger:
   topic: smartthings/minimote b/button
   payload: '{"button": 2, "action": "pushed"}'
 action:
-  service: light.turn_off
+  service: light.toggle
   data:
     entity_id: light.mikes_nightstand
