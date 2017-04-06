@@ -1,0 +1,8 @@
+all_lights:
+  name: All Lights
+  entities:
+    - light.ashleys_nightstand
+    - light.mikes_nightstand
+    - light.fireplace_lights
+    - light.family_room_lamp
+    - light.deck_lights
