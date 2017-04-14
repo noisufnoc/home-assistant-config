@@ -1,6 +1,0 @@
-platform: mqtt
-state_topic: "smartthings/Xiaomi Motion/motion"
-name: "Xiaomi Motion Sensor"
-payload_on: "active"
-payload_off: "inactive"
-sensor_class: motion

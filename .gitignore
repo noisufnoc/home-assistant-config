@@ -13,3 +13,4 @@ secrets.yaml
 tts
 .HA_VERSION
 .uuid
+*.pickle

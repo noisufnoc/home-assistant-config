@@ -6,9 +6,9 @@ sensors:
     value_template: >-
       {%- if is_state("binary_sensor.multisensor_motion_sensor", "active") 
           and is_state("binary_sensor.mud_room_motion_sensor", "active") -%}
-      active
+      On
       {%- else -%}
-      inactive
+      Off
       {%- endif %}
     entity_id:
       - binary_sensor.multisensor_motion_sensor

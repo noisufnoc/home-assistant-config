@@ -63,6 +63,6 @@ ifttt:
 mqtt:
   broker: localhost
 
-splunk:
-  token: !secret splunk_token
-  host: fwd01.noisufnoc.net
+#splunk:
+#  token: !secret splunk_token
+#  host: fwd01.noisufnoc.net

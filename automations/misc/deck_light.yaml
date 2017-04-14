@@ -1,0 +1,13 @@
+alias: Turn on the light for Jeff
+trigger:
+  platform: state
+  entity_id: binary_sensor.sliding_door
+  state: 'on'
+condition:
+  condition: state
+  entity_id: sun.sun
+  state: 'below_horizon'
+action:
+  service: light.turn_on
+  entity_id: light.deck_lights
+
