@@ -1,0 +1,8 @@
+# This is the dummy switch to enable ST control of the Sonoff connected MQTT light
+platform: mqtt
+name: "Living Room Lamp ST"
+state_topic: "smartthings/Living Room Lamp/switch"
+command_topic: "smartthings/Living Room Lamp/switch"
+payload_on: "on"
+payload_off: "off"
+retain: true
