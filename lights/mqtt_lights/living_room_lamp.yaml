@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Living Room Lamp"
+state_topic: "stat/sonoff/POWER"
+command_topic: "cmnd/sonoff/power"
+payload_on: "ON"
+payload_off: "OFF"
+retain: true
+qos: 1

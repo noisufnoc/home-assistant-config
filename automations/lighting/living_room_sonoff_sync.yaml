@@ -1,0 +1,15 @@
+alias: Sync ST Switch and Living Room Lamp Sonoff
+trigger:
+  - platform: state
+    entity_id: light.fake_lamp
+  - platform: state
+    entity_id: light.living_room_lamp
+action:
+  - service_template: "light.turn_{{ trigger.to_state.state }}"
+    data_template:
+      entity_id: >-
+        {% if trigger.entity_id == 'light.fake_lamp' %}
+          light.living_room_lamp
+        {% else %}
+          light.fake_lamp
+        {% endif %}
