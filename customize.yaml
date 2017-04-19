@@ -55,3 +55,6 @@
 
  sensor.mike_to_home:
    icon: mdi:car
+ 
+ light.fake_lamp:
+   hidden: true
