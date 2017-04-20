@@ -1,0 +1,9 @@
+platform: mqtt_json  
+name: "Steve-o Light"  
+state_topic: "noisufnoc/steveo_light"  
+command_topic: "noisufnoc/steveo_light/set"  
+brightness: true  
+flash: true  
+rgb: true  
+optimistic: false  
+qos: 0  
