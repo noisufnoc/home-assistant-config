@@ -1,4 +1,4 @@
 platform: mqtt
 state_topic: "smartthings/Family Room Lamp/power"
 name: "Family Room Lamp Wattage"
-unit_of_mesurement: "W"
+unit_of_measurement: "Watts"
