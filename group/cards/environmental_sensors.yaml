@@ -8,5 +8,7 @@ environmental_sensors:
    - sensor.garage_door_temp
    - sensor.motion_sensor_temp
    - sensor.multisensor_temp
+   - sensor.multisensor_humidity
+   - sensor.multisensor_illuminance
    - sensor.kitchen_thermostat_temperature
    - sensor.kitchen_thermostat_humidity
