@@ -12,3 +12,4 @@ safety:
     - group.interior_doors
     - group.exterior_doors
     - group.motion
+    - group.energy_usage

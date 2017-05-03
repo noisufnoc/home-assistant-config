@@ -1,0 +1,5 @@
+energy_usage:
+  name: Energy Usage
+  entities:
+   - sensor.energy_meter
+   - sensor.family_room_lamp_wattage
