@@ -46,6 +46,18 @@
  sensor.upstairs_nest_protect_co_status:
    icon: mdi:skull
 
+ sensor.washing_machine_status:
+   icon: mdi:washing-machine
+
+ sensor.dishwasher_status:
+   icon: mdi:washing-machine
+
+ sensor.dishwasher_power:
+   icon: mdi:flash
+
+ sensor.washing_machine_power:
+   icon: mdi:flash
+
  climate.kitchen:
    friendly_name: Nest Thermostat
    entity_picture: /local/nest.png

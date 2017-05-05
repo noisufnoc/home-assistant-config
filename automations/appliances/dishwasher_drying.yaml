@@ -1,0 +1,19 @@
+# When the power level drops below 10, and the Dishwasher is set to
+# the 'Running' state, mark the Dishwasher as Finished
+
+alias: Set dishwasher drying when power drops
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.dishwasher_power
+    below: 10
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Running
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Drying

@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  washing_machine_status:
+    value_template: '{{ states.input_select.washing_machine_status.state}}'
+    friendly_name: 'Washing Machine Status'
+  dishwasher_status:
+    value_template: '{{ states.input_select.dishwasher_status.state}}'
+    friendly_name: 'Dishwasher Status'

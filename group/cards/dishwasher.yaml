@@ -1,0 +1,6 @@
+dishwasher:
+  name: Dishwasher
+  entities:
+    - sensor.dishwasher_status
+    - sensor.dishwasher_power
+    - switch.dishwasher_power_override

@@ -1,0 +1,27 @@
+# http://philhawthorne.com/making-dumb-dishwashers-and-washing-machines-smart-alerts-when-the-dishes-and-clothes-are-cleaned/
+# 
+# When we detect power being drawn from the dishwasher,
+# mark the dishwasher as using power
+
+alias: Set dishwasher active when power detected
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.dishwasher_power
+    above: 10
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Dirty
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Clean
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Drying
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Running

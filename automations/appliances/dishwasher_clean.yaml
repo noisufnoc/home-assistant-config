@@ -1,0 +1,21 @@
+# Once the dishwasher status has been 'Drying' for 30 minutes, mark the
+# dishwasher as clean
+
+alias: Set dishwasher clean
+trigger:
+  - platform: state
+    entity_id: input_select.dishwasher_status
+    to: Drying
+    for:
+      minutes: 15
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Drying
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.dishwasher_status
+      option: Clean
