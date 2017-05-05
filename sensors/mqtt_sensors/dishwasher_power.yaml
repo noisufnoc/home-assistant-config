@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Dishwasher/power"
+name: "Dishwasher Power"
+unit_of_measurement: "W"

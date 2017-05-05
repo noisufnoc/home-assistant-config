@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "smartthings/Washing Machine/power"
+name: "Washing Machine Power"
+unit_of_measurement: "W"

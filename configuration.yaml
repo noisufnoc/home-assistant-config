@@ -36,6 +36,7 @@ logger: !include logger.yaml
 camera: !include camera.yaml
 zone: !include_dir_list zone/
 automation: !include_dir_list automations/
+input_select: !include input_select.yaml
 
 # Enables
 updater:
