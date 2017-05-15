@@ -1,8 +1,0 @@
-family:
-  view: yes
-  name: "Family"
-  entities:
-    - device_tracker.mike_clark
-    - device_tracker.ashley_pixel
-    - group.drive_times
-    - camera.mikes_location

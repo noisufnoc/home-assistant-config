@@ -1,6 +1,0 @@
-automations:
-  view: yes
-  name: "Automations"
-  entities:
-    - group.minimote_a
-    - group.minimote_b

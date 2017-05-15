@@ -1,6 +1,0 @@
-technology:
-  view: yes
-  name: "Technology"
-  entities:
-    - group.speedtest
-    - group.sabnzbd

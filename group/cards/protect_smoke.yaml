@@ -1,6 +1,0 @@
-protect_smoke:
-  name: Nest Protect Smoke Status
-  entities:
-   - sensor.upstairs_nest_protect_smoke_status
-   - sensor.downstairs_nest_protect_smoke_status
-   - sensor.basement_nest_protect_smoke_status

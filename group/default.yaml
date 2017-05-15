@@ -1,5 +1,0 @@
-#default_view:
-#  view: no
-#  icon: mdi:home
-#  entities:
-#   - group.House_Environment

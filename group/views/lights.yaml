@@ -1,5 +1,0 @@
-lights:
-  view: yes
-  name: "Lights"
-  entities:
-    - group.all_lights

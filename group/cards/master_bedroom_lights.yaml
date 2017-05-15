@@ -1,5 +1,0 @@
-master_bedroom_lights:
-  name: Master Bedroom Lights
-  entities:
-    - light.ashleys_nightstand
-    - light.mikes_nightstand

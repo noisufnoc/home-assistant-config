@@ -1,7 +1,0 @@
-protect_co:
-  name: Nest Protect CO Status
-  entities:
-   - binary_sensor.co
-   - sensor.upstairs_nest_protect_co_status
-   - sensor.downstairs_nest_protect_co_status
-   - sensor.basement_nest_protect_co_status

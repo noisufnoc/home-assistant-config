@@ -1,6 +1,0 @@
-speedtest:
-  name: Speedtest.net
-  entities:
-   - sensor.speedtest_download
-   - sensor.speedtest_ping
-   - sensor.speedtest_upload

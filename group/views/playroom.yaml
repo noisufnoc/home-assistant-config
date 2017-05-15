@@ -1,5 +1,0 @@
-playroom:
-  view: yes
-  name: "Playroom"
-  entities:
-    - media_player.playroom

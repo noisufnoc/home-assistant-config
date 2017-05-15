@@ -1,6 +1,0 @@
-outside:
-  view: yes
-  name: "Outside"
-  entities:
-    - light.deck_lights
-    - switch.deck_lights
