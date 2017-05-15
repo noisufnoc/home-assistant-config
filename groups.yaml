@@ -1,0 +1,317 @@
+  wunderground:
+    name: Weather Underground Information
+    entities:
+     - sensor.pws_alerts
+     - sensor.pws_dewpoint_f
+     - sensor.pws_dewpoint_string
+     - sensor.pws_elevation
+     - sensor.pws_feelslike_f
+     - sensor.pws_feelslike_string
+     - sensor.pws_heat_index_f
+     - sensor.pws_heat_index_string
+     - sensor.pws_location
+     - sensor.pws_observation_time
+     - sensor.pws_precip_1hr_in
+     - sensor.pws_precip_1hr_string
+     - sensor.pws_precip_today_in
+     - sensor.pws_precip_today_string
+     - sensor.pws_pressure_in
+     - sensor.pws_pressure_mb
+     - sensor.pws_pressure_trend
+     - sensor.pws_relative_humidity
+     - sensor.pws_solarradiation
+     - sensor.pws_station_id
+     - sensor.pws_temp_f
+     - sensor.pws_temperature_string
+     - sensor.pws_uv
+     - sensor.pws_visibility_mi
+     - sensor.pws_wind_degrees
+     - sensor.pws_wind_dir
+     - sensor.pws_wind_gust_mph
+     - sensor.pws_wind_mph
+     - sensor.pws_wind_string
+  
+  environmental_sensors:
+    name: Environmental Sensors
+    entities:
+     - sensor.front_door_temp
+     - sensor.glass_door_temp
+     - sensor.mud_room_door_temp
+     - sensor.utility_room_temp
+     - sensor.garage_door_temp
+     - sensor.motion_sensor_temp
+     - sensor.multisensor_temp
+     - sensor.multisensor_humidity
+     - sensor.multisensor_illuminance
+     - sensor.kitchen_thermostat_temperature
+     - sensor.kitchen_thermostat_humidity
+  
+  protect_battery:
+    name: Nest Protect Battery Status
+    entities:
+      - sensor.upstairs_nest_protect_battery_health
+      - sensor.downstairs_nest_protect_battery_health
+      - sensor.basement_nest_protect_battery_health
+  
+  protect_co:
+    name: Nest Protect CO Status
+    entities:
+     - binary_sensor.co
+     - sensor.upstairs_nest_protect_co_status
+     - sensor.downstairs_nest_protect_co_status
+     - sensor.basement_nest_protect_co_status
+  
+  protect_smoke:
+    name: Nest Protect Smoke Status
+    entities:
+     - sensor.upstairs_nest_protect_smoke_status
+     - sensor.downstairs_nest_protect_smoke_status
+     - sensor.basement_nest_protect_smoke_status
+  
+  protect_status:
+    name: Nest Protect Online Status
+    entities:
+     - binary_sensor.upstairs_nest_protect_online
+     - binary_sensor.downstairs_nest_protect_online
+     - binary_sensor.basement_nest_protect_online
+  
+  leak_sensors:
+    name: Water Leak Sensors
+    entities:
+     - binary_sensor.utility_room_leak_sensor
+  
+  speedtest:
+    name: Speedtest.net
+    entities:
+     - sensor.speedtest_download
+     - sensor.speedtest_ping
+     - sensor.speedtest_upload
+  
+  sabnzbd:
+    name: SABnzbd
+    entities:
+     - sensor.sabnzbd_status
+     - sensor.sabnzbd_disk
+     - sensor.sabnzbd_disk_free
+     - sensor.sabnzbd_left
+     - sensor.sabnzbd_queue
+     - sensor.sabnzbd_speed
+  
+  nest_status:
+    name: Nest Thermostat Status
+    entities:
+    - binary_sensor.kitchen_thermostat_fan
+    - binary_sensor.kitchen_thermostat_has_leaf
+    - binary_sensor.kitchen_thermostat_is_locked
+    - binary_sensor.kitchen_thermostat_is_using_emergency_heat
+    - binary_sensor.kitchen_thermostat_online
+    - sensor.kitchen_thermostat_hvac_state
+    - sensor.kitchen_thermostat_operation_mode
+  
+  drive_times:
+    name: Driving Times
+    entities:
+     - sensor.home_to_school
+     - sensor.mike_to_home
+  
+  motion:
+    name: Motion
+    entities:
+     - binary_sensor.home_motion
+     - binary_sensor.multisensor_motion_sensor
+     - binary_sensor.mud_room_motion_sensor
+     - binary_sensor.family_room_motion_sensor
+  
+  exterior_doors:
+    name: Exterior Doors
+    entities:
+     - binary_sensor.front_door
+     - binary_sensor.mud_room_door
+     - binary_sensor.sliding_door
+     - binary_sensor.garage_door
+     - binary_sensor.garage_rear_door
+  
+  interior_doors:
+    name: Interior Doors
+    entities:
+     - binary_sensor.office_door
+  
+  minimote_b:
+    name: Minimote B
+    entities:
+     - automation.minimote_b_button_1__held
+     - automation.minimote_b_button_1__pressed
+     - automation.minimote_b_button_2__held
+     - automation.minimote_b_button_2__pressed
+     - automation.minimote_b_button_3__held
+     - automation.minimote_b_button_3__pressed
+     - automation.minimote_b_button_4__held
+     - automation.minimote_b_button_4__pressed
+  
+  minimote_a:
+    name: Minimote A
+    entities:
+     - automation.minimote_a_button_1__held
+     - automation.minimote_a_button_1__pressed
+     - automation.minimote_a_button_2__held
+     - automation.minimote_a_button_2__pressed
+     - automation.minimote_a_button_3__held
+     - automation.minimote_a_button_3__pressed
+     - automation.minimote_a_button_4__held
+     - automation.minimote_a_button_4__pressed
+  
+  master_bedroom_lights:
+    name: Master Bedroom Lights
+    entities:
+      - light.ashleys_nightstand
+      - light.mikes_nightstand
+  
+  all_lights:
+    name: All Lights
+    entities:
+      - light.ashleys_nightstand
+      - light.mikes_nightstand
+      - light.fireplace_lights
+      - light.family_room_lamp
+      - light.deck_lights
+  
+  energy_usage:
+    name: Energy Usage
+    entities:
+     - sensor.energy_meter
+     - sensor.family_room_lamp_wattage
+  
+  dishwasher:
+    name: Dishwasher
+    entities:
+      - sensor.dishwasher_status
+      - sensor.dishwasher_power
+      - switch.dishwasher_power_override
+  
+  environment:
+    view: yes
+    name: Environment
+    entities:
+     - sun.sun
+     - sensor.pws_weather
+     - group.environmental_sensors
+     - climate.kitchen
+     - group.wunderground
+     - group.nest_status
+     - camera.radar
+  
+  family_room_view:
+    view: yes
+    name: "Family Room"
+    entities:
+      - sensor.glass_door_temp
+      - media_player.roku_1gj37n063373
+      - remote.family_room_harmony
+      - light.fireplace_lights
+      - light.family_room_lamp
+      - switch.fireplace_lights
+      - switch.family_room_lamp 
+  
+  master_bedroom:
+    view: yes
+    name: "Master Bedroom"
+    entities:
+      - group.master_bedroom_lights
+      - media_player.roku_5s464a339212
+      - media_player.roku_13c1c8145119
+  
+  playroom:
+    view: yes
+    name: "Playroom"
+    entities:
+      - media_player.playroom
+  
+  safety:
+    view: yes
+    name: "Safety"
+    entities:
+      - alarm_control_panel.smartthings_home_monitor
+      - sensor.energy_meter
+      - group.protect_status
+      - group.protect_battery
+      - group.protect_smoke
+      - group.protect_co
+      - group.leak_sensors
+      - group.interior_doors
+      - group.exterior_doors
+      - group.motion
+      - group.energy_usage
+  
+  media_players:
+    view: yes
+    name: "Media Players"
+    entities:
+      - sensor.plex
+      - media_player.roku_13c1c8145119
+      - media_player.roku_13d1ag024543
+      - media_player.roku_1gj37n063373
+      - media_player.roku_5s464a339212
+      - media_player.want_house
+      - media_player.down_the_stairs
+      - media_player.famroom
+      - media_player.garage
+      - media_player.kitchen_home
+        #  - remote.family_room_harmony
+  
+  technology:
+    view: yes
+    name: "Technology"
+    entities:
+      - group.speedtest
+      - group.sabnzbd
+  
+  family:
+    view: yes
+    name: "Family"
+    entities:
+      - device_tracker.mike_clark
+      - device_tracker.ashley_pixel
+      - group.drive_times
+      - camera.mikes_location
+  
+  lights:
+    view: yes
+    name: "Lights"
+    entities:
+      - group.all_lights
+  
+  kitchen:
+    view: yes
+    name: Kitchen
+    entities:
+     - climate.kitchen
+     - group.dishwasher
+  
+  garage:
+    view: yes
+    name: Garage
+    entities:
+     - media_player.garage
+     - binary_sensor.garage_door
+     - binary_sensor.garage_rear_door
+     - sensor.garage_door_temp
+  
+  outside:
+    view: yes
+    name: "Outside"
+    entities:
+      - light.deck_lights
+      - switch.deck_lights
+  
+  automations:
+    view: yes
+    name: "Automations"
+    entities:
+      - group.minimote_a
+      - group.minimote_b
+  
+  #default_view:
+  #  view: no
+  #  icon: mdi:home
+  #  entities:
+  #   - group.House_Environment
