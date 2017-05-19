@@ -187,19 +187,7 @@
       - sensor.dishwasher_status
       - sensor.dishwasher_power
       - switch.dishwasher_power_override
-  
-  environment:
-    view: yes
-    name: Environment
-    entities:
-     - sun.sun
-     - sensor.pws_weather
-     - group.environmental_sensors
-     - climate.kitchen
-     - group.wunderground
-     - group.nest_status
-     - camera.radar
-  
+
   family_room_view:
     view: yes
     name: "Family Room"
@@ -225,7 +213,19 @@
     name: "Playroom"
     entities:
       - media_player.playroom
-  
+
+  environment:
+    view: yes
+    name: "Environment"
+    entities:
+     - sun.sun
+     - sensor.pws_weather
+     - group.environmental_sensors
+     - climate.kitchen
+     - group.wunderground
+     - group.nest_status
+     - camera.radar
+ 
   safety:
     view: yes
     name: "Safety"
@@ -282,14 +282,14 @@
   
   kitchen:
     view: yes
-    name: Kitchen
+    name: "Kitchen"
     entities:
      - climate.kitchen
      - group.dishwasher
   
   garage:
     view: yes
-    name: Garage
+    name: "Garage"
     entities:
      - media_player.garage
      - binary_sensor.garage_door
