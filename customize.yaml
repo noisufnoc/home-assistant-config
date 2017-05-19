@@ -70,3 +70,6 @@
  
  light.living_room_lamp_st:
    hidden: true
+
+ light.amelias_lamp_st:
+   hidden: true

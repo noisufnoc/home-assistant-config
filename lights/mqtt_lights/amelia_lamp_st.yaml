@@ -1,0 +1,8 @@
+# This is the dummy switch to enable ST control of the Sonoff connected MQTT light
+platform: mqtt
+name: "Amelia's Lamp ST"
+state_topic: "smartthings/Amelia's Lamp/switch"
+command_topic: "smartthings/Amelia's Lamp/switch"
+payload_on: "on"
+payload_off: "off"
+retain: true
