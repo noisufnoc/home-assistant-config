@@ -159,6 +159,12 @@
      - automation.minimote_a_button_3__pressed
      - automation.minimote_a_button_4__held
      - automation.minimote_a_button_4__pressed
+
+  sonoff_sync:
+    name: Sonoff Smartthings Sync
+    entities:
+     - automation.sync_st_switch_and_amelias_lamp_sonoff
+     - automation.sync_st_switch_and_living_room_lamp_sonoff
   
   master_bedroom_lights:
     name: Master Bedroom Lights
@@ -310,6 +316,7 @@
     name: "Automations"
     entities:
       - group.all_automations
+      - group.sonoff_sync
       - group.minimote_a
       - group.minimote_b
   
