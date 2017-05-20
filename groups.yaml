@@ -171,6 +171,16 @@
     entities:
       - light.ashleys_nightstand
       - light.mikes_nightstand
+        
+  downstairs_lights:
+    name: Downstairs Lights
+    entities:
+      - light.family_room_lamp
+
+  upstairs_lights:
+    name: Upstairs Lights
+    entities:
+      - group.master_bedroom_lights
   
 #  all_lights:
 #    name: All Lights
