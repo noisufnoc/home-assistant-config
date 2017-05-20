@@ -1,0 +1,15 @@
+alias: Downstairs Lights On Off
+trigger:
+  - platform: state
+    entity_id: light.downstairs_lights_st
+  - platform: state
+    entity_id: group.downstairs_lights
+action:
+  - service_template: "light.turn_{{ trigger.to_state.state }}"
+    data_template:
+      entity_id: >-
+        {% if trigger.entity_id == 'light.downstairs_lights_st' %}
+          group.downstairs_lights
+        {% else %}
+          light.downstairs_lights_st
+        {% endif %}

@@ -1,0 +1,8 @@
+# This is the dummy switch to enable ST control of the Sonoff connected MQTT light
+platform: mqtt
+name: "Downstairs Lights ST"
+state_topic: "smartthings/Downstairs Lights/switch"
+command_topic: "smartthings/Downstairs Lights/switch"
+payload_on: "on"
+payload_off: "off"
+retain: true
