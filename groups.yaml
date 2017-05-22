@@ -220,15 +220,6 @@
     entities:
       - group.backyard_lights
         
-  lights:
-    view: yes
-    name: "Lights"
-    entities:
-      - group.downstairs_lights
-      - group.upstairs_lights
-      - group.outside_lights
-      - group.all_lights
-  
 # End Lights
   
   energy_usage:
@@ -244,6 +235,17 @@
       - sensor.dishwasher_power
       - switch.dishwasher_power_override
 
+# Views
+
+  lights:
+    view: yes
+    name: "Lights"
+    entities:
+      - group.downstairs_lights
+      - group.upstairs_lights
+      - group.outside_lights
+      - group.all_lights
+  
   family_room_view:
     view: yes
     name: "Family Room"
