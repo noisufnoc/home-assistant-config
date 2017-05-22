@@ -73,3 +73,12 @@
 
  light.amelias_lamp_st:
    hidden: true
+
+ light.stevens_night_light_st:
+   hidden: true
+     
+ light.downstairs_lights_st:
+   hidden: true
+     
+ light.upstairs_lights_st:
+   hidden: true

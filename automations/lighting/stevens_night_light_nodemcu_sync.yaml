@@ -1,0 +1,15 @@
+alias: Sync ST Switch and Steven's Night Light
+trigger:
+  - platform: state
+    entity_id: light.stevens_night_light_st
+  - platform: state
+    entity_id: light.steveo_light
+action:
+  - service_template: "light.turn_{{ trigger.to_state.state }}"
+    data_template:
+      entity_id: >-
+        {% if trigger.entity_id == 'light.stevens_night_light_st' %}
+          light.steveo_light
+        {% else %}
+          light.stevens_night_light_st
+        {% endif %}
