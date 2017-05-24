@@ -82,3 +82,93 @@
      
  light.upstairs_lights_st:
    hidden: true
+
+##################################################################################
+##                                    Weather                                   ##
+##################################################################################
+
+ # Sky Summary
+ sensor.dark_sky_summary:
+   friendly_name: Sky Summary
+   icon: 'mdi:weather-partlycloudy'
+ 
+ # Cloud Coverage
+ sensor.dark_sky_cloud_coverage:
+   friendly_name: Cloud Coverage
+ 
+ # Visibility
+ sensor.dark_sky_visibility:
+   friendly_name: Visbility
+   icon: 'mdi:eye'
+ 
+ # Temperature
+ sensor.dark_sky_temperature:
+   friendly_name: Temperature
+   icon: 'mdi:thermometer-lines'
+ 
+ # Feels Like
+ sensor.dark_sky_apparent_temperature:
+   friendly_name: Feels Like
+ 
+ # Today's High
+ sensor.dark_sky_daily_high_temperature:
+   friendly_name: Today's High
+ 
+ # Today's Low
+ sensor.dark_sky_daily_low_temperature:
+   friendly_name: Today's Low
+ 
+ # Humidity
+ sensor.dark_sky_humidity:
+   friendly_name: Humidity
+ 
+ # Dew Point
+ sensor.dark_sky_dew_point:
+   friendly_name: Dew Point
+ 
+ # Wind Speed
+ sensor.dark_sky_wind_speed:
+   friendly_name: Wind Speed
+ 
+ # Wind Bearing
+ sensor.dark_sky_wind_bearing:
+   friendly_name: Wind Bearing
+ 
+ # Precipitation Type
+ sensor.dark_sky_precip:
+   friendly_name: Precipitation Type
+ 
+ # Probability
+ sensor.dark_sky_precip_probability:
+   friendly_name: Probability
+ 
+ # Intensity
+ sensor.dark_sky_precip_intensity:
+   friendly_name: Intensity
+ 
+ # Nearest Storm Distance
+ sensor.dark_sky_nearest_storm_distance:
+   friendly_name: Nearest Storm Distance
+ 
+ # Nearest Storm Bearing
+ sensor.dark_sky_nearest_storm_bearing:
+   friendly_name: Nearest Storm Bearing
+ 
+ # Pressure
+ sensor.dark_sky_pressure:
+   friendly_name: Pressure
+ 
+ # Hourly Report
+ sensor.dark_sky_minutely_summary:
+   friendly_name: Hourly
+   icon: 'mdi:calendar-clock'
+ 
+ # Daily Report
+ sensor.dark_sky_hourly_summary:
+   friendly_name: Daily
+   icon: 'mdi:calendar-today'
+ 
+ # Weekly Report
+ sensor.dark_sky_daily_summary:
+   friendly_name: Weekly
+   icon: 'mdi:calendar-range'

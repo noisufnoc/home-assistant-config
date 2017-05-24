@@ -1,3 +1,27 @@
+##################################################################################
+##                                  Home Status                                 ##
+##################################################################################
+
+# Occupants
+occupants:
+  name: Occupants
+  options:
+    - Mike & Ashley
+    - All
+  initial: Mike & Ashley
+  icon: mdi:account-multiple
+  
+# Home Status
+home_status:
+  name: Home Status
+  options:
+    - Home
+    - Away
+    - Limited Light
+    - Night
+#  initial: Unknown
+  icon: mdi:home
+
 dishwasher_status:
   name: Dishwasher Status
   options:
@@ -6,6 +30,7 @@ dishwasher_status:
     - Drying
     - Clean
   initial: Dirty
+
 washing_machine_status:
   name: Washing Machine Status
   options:
