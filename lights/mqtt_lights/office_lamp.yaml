@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Office Lamp"
+state_topic: "stat/office_lamp/POWER"
+command_topic: "cmnd/office_lamp/power"
+payload_on: "ON"
+payload_off: "OFF"
+retain: true
+qos: 1

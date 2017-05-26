@@ -22,6 +22,8 @@ home_status:
 #  initial: Unknown
   icon: mdi:home
 
+# Appliance States
+
 dishwasher_status:
   name: Dishwasher Status
   options:
@@ -39,3 +41,13 @@ washing_machine_status:
     - Finishing
     - Clean
   initial: Idle
+
+# Work From Home State
+
+work_from_home_status:
+  name: Work From Home Status
+  options:
+    - Available
+    - Busy
+    - Do Not Disturb
+  initial: Available

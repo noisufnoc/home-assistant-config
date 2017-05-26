@@ -102,7 +102,7 @@
     entities:
       - device_tracker.mike_clark
       - device_tracker.ashley_pixel
-  
+
   sabnzbd:
     name: SABnzbd
     entities:
@@ -263,6 +263,11 @@
       - light.family_room_lamp
       - light.fireplace_lights
 
+  office_lights:
+    name: Office Lights
+    entities:
+      - light.office_lamp
+
   living_room_lights:
     name: Living Room Lights
     entities:
@@ -287,6 +292,11 @@
       - group.master_bedroom_lights
       - group.steven_bedroom_lights
       - group.amelia_bedroom_lights
+
+  basement_lights:
+    name: Basement Lights
+    entities:
+      - group.office_lights
 
   outside_lights:
     name: Outside Lights
@@ -322,6 +332,7 @@
       - group.climate
       - group.downstairs_lights
       - group.upstairs_lights
+      - group.basement_lights
       - group.outside_lights
       - group.all_lights
   
@@ -347,6 +358,15 @@
       - group.master_bedroom_lights
       - media_player.roku_5s464a339212
       - media_player.roku_13c1c8145119
+
+  office:
+    view: yes
+    name: "Office"
+    icon: mdi:clippy
+    entities:
+      - group.office_lights
+      - binary_sensor.office_door
+      - input_select.work_from_home_status
   
   playroom:
     view: yes
