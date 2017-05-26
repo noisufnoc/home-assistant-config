@@ -89,7 +89,7 @@
 
  # Sky Summary
  sensor.dark_sky_summary:
-   friendly_name: Sky Summary
+   friendly_name: Dark Sky Summary
    icon: 'mdi:weather-partlycloudy'
  
  # Cloud Coverage
@@ -160,15 +160,15 @@
  
  # Hourly Report
  sensor.dark_sky_minutely_summary:
-   friendly_name: Hourly
+   friendly_name: Minutely
    icon: 'mdi:calendar-clock'
  
  # Daily Report
  sensor.dark_sky_hourly_summary:
-   friendly_name: Daily
+   friendly_name: Hourly
    icon: 'mdi:calendar-today'
  
  # Weekly Report
  sensor.dark_sky_daily_summary:
-   friendly_name: Weekly
+   friendly_name: Daily
    icon: 'mdi:calendar-range'
