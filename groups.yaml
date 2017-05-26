@@ -456,6 +456,7 @@
   automations:
     view: yes
     name: "Automations"
+    icon: mdi:auto-fix
     entities:
       - group.all_automations
       - group.sonoff_sync

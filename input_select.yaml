@@ -17,7 +17,7 @@ home_status:
   options:
     - Home
     - Away
-    - Limited Light
+    - Work From Home
     - Night
 #  initial: Unknown
   icon: mdi:home
