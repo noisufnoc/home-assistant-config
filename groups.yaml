@@ -320,10 +320,9 @@
 
 # Views
 
-#  lights:
-  default_view:
+  default:
+    #  default_view:
     view: yes
-#    name: "Lights"
     name: "Home"
     icon: mdi:home
     entities:
@@ -436,6 +435,7 @@
   safety:
     view: yes
     name: "Safety"
+    icon: mdi:lock-open
     entities:
       - alarm_control_panel.smartthings_home_monitor
       - sensor.energy_meter
@@ -452,6 +452,7 @@
   media_players:
     view: yes
     name: "Media Players"
+    icon: mdi:play-box-outline
     entities:
       - sensor.plex
       - media_player.roku_13c1c8145119
