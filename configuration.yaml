@@ -69,7 +69,9 @@ ifttt:
 mqtt:
   broker: localhost
 
-# splunk is down right now
 splunk:
   token: !secret splunk_token
   host: hec.noisufnoc.net
+
+apcupsd:
+  host: apcupsd.noisufnoc.net
