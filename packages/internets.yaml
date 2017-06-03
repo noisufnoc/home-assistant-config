@@ -1,0 +1,32 @@
+################################################################
+## packages / apcupsd
+################################################################
+
+homeassistant:
+  customize:
+
+################################################
+## sensors
+################################################
+
+sensor:
+  - platform: fastdotcom
+
+  - platform: speedtest
+    server_id: !secret speedtest_server_id
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+       
+################################################
+## group
+################################################
+
+group:
+  Internets:
+    entities:
+      - sensor.fastcom_download
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping

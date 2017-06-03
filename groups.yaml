@@ -471,8 +471,9 @@
     name: "Technology"
     icon: mdi:settings
     entities:
-      - group.speedtest
+      - group.internets
       - group.sabnzbd
+      - group.apc_ups_daemon
   
  
   automations:
