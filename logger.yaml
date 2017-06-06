@@ -11,10 +11,11 @@ logs:
 #  homeassistant.components.sensor.command_line: warn
 #  homeassistant.components.device_tracker.asuswrt: warn
 #  homeassistant.components.discovery: warn
-  homeassistant.components.switch: debug
+#  homeassistant.components.switch: debug
 #  homeassistant.components.http: debug
-  homeassistant.components.mqtt: debug
+#  homeassistant.components.mqtt: debug
 #  homeassistant.components.remote: debug
+  homeassistant.components.snmp: debug
 #  homeassistant.components.sensor.apcupsd: error
 #  homeassistant.components.sensor.yweather: warn
 #  homeassistant.components.notify.telegram: warn
