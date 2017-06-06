@@ -9,12 +9,21 @@ sensors:
   home_avg_temp:
     friendly_name: "Home Avg Temp"
     unit_of_measurement: 'ºF'
-    value_template: '{{ ((float(states.sensor.smartthings_motionv4_010383cc_1.state) + float(states.sensor.smartthings_motionv4_01038c51_1.state) + float(states.sensor.centralite_3325s_0bccb664_1.state) + float(states.sensor.thermostat_temperature.state) + float(states.sensor.bar_temp.state) + float(states.sensor.centralite_3325s_0bccba0f_1.state) + float(states.sensor.centralite_3325s_0bccc222_1.state) + float(states.sensor.workout_room_temp.state) + float(states.sensor.smartthings_moisturev4_01018e82_1.state) + float(states.sensor.smartthings_moisturev4_0103abde_1.state) + float(states.sensor.workout_room_temp.state) + float(states.sensor.smartthings_motionv4_01038c32_1.state)) / 11) | round(0) }}'
+    value_template: >
+       {{ ((float(states.sensor.upstairs_avg_temp.state) +
+            float(states.sensor.downstairs_avg_temp.state)) / 2) | round(0) }}
   upstairs_avg_temp:
     friendly_name: "Upstairs Avg Temp"
     unit_of_measurement: 'ºF'
-    value_template: '{{ ((float(states.sensor.smartthings_motionv4_010383cc_1.state) + float(states.sensor.smartthings_motionv4_01038c51_1.state) + float(states.sensor.centralite_3325s_0bccb664_1.state) + float(states.sensor.thermostat_temperature.state) + float(states.sensor.smartthings_moisturev4_0103abde_1.state) + float(states.sensor.smartthings_motionv4_01038c32_1.state)) / 6) | round(0) }}'
+    value_template: >
+       {{ float(states.sensor.multisensor_temp.state) | round(0) }}
   downstairs_avg_temp:
     friendly_name: "Downstairs Avg Temp"
     unit_of_measurement: 'ºF'
-    value_template: '{{ ((float(states.sensor.bar_temp.state) + float(states.sensor.centralite_3325s_0bccba0f_1.state) + float(states.sensor.centralite_3325s_0bccc222_1.state) + float(states.sensor.workout_room_temp.state) + float(states.sensor.smartthings_moisturev4_01018e82_1.state)) / 5) | round(0) }}'
+    value_template: >
+       {{ ((float(states.sensor.front_door_temp.state) +
+            float(states.sensor.glass_door_temp.state) +
+            float(states.sensor.mud_room_door_temp.state) +
+            float(states.sensor.utility_room_temp.state) +
+            float(states.sensor.motion_sensor_temp.state) +
+            float(states.sensor.kitchen_thermostat_temperature.state)) / 6) | round(0) }}
