@@ -1,0 +1,7 @@
+platform: snmp
+host: 10.0.0.1
+name: fw_cpu
+unit_of_measurement: "%"
+community: public
+version: 2c
+baseoid: .1.3.6.1.4.1.12356.101.4.1.3.0

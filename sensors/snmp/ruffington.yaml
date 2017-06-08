@@ -1,6 +1,6 @@
 platform: snmp
-host: 10.0.0.6
-name: test_snmp
+host: 10.0.0.7
+name: "Server Rack Temperature"
 unit_of_measurement: "F"
 community: public
 version: 2c
