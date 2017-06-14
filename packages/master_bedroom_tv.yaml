@@ -61,15 +61,14 @@ input_select:
 #      - platform: numeric_state
 #        entity_id: sensor.master_bedroom_tv_power
 #        above: 6
-#    condition: and
-#    conidtions:
+#    condition:
 #      - condition: state
 #        entity_id: input_select.master_bedroom_tv_status
 #        state: Stand-by
 #    action:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.master_Bedroom_tv_status
+#          entity_id: input_select.master_bedroom_tv_status
 #          option: On
 #
 #  - alias: Set MBR TV status stand-by when power drops 
@@ -77,15 +76,14 @@ input_select:
 #      - platform: numeric_state
 #        entity_id: sensor.master_bedroom_tv_power
 #        below: 6
-#    condition: and
-#    conidtions:
+#    condition:
 #      - condition: state
 #        entity_id: input_select.master_bedroom_tv_status
 #        state: On
 #    action:
 #      - service: input_select.select_option
 #        data:
-#          entity_id: input_select.master_Bedroom_tv_status
+#          entity_id: input_select.master_bedroom_tv_status
 #          option: Stand-by
 
 ################################################
