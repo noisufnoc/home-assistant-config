@@ -47,44 +47,35 @@ input_select:
   master_bedroom_tv_status:
     name: "Master Bedroom TV Status"
     options:
-      - On
-      - Stand-by
-    initial: Stand-by
+      - "On"
+      - "Stand-by"
 
 ################################################
 ## automation
 ################################################
 
-#automation:
-#  - alias: Set MBR TV status on when power detected
-#    trigger:
-#      - platform: numeric_state
-#        entity_id: sensor.master_bedroom_tv_power
-#        above: 6
-#    condition:
-#      - condition: state
-#        entity_id: input_select.master_bedroom_tv_status
-#        state: Stand-by
-#    action:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.master_bedroom_tv_status
-#          option: On
-#
-#  - alias: Set MBR TV status stand-by when power drops 
-#    trigger:
-#      - platform: numeric_state
-#        entity_id: sensor.master_bedroom_tv_power
-#        below: 6
-#    condition:
-#      - condition: state
-#        entity_id: input_select.master_bedroom_tv_status
-#        state: On
-#    action:
-#      - service: input_select.select_option
-#        data:
-#          entity_id: input_select.master_bedroom_tv_status
-#          option: Stand-by
+automation:
+  - alias: Set MBR TV status on when power detected
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.master_bedroom_tv_power
+        above: 6
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_bedroom_tv_status
+          option: "On"
+
+  - alias: Set MBR TV status stand-by when power drops 
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.master_bedroom_tv_power
+        below: 6
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_bedroom_tv_status
+          option: "Stand-by"
 
 ################################################
 ## group
