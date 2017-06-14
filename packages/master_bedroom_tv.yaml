@@ -33,8 +33,8 @@ sensor:
 switch:
   - platform: mqtt
     name: "Master Bedroom TV Power Override"
-    state_topic: "smartthings/Dishwasher/switch"
-    command_topic: "smartthings/Dishwasher/switch"
+    state_topic: "smartthings/Master Bedroom TV/switch"
+    command_topic: "smartthings/Master Bedroom TV/switch"
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -49,6 +49,7 @@ input_select:
     options:
       - "On"
       - "Stand-by"
+      - "Off"
 
 ################################################
 ## automation
@@ -66,16 +67,28 @@ automation:
           entity_id: input_select.master_bedroom_tv_status
           option: "On"
 
-  - alias: Set MBR TV status stand-by when power drops 
+  - alias: Set MBR TV status stand-by when power betwen 1-6W
     trigger:
       - platform: numeric_state
         entity_id: sensor.master_bedroom_tv_power
+        above: 1
         below: 6
     action:
       - service: input_select.select_option
         data:
           entity_id: input_select.master_bedroom_tv_status
           option: "Stand-by"
+
+  - alias: Set MBR TV status off when no power
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.master_bedroom_tv_power
+        below: 1
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.master_bedroom_tv_status
+          option: "Off"
 
 ################################################
 ## group
