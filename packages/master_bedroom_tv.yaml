@@ -1,0 +1,100 @@
+################################################################
+## packages / master_bedroom_tv
+################################################################
+
+homeassistant:
+  customize:
+    sensor.master_bedroom_tv_status:
+      icon: mdi:television
+
+    sensor.master_bedroom_tv_power:
+      icon: mdi:flash
+
+################################################
+## sensor
+################################################
+
+sensor:
+  - platform: mqtt
+    state_topic: "smartthings/Master Bedroom TV/power"
+    name: "Master Bedroom TV Power"
+    unit_of_measurement: "W"
+      
+  - platform: template
+    sensors:
+      master_bedroom_tv_status:
+        value_template: "{{ states.input_select.master_bedroom_tv_status.state}}"
+        friendly_name: "Master Bedroom TV Status"
+       
+################################################
+## switch
+################################################
+
+switch:
+  - platform: mqtt
+    name: "Master Bedroom TV Power Override"
+    state_topic: "smartthings/Dishwasher/switch"
+    command_topic: "smartthings/Dishwasher/switch"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+
+################################################
+## input_select
+################################################
+
+input_select:
+  master_bedroom_tv_status:
+    name: "Master Bedroom TV Status"
+    options:
+      - On
+      - Stand-by
+    initial: Stand-by
+
+################################################
+## automation
+################################################
+
+#automation:
+#  - alias: Set MBR TV status on when power detected
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.master_bedroom_tv_power
+#        above: 6
+#    condition: and
+#    conidtions:
+#      - condition: state
+#        entity_id: input_select.master_bedroom_tv_status
+#        state: Stand-by
+#    action:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_Bedroom_tv_status
+#          option: On
+#
+#  - alias: Set MBR TV status stand-by when power drops 
+#    trigger:
+#      - platform: numeric_state
+#        entity_id: sensor.master_bedroom_tv_power
+#        below: 6
+#    condition: and
+#    conidtions:
+#      - condition: state
+#        entity_id: input_select.master_bedroom_tv_status
+#        state: On
+#    action:
+#      - service: input_select.select_option
+#        data:
+#          entity_id: input_select.master_Bedroom_tv_status
+#          option: Stand-by
+
+################################################
+## group
+################################################
+
+group:
+  Master Bedroom TV:
+    entities:
+      - sensor.master_bedroom_tv_status
+      - sensor.master_bedroom_tv_power
+      - switch.master_bedroom_tv_power_override

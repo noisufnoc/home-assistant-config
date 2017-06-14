@@ -355,6 +355,7 @@
     icon: mdi:hotel
     entities:
       - group.master_bedroom_lights
+      - group.master_bedroom_tv
       - media_player.roku_5s464a339212
       - media_player.roku_13c1c8145119
 

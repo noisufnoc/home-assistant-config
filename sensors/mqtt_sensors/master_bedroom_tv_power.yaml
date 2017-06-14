@@ -1,4 +1,0 @@
-platform: mqtt
-state_topic: "smartthings/Master Bedroom TV/power"
-name: "Master Bedroom TV Power"
-unit_of_measurement: "W"
