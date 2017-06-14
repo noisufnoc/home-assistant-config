@@ -80,6 +80,12 @@
  light.living_room_lamp_st:
    hidden: true
 
+ light.family_room_lamp_st:
+   hidden: true
+
+ light.office_room_lamp_st:
+   hidden: true
+
  light.amelias_lamp_st:
    hidden: true
 

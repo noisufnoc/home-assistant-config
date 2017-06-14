@@ -1,7 +1,8 @@
 platform: mqtt
 name: "Family Room Lamp"
-state_topic: "smartthings/Family Room Lamp/switch"
-command_topic: "smartthings/Family Room Lamp/switch"
-payload_on: "on"
-payload_off: "off"
+state_topic: "stat/family_room_lamp/POWER"
+command_topic: "cmnd/family_room_lamp/power"
+payload_on: "ON"
+payload_off: "OFF"
 retain: true
+qos: 1
