@@ -379,7 +379,6 @@
     icon: mdi:weather-sunny
     entities:
      - sun.sun
-       #     - group.wunderground
      - camera.radar
      - group.weather_sun_clouds
      - group.weather_temperature

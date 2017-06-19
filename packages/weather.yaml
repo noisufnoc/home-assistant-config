@@ -85,7 +85,7 @@ sensor:
 
 group:
   weather_sun_clouds:
-    name: Sun / Clouds
+    name: "Sun / Clouds"
     entities:
       - sun.sun
       - sensor.dark_sky_summary
