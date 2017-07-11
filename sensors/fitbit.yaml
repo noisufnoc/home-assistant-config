@@ -1,1 +1,4 @@
 platform: fitbit
+monitored_resources:
+  - "activities/steps"
+  - "body/weight"
