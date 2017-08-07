@@ -200,6 +200,7 @@
     entities:
       - light.ashleys_nightstand
       - light.mikes_nightstand
+      - light.master_bedroom_ceiling_light
 
   steven_bedroom_lights:
     name: Steven's Bedroom Lights
@@ -310,6 +311,7 @@
     entities:
       - group.master_bedroom_lights
       - group.master_bedroom_tv
+      - light.master_bedroom_ceiling_fan
       - media_player.roku_5s464a339212
       - media_player.roku_13c1c8145119
 

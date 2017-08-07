@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Master Bedroom Ceiling Fan"
+state_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
+command_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
+brightness_state_topic: "smartthings/Master Bedroom Ceiling Fan/level"
+brightness_command_topic: "smartthings/Master Bedroom Ceiling Fan/level"
+payload_on: "on"
+payload_off: "off"
+retain: true
