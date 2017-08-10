@@ -6,7 +6,7 @@ trigger:
 condition:
   condition: state
   entity_id: sun.sun
-  to: 'below_horizon'
+  state: 'below_horizon'
 action:
   service: light.turn_on
   entity_id: light.deck_lights
