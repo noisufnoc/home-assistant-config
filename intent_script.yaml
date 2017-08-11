@@ -13,6 +13,9 @@
       title: Get {{ SensorType }} information
       content: Ask Home Assistant about {{ SensorType }}
 
+  GetTemperature:
+    speech: The average temperature at home is {{ states('sensor.home_avg_temp') }} degrees
+
   LocateIntent:
     speech:
       text: >
