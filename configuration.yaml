@@ -71,3 +71,4 @@ apcupsd:
   host: apcupsd.noisufnoc.net
 
 apiai:
+intent_script: !include apiai.yaml
