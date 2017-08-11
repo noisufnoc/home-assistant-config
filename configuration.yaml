@@ -69,3 +69,5 @@ splunk:
 
 apcupsd:
   host: apcupsd.noisufnoc.net
+
+apiai:
