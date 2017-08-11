@@ -15,7 +15,7 @@
 
   GetTemperature:
     speech: 
-    text: The average temperature at home is {{ states('sensor.home_avg_temp') }} degrees
+      text: The average temperature at home is {{ states('sensor.home_avg_temp') }} degrees
 
   LocateIntent:
     speech:
