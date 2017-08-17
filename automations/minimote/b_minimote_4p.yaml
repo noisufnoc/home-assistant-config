@@ -4,8 +4,6 @@ trigger:
   topic: smartthings/minimote b/button
   payload: '{"button": 4, "action": "pushed"}'
 action:
-  service: tts.google_say
-  entity_id: media_player.kitchen_home
-  data_template:
-    message: >
-        Don't push the button!
+  service: light.toggle
+  data:
+    entity_id: light.master_bedroom_ceiling_light
