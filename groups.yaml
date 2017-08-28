@@ -2,9 +2,11 @@
   status:
     name: Status
     entities:
-      - input_select.occupants
-      - input_select.home_status
-      - alarm_control_panel.smartthings_home_monitor
+     - input_select.occupants
+     - input_select.home_status
+     - alarm_control_panel.smartthings_home_monitor
+     - group.interior_doors
+     - group.exterior_doors
 
   wunderground:
     name: Weather Underground Information
