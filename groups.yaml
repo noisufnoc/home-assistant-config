@@ -1,12 +1,13 @@
 # Status
   status:
     name: Status
+    control: hidden
     entities:
      - input_select.occupants
      - input_select.home_status
      - alarm_control_panel.smartthings_home_monitor
-     - group.interior_doors
      - group.exterior_doors
+     - group.interior_doors
 
   wunderground:
     name: Weather Underground Information
@@ -142,6 +143,7 @@
   
   exterior_doors:
     name: Exterior Doors
+    control: hidden
     entities:
      - binary_sensor.front_door
      - binary_sensor.mud_room_door
@@ -151,6 +153,7 @@
   
   interior_doors:
     name: Interior Doors
+    control: hidden
     entities:
      - binary_sensor.office_door
   
