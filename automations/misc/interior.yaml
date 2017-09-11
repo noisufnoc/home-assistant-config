@@ -1,13 +1,13 @@
 alias: 'Notify if any exterior door open past midnight'
 trigger:
   platform: time
-  at: '00:00:00'
+  at: '22:00:00'
 condition:
   condition: state
-  entity_id: 'group.exterior_doors'
+  entity_id: 'group.interior_doors'
   state: 'on'
 action:
-  service: notify.chrome
+  service: notify.chrome_motox
   data_template:
     title: "Doors!"
-    message: "You left a damn door open!"
+    message: "You left an interior door open!"
