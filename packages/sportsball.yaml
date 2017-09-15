@@ -1,0 +1,149 @@
+################################################################
+## packages / sportsball
+################################################################
+
+homeassistant:
+  customize:
+
+################################################
+## input_text
+################################################
+
+input_text:
+  indians_score:
+    name: ESPN Indians Score
+    initial: SomeText
+  indians_baseball_in_game_update:
+    name: ESPN Indians ingame update score
+    initial: SomeTextInGame
+
+################################################
+## binary_sensors
+################################################
+
+################################################
+## sensors
+################################################
+
+sensor:
+  # store baseball score to announce that later on that day
+  - platform: mqtt
+    state_topic: "/sports/indiansfinalscore"
+    name: "Indians Final Score"
+    value_template: "{{ value }}"
+
+  - platform: mqtt
+    state_topic: "/sports/indiansingameupdatescore"
+    name: "Indians In Game Update"
+    value_template: "{{ value }}"        
+
+################################################
+## group
+################################################
+
+group:
+  score_card:
+    name: Indians Scores
+    entities:
+      - script.indians_final_score
+      - script.indians_ingame_update_score
+        
+################################################
+## script
+################################################
+
+script:
+  indians_final_score:
+    alias: Indians score
+    sequence:
+      - service: media_player.turn_on
+        entity_id: media_player.kitchen_home
+      - service: media_player.volume_set
+        entity_id:
+          - media_player.kitchen_home
+        data:
+          volume_level: 0.6
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_home
+          message: >
+            {% if now().strftime("%H")|int < 12 %}
+              Good morning Indians Fans
+            {% elif now().strftime("%H")|int < 18 %}
+              Good afternoon Indians Fans
+            {% else %}
+              Good evening Indians Fans
+            {% endif %}
+            {% if states.sensor.indians_final_score.state != 'unknown' %}
+              final score update {{ states.sensor.indians_final_score.state.split('WP')[0] }}
+            {% else %}
+              at this moment there is no final score information 
+            {% endif %}
+
+  indians_ingame_update_score:
+    alias: Indians Game Inprogress update 
+    sequence:
+      - service: media_player.turn_on
+        entity_id: media_player.kitchen_home
+      - service: media_player.volume_set
+        entity_id:
+          - media_player.kitchen_home
+        data:
+          volume_level: 0.6
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_home
+          message: >
+            {% if now().strftime("%H")|int < 12 %}
+              Good morning Indians Fans
+            {% elif now().strftime("%H")|int < 18 %}
+              Good afternoon Indians Fans
+            {% else %}
+              Good evening Indians Fans
+            {% endif %}
+            {% if states.sensor.indians_in_game_update.state != 'unknown' %}
+              {{ states.sensor.indians_in_game_update.state }}
+            {% else %}
+              at this moment there is no game update 
+            {% endif %}
+          # add - <break time='0.5s'/>
+        
+################################################
+## automation
+################################################
+
+automation:
+  - alias: Indians baseball final game update
+    initial_state: true
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: input_text.indians_score
+    action:
+      - service: script.voice_notify
+        data_template:
+          value1: "Hello Indians Fans - score update - {{ states.input_text.indians_score.state.split('WP')[0] }}"
+      - service: mqtt.publish
+        data_template:
+          topic: "sports/indiansfinalscore"
+          retain: true
+          qos: 1
+          payload: '{{ trigger.to_state.state }}'
+
+
+  - alias: Indians baseball in progress game update
+    initial_state: true
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: input_text.indians_baseball_in_game_update
+    action:
+      - service: script.voice_notify
+        data_template:
+          value1: "Hello Indians Fans - Indians Game update - {{states.input_text.indians_baseball_in_game_update.state.split('.')[0]}}"
+      - service: mqtt.publish
+        data_template:
+          topic: "sports/indiansinprogressscore"
+          retain: true
+          qos: 1
+          payload: '{{ trigger.to_state.state }}'
