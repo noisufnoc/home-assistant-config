@@ -326,7 +326,7 @@
     icon: mdi:clippy
     entities:
       - group.office_lights
-      - binary_sensor.office_door
+      - group.working_from_home_sensor
       - input_select.work_from_home_status
   
   playroom:

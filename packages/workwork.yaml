@@ -7,6 +7,10 @@
 
 homeassistant:
   customize:
+    device_tracker.work_mbp_wired:
+      hidden: true
+    device_tracker.work_mbp_wireless:
+      hidden: true
 
 ################################################
 ## input_text
@@ -45,6 +49,20 @@ binary_sensor:
 ## sensors
 ################################################
 
+sensor:
+  - platform: template
+    sensors:
+      work_mbp_online:
+        friendly_name: 'Work Macbook Online'
+        value_template: >-
+            {%- if is_state("device_tracker.work_mbp_wired", "home") %}
+                online
+            {% elif is_state("device_tracker.work_mbp_wireless", "home") %}
+                online
+            {% else %}
+                offline
+            {%- endif %}
+
 ################################################
 ## group
 ################################################
@@ -53,6 +71,8 @@ group:
   Working From Home Sensor:
     entities:
       - binary_sensor.working_from_home
+      - sensor.work_mbp_online
+      - binary_sensor.office_door
        
 ################################################
 ## script
