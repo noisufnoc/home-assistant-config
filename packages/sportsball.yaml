@@ -28,12 +28,12 @@ input_text:
 sensor:
   # store baseball score to announce that later on that day
   - platform: mqtt
-    state_topic: "/sports/indiansfinalscore"
+    state_topic: "sports/indiansfinalscore"
     name: "Indians Final Score"
     value_template: "{{ value }}"
 
   - platform: mqtt
-    state_topic: "/sports/indiansingameupdatescore"
+    state_topic: "sports/indiansingameupdatescore"
     name: "Indians In Game Update"
     value_template: "{{ value }}"        
 
