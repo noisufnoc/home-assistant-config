@@ -10,6 +10,7 @@ home-assistant_v2.db
 nest.conf
 plex.conf
 fitbit.conf
+sabnzbd.conf
 secrets.yaml
 tts
 .HA_VERSION
