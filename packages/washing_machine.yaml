@@ -1,0 +1,50 @@
+################################################################
+## packages / washing_machine
+##  Uses power consumption from washing machine sensor
+##  to determine if the machine is idle/running/complete
+##  door sensor on machine is used to notify if wet clothes
+##  are sitting in the drum.
+##
+##  logic borrowed from https://goo.gl/KhMxn1 @philhawthorne
+################################################################
+
+homeassistant:
+  customize:
+
+################################################
+## input_text
+################################################
+
+################################################
+## binary_sensors
+################################################
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "smartthings/Washing Machine Door/contact"
+    name: "Washing Machine Door"
+    payload_on: "open"
+    payload_off: "closed"
+    sensor_class: opening
+
+################################################
+## sensors
+################################################
+
+sensor:
+  - platform: mqtt
+    state_topic: "smartthings/Washing Machine/power"
+    name: "Washing Machine Power"
+    unit_of_measurement: "W"
+
+################################################
+## group
+################################################
+       
+################################################
+## script
+################################################
+        
+################################################
+## automation
+################################################
