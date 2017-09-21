@@ -11,6 +11,10 @@ homeassistant:
       hidden: true
     device_tracker.work_mbp_wireless:
       hidden: true
+    sensor.work_mbp_online:
+      icon: mdi:apple
+    binary_sensor.workday_sensor:
+      icon: mdi:calendar
 
 ################################################
 ## input_text
@@ -75,6 +79,7 @@ group:
   Working From Home Sensor:
     entities:
       - binary_sensor.working_from_home
+      - device_tracker.mike_clark
       - sensor.work_mbp_online
       - binary_sensor.office_door
       - binary_sensor.workday_sensor
