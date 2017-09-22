@@ -84,3 +84,80 @@ switch:
 ################################################
 ## automation
 ################################################
+
+automation:
+  - alias: Set washing machine active when power detected
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.aeotec_smart_energy_switch_power_25_4
+        above: 10
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Idle
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Clean
+        - condition: state
+          entity_id: sensor.washing_machine_status
+          state: Finishing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Running
+   
+  - alias: Set washing machine finished when power drops
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.aeotec_smart_energy_switch_power_25_4
+        below: 6
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Running
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Finishing
+   
+  - alias: Set washing machine clean after timeout
+    trigger:
+      - platform: state
+        entity_id: input_select.washing_machine_status
+        to: Finishing
+        for:
+          minutes: 8
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Finishing
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Clean
+   
+  - alias: Set washing machine dirty when door opens
+    trigger:
+      - platform: state
+        entity_id: input_select.washingmachine_door_status
+        to: 'Open'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Clean
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.washing_machine_status
+          option: Idle
