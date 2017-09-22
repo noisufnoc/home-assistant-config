@@ -33,15 +33,6 @@ dishwasher_status:
     - Clean
   initial: Dirty
 
-washing_machine_status:
-  name: Washing Machine Status
-  options:
-    - Idle
-    - Running
-    - Finishing
-    - Clean
-  initial: Idle
-
 # Work From Home State
 
 work_from_home_status:

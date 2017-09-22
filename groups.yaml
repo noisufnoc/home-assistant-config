@@ -366,6 +366,7 @@
     name: "Utility Room"
     icon: mdi:tshirt-crew
     entities:
+      - group.washing_machine
       - binary_sensor.utility_room_leak_sensor
         
   family:

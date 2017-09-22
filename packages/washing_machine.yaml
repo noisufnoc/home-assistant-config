@@ -38,9 +38,45 @@ sensor:
     unit_of_measurement: "W"
 
 ################################################
+## input_select
+################################################
+
+input_select:
+  washing_machine_status:
+    name: Washing Machine Status
+    options:
+      - Idle
+      - Running
+      - Finishing
+      - Clean
+    initial: Idle
+       
+################################################
 ## group
 ################################################
        
+group:
+  washing_machine:
+    name: Washing Machine
+    entities:
+      - sensor.washing_machine_status
+      - binary_sensor.washing_machine_door
+      - sensor.washing_machine_power
+      - switch.washing_machine_power_override
+
+################################################
+## switches
+################################################
+        
+switch:
+  - platform: mqtt
+    name: "Washing Machine Power Override"
+    state_topic: "smartthings/Washing Machine/switch"
+    command_topic: "smartthings/Washing Machine/switch"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+
 ################################################
 ## script
 ################################################
