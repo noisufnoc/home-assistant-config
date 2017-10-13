@@ -16,3 +16,4 @@ tts
 .HA_VERSION
 .uuid
 *.pickle
+*.sqlite  

@@ -1,5 +1,6 @@
 platform: sabnzbd
-host: tv.noisufnoc.net
+host: docker.noisufnoc.net
+port: 8180
 api_key: !secret sabnzbd_api_key
 monitored_variables:
   - 'current_status'
