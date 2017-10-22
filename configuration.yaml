@@ -77,4 +77,11 @@ usps:
   username: !secret usps_username
   password: !secret usps_password
 
-# just bumping to rebuilt travis-ci
+google_assistant:
+  project_id: !secret google_project_id
+  client_id: !secret google_client_id
+  access_token: !secret google_access_token
+  exposed_domains:
+    - switch
+    - light
+    - group
