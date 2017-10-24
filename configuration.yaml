@@ -82,6 +82,6 @@ google_assistant:
   client_id: !secret google_client_id
   access_token: !secret google_access_token
   exposed_domains:
-    - switch
-    - light
-    - group
+#    - switch
+#    - light
+#    - group

@@ -97,3 +97,23 @@
      
  light.upstairs_lights_st:
    hidden: true
+
+ light.amelias_lamp:
+   google_assistant: true
+   google_assistant_name: Amelias Lamp
+
+ light.family_room_lamp:
+   google_assistant: true
+   google_assistant_name: Family Room Lamp
+
+ light.living_room_lamp:
+   google_assistant: true
+   google_assistant_name: Living Room Lamp
+
+ light.office_lamp:
+   google_assistant: true
+   google_assistant_name: Office Lamp
+
+ light.steveo_light:
+   google_assistant: true
+   google_assistant_name: Stevens Night Light
