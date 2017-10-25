@@ -98,6 +98,10 @@
  light.upstairs_lights_st:
    hidden: true
 
+ group.downstairs_lights:
+   google_assistant: true
+   google_assistant_name: Banana
+
  light.amelias_lamp:
    google_assistant: true
    google_assistant_name: Amelias Lamp
