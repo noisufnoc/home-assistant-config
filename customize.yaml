@@ -121,3 +121,8 @@
  light.steveo_light:
    google_assistant: true
    google_assistant_name: Stevens Night Light
+
+ light.holiday_1:
+   friendly_name: Garland
+   google_assistant: true
+   google_assistant_name: Garland
