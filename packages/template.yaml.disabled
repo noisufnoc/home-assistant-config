@@ -1,56 +1,146 @@
 ################################################################
-## packages / template
+## package / template
 ################################################################
+
+################################################
+## customize
+################################################
 
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
 
-################################################
-## input_text
-################################################
+    package.node_anchors:
+      customize: &customize
+        package: 'template'
 
-################################################
-## binary_sensors
-################################################
+      assistant: &assistant
+	<<: *customize
+	google_assistant: true
+	
 
-binary_sensor:
-  - platform: 'bayesian'
-    name: 'working from home'
-    prior: 0.25
-    probability_threshold: 0.95
-    observations:
-      - entity_id: 'sensor.living_room_motion'
-        prob_given_true: 0.4
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'sensor.basement_motion'
-        prob_given_true: 0.5
-        prob_given_false: 0.4
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'sensor.bedroom_motion'
-        prob_given_true: 0.5
-        platform: 'state'
-        to_state: 'on'
-      - entity_id: 'sensor.sun'
-        prob_given_true: 0.7
-        platform: 'state'
-        to_state: 'below_horizon'
+    ################################################
+    ## customize / group
+    ################################################
 
-################################################
-## sensors
-################################################
+    group.house_mode:
+      <<: *customize
+      friendly_name: "House Mode"
+      icon: mdi:home-variant
+
+    ################################################
+    ## customize / input boolean
+    ################################################
+
+    input_boolean.guest_mode:
+      <<: *customize
+      friendly_name: "Guest Mode"
+      icon: mdi:account
+
+    input_boolean.vacation_mode:
+      <<: *customize
+      friendly_name: "Vacation Mode"
+      icon: mdi:beach
+
+    ################################################
+    ## customize / sensor
+    ################################################
+
+    sensor.household:
+      <<: *customize
+      friendly_name: "Household"
+
+    sensor.house_mode:
+      <<: *customize
+      friendly_name: "House Mode"
 
 ################################################
 ## group
 ################################################
 
 group:
-  Working From Home Sensor:
+  house_mode:
+    control: hidden
     entities:
-      - binary_sensor.working_from_home
-       
+      - sensor.house_mode
+      - input_boolean.guest_mode
+      - input_boolean.vacation_mode
+      - sensor.household
+
+  household:  
+    control: hidden
+    entities:
+      - device_tracker.mike_clark
+      - device_tracker.ashley_pixel
+
+################################################
+## input boolean
+################################################
+
+input_boolean:
+  guest_mode:
+    initial: off
+
+  vacation_mode:
+    initial: off
+
+################################################
+## sensor
+################################################
+
+sensor:
+  - platform: template
+    sensors:
+      household:
+        entity_id: group.household
+        value_template: >-
+          {% if is_state('group.household', 'home') %}
+            home
+          {% else %}
+            away
+          {% endif %}
+        icon_template: >-
+          {% if is_state('group.household', 'home') %}
+            mdi:home
+          {% else %}
+            mdi:home-outline
+          {% endif %}
+      house_mode:
+        entity_id:
+          - input_boolean.guest_mode
+          - input_boolean.vacation_mode
+          - sensor.household
+        value_template: >-
+          {% if is_state('input_boolean.guest_mode', 'on') %}
+            guest
+          {% elif is_state('sensor.household', 'home') %}
+            home
+          {% elif is_state('input_boolean.vacation_mode', 'on') %}
+            vacation
+          {% else %}
+            away
+          {% endif %}
+        icon_template: >-
+          {% if is_state('input_boolean.guest_mode', 'on') %}
+            mdi:account
+          {% elif is_state('sensor.household', 'home') %}
+            mdi:home
+          {% elif is_state('input_boolean.vacation_mode', 'on') %}
+            mdi:beach
+          {% else %}
+            mdi:home-outline
+          {% endif %}
+
+################################################
+## input_text
+################################################
+
+################################################
+## binary_sensor
+################################################
+
 ################################################
 ## script
 ################################################
