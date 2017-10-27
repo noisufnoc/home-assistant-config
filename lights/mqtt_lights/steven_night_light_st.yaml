@@ -1,8 +1,0 @@
-# This is the dummy switch to enable ST control of the connected MQTT light
-platform: mqtt
-name: "Steven's Night Light ST"
-state_topic: "smartthings/Steven's Night Light/switch"
-command_topic: "smartthings/Steven's Night Light/switch"
-payload_on: "on"
-payload_off: "off"
-retain: true
