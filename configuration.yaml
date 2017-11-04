@@ -70,8 +70,8 @@ splunk:
 apcupsd:
   host: apcupsd.noisufnoc.net
 
-apiai:
-intent_script: !include intent_script.yaml
+#apiai:
+#intent_script: !include intent_script.yaml
 
 usps:
   username: !secret usps_username
