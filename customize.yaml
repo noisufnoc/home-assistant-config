@@ -80,6 +80,7 @@
  group.downstairs_lights:
    google_assistant: true
    google_assistant_name: Downstairs Lights
+   google_assistant_type: switch
 
  light.amelias_lamp:
    google_assistant: true
