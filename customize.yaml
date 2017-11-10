@@ -79,7 +79,7 @@
  
  group.downstairs_lights:
    google_assistant: true
-   google_assistant_name: Banana
+   google_assistant_name: Downstairs Lights
 
  light.amelias_lamp:
    google_assistant: true
