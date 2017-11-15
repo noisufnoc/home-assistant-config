@@ -1,0 +1,6 @@
+platform: mqtt
+state_topic: "smartthings/Office Desk Motion/motion"
+name: "Office Desk Motion Sensor"
+payload_on: "active"
+payload_off: "inactive"
+sensor_class: motion
