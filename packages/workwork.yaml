@@ -82,6 +82,7 @@ group:
       - device_tracker.mike_clark
       - sensor.work_mbp_online
       - binary_sensor.office_door
+      - binary_sensor.office_motion_sensor
       - binary_sensor.workday_sensor
        
 ################################################
