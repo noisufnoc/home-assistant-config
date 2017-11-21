@@ -1,5 +1,7 @@
 ################################################################
 ## packages / workwork
+##  Home Office related devices and sensors
+##
 ##  Uses bayesian binary_sensor to determine if I am working
 ##  from home at this time.  Apply weight to various sensors
 ##  to make the decision.
