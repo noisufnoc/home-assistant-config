@@ -15,6 +15,8 @@ homeassistant:
       icon: mdi:apple
     binary_sensor.workday_sensor:
       icon: mdi:calendar
+    binary_sensor.office_desk_motion_sensor:
+      icon: mdi:desktop-classic
 
 ################################################
 ## input_text
@@ -30,24 +32,34 @@ binary_sensor:
     prior: 0.25
     probability_threshold: 0.95
     observations:
-      - entity_id: 'sensor.living_room_motion'
+      - entity_id: 'binary_sensor.office_motion_sensor'
         prob_given_true: 0.4
         prob_given_false: 0.2
         platform: 'state'
         to_state: 'off'
-      - entity_id: 'sensor.basement_motion'
+      - entity_id: 'binary_sensor.workday_sensor'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'device_tracker.mike_clark'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'sensor.work_mbp_online'
         prob_given_true: 0.5
         prob_given_false: 0.4
         platform: 'state'
-        to_state: 'off'
-      - entity_id: 'sensor.bedroom_motion'
+        to_state: 'online'
+      - entity_id: 'binary_sensor.office_door'
         prob_given_true: 0.5
         platform: 'state'
         to_state: 'on'
-      - entity_id: 'sensor.sun'
+      - entity_id: 'binary_sensor.office_desk_motion_sensor'
         prob_given_true: 0.7
         platform: 'state'
-        to_state: 'below_horizon'
+        to_state: 'on'
 
   - platform: workday
     country: US
