@@ -7,17 +7,50 @@
 ##  to make the decision.
 ################################################################
 
+################################################
+## customize
+################################################
+
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'workwork'
+
+    ################################################
+    ## customize / device_tracker
+    ################################################
+
     device_tracker.work_mbp_wired:
+      <<: *customize
       hidden: true
+
     device_tracker.work_mbp_wireless:
+      <<: *customize
       hidden: true
+
+    ################################################
+    ## customize / sensor
+    ################################################
+
     sensor.work_mbp_online:
+      <<: *customize
       icon: mdi:apple
+
+    ################################################
+    ## customize / binary_sensor
+    ################################################
+
     binary_sensor.workday_sensor:
+      <<: *customize
       icon: mdi:calendar
+
     binary_sensor.office_desk_motion_sensor:
+      <<: *customize
       icon: mdi:desktop-classic
 
 ################################################
