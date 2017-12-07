@@ -70,7 +70,6 @@ group:
 
   cheerlights:  
     control: hidden
-    friendly_name: Cheerlights
     entities:
       - sensor.cheerlights_color
       - sensor.cheerlights_hex
