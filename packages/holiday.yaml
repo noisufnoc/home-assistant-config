@@ -1,0 +1,135 @@
+################################################################
+## package / holiday
+##  Package of holiday lights and sensors for much celebration
+################################################################
+
+################################################
+## customize
+################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'holiday'
+
+  #      assistant: &assistant
+  #    	<<: *customize
+  #      google_assistant: true
+
+    ################################################
+    ## customize / group
+    ################################################
+
+    group.holiday_lights:
+      <<: *customize
+      friendly_name: "Holiday Lights"
+      icon: mdi:pine-tree
+
+    ################################################
+    ## customize / light
+    ################################################
+
+    light.holiday_1:
+      <<: *customize
+      friendly_name: Garland
+      google_assistant: true
+      google_assistant_name: Garland  
+
+    light.holiday_2:
+      <<: *customize
+      friendly_name: Christmas Tree
+      google_assistant: true
+      google_assistant_name: Christmas Tree
+
+    ################################################
+    ## customize / sensor
+    ################################################
+
+    sensor.cheerlights_color:
+      <<: *customize
+      friendly_name: "Cheerlights Color"
+
+    sensor.cheerlights_hex:
+      <<: *customize
+      friendly_name: "Cheerlights HEX"
+
+################################################
+## group
+################################################
+
+group:
+  holiday_lights:
+    entities:
+      - light.holiday_1
+      - light.holiday_2
+
+  cheerlights:  
+    control: hidden
+    friendly_name: Cheerlights
+    entities:
+      - sensor.cheerlights_color
+      - sensor.cheerlights_hex
+
+################################################
+## input boolean
+################################################
+
+  #input_boolean:
+  #  guest_mode:
+  #    initial: off
+  #
+  #  vacation_mode:
+  #    initial: off
+
+################################################
+## sensor
+################################################
+
+sensor:
+  - platform: rest
+    name: cheerlights_color
+    resource: http://api.thingspeak.com/channels/1417/field/1/last.txt
+
+  - platform: rest
+    name: cheerlights_hex
+    resource: http://api.thingspeak.com/channels/1417/field/2/last.txt
+
+################################################
+## light
+################################################
+
+light:
+  - platform: mqtt
+    name: "Holiday 1"
+    state_topic: "stat/holiday_1/POWER"
+    command_topic: "cmnd/holiday_1/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 2"
+    state_topic: "stat/holiday_2/POWER"
+    command_topic: "cmnd/holiday_2/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+################################################
+## binary_sensor
+################################################
+
+################################################
+## script
+################################################
+        
+################################################
+## automation
+################################################

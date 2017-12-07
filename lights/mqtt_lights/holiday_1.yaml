@@ -1,8 +1,0 @@
-platform: mqtt
-name: "Holiday 1"
-state_topic: "stat/holiday_1/POWER"
-command_topic: "cmnd/holiday_1/power"
-payload_on: "ON"
-payload_off: "OFF"
-retain: true
-qos: 1
