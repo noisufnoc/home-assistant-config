@@ -437,7 +437,6 @@
       - group.internets
       - group.sabnzbd
       - group.apc_ups_daemon
-  
  
   automations:
     view: yes
@@ -448,6 +447,14 @@
       - group.sonoff_sync
       - group.minimote_a
       - group.minimote_b
+
+  holiday:
+    view: yes
+    name: "Holiday"
+    icon: mdi:stocking
+    entities:
+      - group.holiday_lights
+      - group.cheerlights
   
   #default_view:
   #  view: no

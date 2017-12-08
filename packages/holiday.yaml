@@ -17,10 +17,6 @@ homeassistant:
       customize: &customize
         package: 'holiday'
 
-  #      assistant: &assistant
-  #    	<<: *customize
-  #      google_assistant: true
-
     ################################################
     ## customize / group
     ################################################
@@ -63,6 +59,14 @@ homeassistant:
 ################################################
 
 group:
+  holiday:
+    view: yes
+    name: "Holiday"
+    icon: mdi:stocking
+    entities:
+      - group.holiday_lights
+      - group.cheerlights
+
   holiday_lights:
     entities:
       - light.holiday_1
