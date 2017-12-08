@@ -24,7 +24,6 @@ homeassistant:
     group.holiday_lights:
       <<: *customize
       friendly_name: "Holiday Lights"
-      icon: mdi:pine-tree
 
     ################################################
     ## customize / light
@@ -33,14 +32,23 @@ homeassistant:
     light.holiday_1:
       <<: *customize
       friendly_name: Garland
+      icon: mdi: led-variant-on
       google_assistant: true
       google_assistant_name: Garland  
 
     light.holiday_2:
       <<: *customize
-      friendly_name: Christmas Tree
+      friendly_name: Christmas Tree - Front
+      icon: mdi:pine-tree
       google_assistant: true
-      google_assistant_name: Christmas Tree
+      google_assistant_name: Christmas Tree Front
+
+    light.holiday_3:
+      <<: *customize
+      friendly_name: Christmas Tree - Back
+      icon: mdi:pine-tree
+      google_assistant: true
+      google_assistant_name: Christmas Tree Back
 
     ################################################
     ## customize / sensor
@@ -49,10 +57,12 @@ homeassistant:
     sensor.cheerlights_color:
       <<: *customize
       friendly_name: "Cheerlights Color"
+      icon: mdi:led-on
 
     sensor.cheerlights_hex:
       <<: *customize
       friendly_name: "Cheerlights HEX"
+      icon: mdi:palette
 
 ################################################
 ## group
@@ -63,8 +73,9 @@ group:
     entities:
       - light.holiday_1
       - light.holiday_2
+      - light.holiday_3
 
-  cheerlights:  
+  Cheerlights:  
     control: hidden
     entities:
       - sensor.cheerlights_color
@@ -112,6 +123,15 @@ light:
     name: "Holiday 2"
     state_topic: "stat/holiday_2/POWER"
     command_topic: "cmnd/holiday_2/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 3"
+    state_topic: "stat/holiday_3/POWER"
+    command_topic: "cmnd/holiday_3/power"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
