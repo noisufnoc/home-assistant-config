@@ -32,7 +32,7 @@ homeassistant:
     light.holiday_1:
       <<: *customize
       friendly_name: Garland
-      icon: mdi: led-variant-on
+      icon: mdi:led-variant-on
       google_assistant: true
       google_assistant_name: Garland  
 
