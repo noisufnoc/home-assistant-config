@@ -130,12 +130,20 @@ light:
 
   - platform: mqtt
     name: "Holiday 3"
-    state_topic: "stat/holiday_3/POWER"
-    command_topic: "cmnd/holiday_3/power"
-    payload_on: "ON"
-    payload_off: "OFF"
+    state_topic: "smartthings/Front Yard Lights/switch"
+    command_topic: "smartthings/Front Yard Lights/switch"
+    payload_on: "on"
+    payload_off: "off"
     retain: true
-    qos: 1
+
+#  - platform: mqtt
+#    name: "Holiday 3"
+#    state_topic: "stat/holiday_3/POWER"
+#    command_topic: "cmnd/holiday_3/power"
+#    payload_on: "ON"
+#    payload_off: "OFF"
+#    retain: true
+#    qos: 1
 
 ################################################
 ## binary_sensor
