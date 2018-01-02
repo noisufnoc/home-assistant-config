@@ -437,6 +437,14 @@
       - group.internets
       - group.sabnzbd
       - group.apc_ups_daemon
+
+  fitness:
+    view: yes
+    name: "Fitness"
+    icon: mdi:allo
+    entities:
+      - group.fitbit_activities
+      - group.fitbit_body_stats
  
   automations:
     view: yes

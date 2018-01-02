@@ -1,0 +1,95 @@
+################################################################
+## package / fitness
+##  Collection of fitness related sensors
+################################################################
+
+################################################
+## customize
+################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'fitness'
+
+    ################################################
+    ## customize / group
+    ################################################
+
+    group.fitbit_activities:
+      <<: *customize
+      friendly_name: "Fitbit Activities"
+      icon: mdi:home-variant
+
+    group.fitbit_body_stats:
+      <<: *customize
+      friendly_name: "Fitbit Body Stats"
+      icon: mdi:home-variant
+
+    ################################################
+    ## customize / input boolean
+    ################################################
+
+    ################################################
+    ## customize / sensor
+    ################################################
+        
+  #    sensor.house_mode:
+  #      <<: *customize
+  #      friendly_name: "House Mode"
+
+################################################
+## group
+################################################
+
+group:
+  fitbit_activities:
+    control: hidden
+    entities:
+      - sensor.steps
+      - sensor.floors
+
+  fitbit_body_stats:
+    control: hidden
+    entities:
+      - sensor.weight
+      - sensor.body_fat
+      - sensor.bmi
+
+################################################
+## input boolean
+################################################
+
+################################################
+## sensor
+################################################
+
+sensor:
+  - platform: fitbit
+    monitored_resources:
+      - "activities/steps"
+      - "activities/floors"
+      - "body/bmi"
+      - "body/fat"
+      - "body/weight"
+
+################################################
+## input_text
+################################################
+
+################################################
+## binary_sensor
+################################################
+
+################################################
+## script
+################################################
+        
+################################################
+## automation
+################################################
