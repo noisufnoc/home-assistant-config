@@ -91,6 +91,34 @@ automation:
           option: "Off"
 
 ################################################
+## scene
+################################################
+
+scene:
+  - name: Master Bedroom Normal
+    entities:
+        light.mikes_nightstand:
+            state: on
+            transition: 2
+            brightness_pct: 60
+        light.ashleys_nightstand:
+            state: on
+            transition: 2
+            brightness_pct: 60
+  - name: Sexy Time
+    entities:
+        light.mikes_nightstand:
+            state: on
+            transition: 2
+            brightness_pct: 25
+        light.ashleys_nightstand:
+            state: on
+            transition: 2
+            brightness_pct: 25
+        light.master_bedroom_ceiling_light:
+            state: off
+
+################################################
 ## group
 ################################################
 
@@ -100,3 +128,8 @@ group:
       - sensor.master_bedroom_tv_status
       - sensor.master_bedroom_tv_power
       - switch.master_bedroom_tv_power_override
+
+  Master Bedroom Scenes:
+    entities:
+      - scene.master_bedroom_normal
+      - scene.sexy_time
