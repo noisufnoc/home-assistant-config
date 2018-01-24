@@ -103,7 +103,7 @@
   presence:
     name: Presence
     entities:
-      - device_tracker.mike_clark
+      - device_tracker.mike_taimen
       - device_tracker.ashley_pixel
 
   sabnzbd:
@@ -369,7 +369,7 @@
     name: "Family"
     icon: mdi:account-multiple
     entities:
-      - device_tracker.mike_clark
+      - device_tracker.mike_taimen
       - device_tracker.ashley_pixel
       - group.drive_times
       - camera.mikes_location

@@ -1,7 +1,8 @@
 - platform: nmap_tracker
   hosts: 10.0.0.100-200
-  track_new_devices: False
+  new_device_defaults:
+    track_new_devices: false
 
 - platform: owntracks
-  track_new_devices: False
-
+  new_device_defaults:
+    track_new_devices: False
