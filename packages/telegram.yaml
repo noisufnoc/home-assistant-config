@@ -10,3 +10,37 @@ notify:
   - name: NOTIFIER_NAME
     platform: telegram
     chat_id: !secret telegram_chat_id
+
+################################################
+### automation
+#################################################
+
+# I borrowed some examples to test with
+
+automation:
+  - alias: "telegram bot that replies the temprature"
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/temp"
+    action:
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F'
+          disable_notification: True
+
+
+  - alias: "telegram bot that replies the weather"
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/weather"
+    action:
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: '{{ states.sensor.dark_sky_hourly_summary.state }}'
+          disable_notification: True
