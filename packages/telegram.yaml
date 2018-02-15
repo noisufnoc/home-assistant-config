@@ -44,3 +44,20 @@ automation:
           target: '{{ trigger.event.data.user_id }}'
           message: '{{ states.sensor.dark_sky_hourly_summary.state }}'
           disable_notification: True
+
+
+  - alias: "telegram bot args test"
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/test'
+        args:
+          - 'arg'
+    action:
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'You tested the command with an arg!'
+          disable_notification: True
+
