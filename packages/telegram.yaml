@@ -1,0 +1,12 @@
+# Example configuration.yaml entry for the Telegram Bot
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chat_id
+
+# Example configuration.yaml entry for the notifier
+notify:
+  - name: NOTIFIER_NAME
+    platform: telegram
+    chat_id: !secret telegram_chat_id

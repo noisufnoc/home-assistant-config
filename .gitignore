@@ -19,3 +19,4 @@ tts
 *.sqlite  
 usps_cache.sqlite
 ignore/*
+entity_registry.yaml
