@@ -70,7 +70,6 @@ automation:
     action:
       - service: notify.NOTIFIER_NAME
         data:
-          title: "Ashley is home!"
           message: "Ashley is home, yay!"
  
   - alias: 'Mike is home'
@@ -82,5 +81,4 @@ automation:
     action:
       - service: notify.NOTIFIER_NAME
         data:
-          title: "Mike is home!"
           message: "Mike is home, yay!"
