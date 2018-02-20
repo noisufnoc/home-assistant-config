@@ -7,7 +7,7 @@ telegram_bot:
 
 # Example configuration.yaml entry for the notifier
 notify:
-  - name: NOTIFIER_NAME
+  - name: noisufnoc_emoh
     platform: telegram
     chat_id: !secret telegram_chat_id
 
@@ -88,7 +88,7 @@ automation:
         from: not_home
         to: home
     action:
-      - service: notify.NOTIFIER_NAME
+      - service: notify.noisufnoc_emoh
         data:
           message: "Ashley is home, yay!"
  
@@ -99,7 +99,7 @@ automation:
         from: not_home
         to: home
     action:
-      - service: notify.NOTIFIER_NAME
+      - service: notify.noisufnoc_emoh
         data:
           message: "Mike is home, yay!"
 
@@ -108,7 +108,7 @@ automation:
       - platform: homeassistant
         event: start
     action:
-      service: notify.NOTIFIER_NAME
+      service: notify.noisufnoc_emoh
       data:
         message: "Home Assistant Started"
 
@@ -117,7 +117,7 @@ automation:
       - platform: homeassistant
         event: shutdown
     action:
-      service: notify.NOTIFIER_NAME
+      service: notify.noisufnoc_emoh
       data:
         message: "Home Assistant Shutdown"
 
@@ -126,6 +126,6 @@ automation:
       - platform: state
         entity_id: updater.updater
     action:
-      service: notify.NOTIFIER_NAME
+      service: notify.noisufnoc_emoh
       data_template: 
         message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
