@@ -12,6 +12,24 @@ notify:
     chat_id: !secret telegram_chat_id
 
 ################################################
+## group
+################################################
+
+group:
+  telegram_bot:
+    name: Telegram Bot - noisufnoc emoh
+    control: hidden
+    entities:
+      - automation.telegram__bot_command__args_test
+      - automation.telegram__bot_command__temprature
+      - automation.telegram__bot_command__weather
+      - automation.telegram__notification__ashley_is_home
+      - automation.telegram__notification__mike_is_home
+      - automation.telegram__notification__home_assistant_shutdown
+      - automation.telegram__notification__home_assistant_startup
+      - automation.telegram__notification__home_assistant_update
+
+################################################
 ### automation
 #################################################
 
@@ -102,3 +120,12 @@ automation:
       service: notify.NOTIFIER_NAME
       data:
         message: "Home Assistant Shutdown"
+
+  - alias: 'Telegram - Notification - Home Assistant Update'
+    trigger:
+      - platform: state
+        entity_id: updater.updater
+    action:
+      service: notify.NOTIFIER_NAME
+      data_template: 
+        message: "Home Assistant  {{ states.updater.updater.state }}  is now available."

@@ -454,6 +454,7 @@
     entities:
       - group.all_automations
       - group.sonoff_sync
+      - group.telegram_bot
       - group.minimote_a
       - group.minimote_b
 
