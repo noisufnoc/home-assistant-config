@@ -82,3 +82,21 @@ automation:
       - service: notify.NOTIFIER_NAME
         data:
           message: "Mike is home, yay!"
+
+  - alias: 'Home Assistant Startup Notification'
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      service: notify.NOTIFIER_NAME
+      data:
+        message: "Home Assistant Started"
+
+  - alias: 'Home Assistant Shutdown Notification'
+    trigger:
+      - platform: homeassistant
+        event: shutdown
+    action:
+      service: notify.NOTIFIER_NAME
+      data:
+        message: "Home Assistant Shutdown"
