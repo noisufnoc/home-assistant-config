@@ -61,3 +61,26 @@ automation:
           message: 'You tested the command with an arg!'
           disable_notification: True
 
+  - alias: 'Ashley is home'
+    trigger:
+        platform: state
+        entity_id: device_tracker.ashley_pixel
+        from: not_home
+        to: home
+    action:
+      - service: notify.NOTIFIER_NAME
+        data:
+          title: "Ashley is home!"
+          message: "Ashley is home, yay!"
+ 
+  - alias: 'Mike is home'
+    trigger:
+        platform: state
+        entity_id: device_tracker.mike_taimen
+        from: not_home
+        to: home
+    action:
+      - service: notify.NOTIFIER_NAME
+        data:
+          title: "Mike is home!"
+          message: "Mike is home, yay!"
