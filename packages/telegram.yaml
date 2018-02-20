@@ -15,10 +15,10 @@ notify:
 ### automation
 #################################################
 
-# I borrowed some examples to test with
+# Bot Commands
 
 automation:
-  - alias: "Telegram - Bot command temprature"
+  - alias: "Telegram - Bot Command - temprature"
     trigger:
       platform: event
       event_type: telegram_command
@@ -32,7 +32,7 @@ automation:
           disable_notification: True
 
 
-  - alias: "Telegram - Bot command weather"
+  - alias: "Telegram - Bot Command - weather"
     trigger:
       platform: event
       event_type: telegram_command
@@ -46,7 +46,7 @@ automation:
           disable_notification: True
 
 
-  - alias: "Telegram - Bot command args test"
+  - alias: "Telegram - Bot Command - args test"
     trigger:
       platform: event
       event_type: telegram_command
@@ -61,7 +61,9 @@ automation:
           message: 'You tested the command with an arg!'
           disable_notification: True
 
-  - alias: 'Telegram - Ashley is home'
+# Notifications
+
+  - alias: 'Telegram - Notification - Ashley is home'
     trigger:
         platform: state
         entity_id: device_tracker.ashley_pixel
@@ -72,7 +74,7 @@ automation:
         data:
           message: "Ashley is home, yay!"
  
-  - alias: 'Telegram - Mike is home'
+  - alias: 'Telegram - Notification - Mike is home'
     trigger:
         platform: state
         entity_id: device_tracker.mike_taimen
@@ -83,7 +85,7 @@ automation:
         data:
           message: "Mike is home, yay!"
 
-  - alias: 'Telegram - Home Assistant Startup Notification'
+  - alias: 'Telegram - Notification - Home Assistant Startup'
     trigger:
       - platform: homeassistant
         event: start
@@ -92,7 +94,7 @@ automation:
       data:
         message: "Home Assistant Started"
 
-  - alias: 'Telegram - Home Assistant Shutdown Notification'
+  - alias: 'Telegram - Notification - Home Assistant Shutdown' 
     trigger:
       - platform: homeassistant
         event: shutdown
