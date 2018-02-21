@@ -1,3 +1,29 @@
+################################################################
+## package / telegram
+##  telegram bot 'noisufnoc emoh' configs
+################################################################
+
+################################################
+## customize
+################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'telegram'
+
+      automation: &automation
+        initial_state: true
+
+################################################
+## telegram
+################################################
+
 # Example configuration.yaml entry for the Telegram Bot
 telegram_bot:
   - platform: polling
@@ -37,6 +63,7 @@ group:
 
 automation:
   - alias: "Telegram - Bot Command - temprature"
+    <<: *automation
     trigger:
       platform: event
       event_type: telegram_command
@@ -46,11 +73,12 @@ automation:
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
-          message: 'The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F'
+          message: "The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F"
           disable_notification: True
 
 
   - alias: "Telegram - Bot Command - weather"
+    <<: *automation
     trigger:
       platform: event
       event_type: telegram_command
@@ -65,6 +93,7 @@ automation:
 
 
   - alias: "Telegram - Bot Command - args test"
+    <<: *automation
     trigger:
       platform: event
       event_type: telegram_command
@@ -80,8 +109,10 @@ automation:
           disable_notification: True
 
 # Notifications
+# Emojii Unicode - https://apps.timwhitlock.info/emoji/tables/unicode
 
   - alias: 'Telegram - Notification - Ashley is home'
+    <<: *automation
     trigger:
         platform: state
         entity_id: device_tracker.ashley_pixel
@@ -90,9 +121,10 @@ automation:
     action:
       - service: notify.noisufnoc_emoh
         data:
-          message: "Ashley is home, yay!"
+          message: "Ashley is home! \ud83d\ude0d"
  
   - alias: 'Telegram - Notification - Mike is home'
+    <<: *automation
     trigger:
         platform: state
         entity_id: device_tracker.mike_taimen
@@ -104,6 +136,7 @@ automation:
           message: "Mike is home, yay!"
 
   - alias: 'Telegram - Notification - Home Assistant Startup'
+    <<: *automation
     trigger:
       - platform: homeassistant
         event: start
@@ -113,6 +146,7 @@ automation:
         message: "Home Assistant Started"
 
   - alias: 'Telegram - Notification - Home Assistant Shutdown' 
+    <<: *automation
     trigger:
       - platform: homeassistant
         event: shutdown
@@ -122,10 +156,11 @@ automation:
         message: "Home Assistant Shutdown"
 
   - alias: 'Telegram - Notification - Home Assistant Update'
+    <<: *automation
     trigger:
       - platform: state
         entity_id: updater.updater
     action:
       service: notify.noisufnoc_emoh
       data_template: 
-        message: "Home Assistant  {{ states.updater.updater.state }}  is now available."
+        message: "Home Assistant {{ states.updater.updater.state }} is now available."
