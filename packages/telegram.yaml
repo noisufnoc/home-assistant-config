@@ -47,6 +47,7 @@ group:
     control: hidden
     entities:
       - automation.telegram__bot_command__args_test
+      - automation.telegram__bot_command__guest_mode_toggle
       - automation.telegram__bot_command__temprature
       - automation.telegram__bot_command__weather
       - automation.telegram__notification__ashley_is_home
@@ -62,6 +63,21 @@ group:
 # Bot Commands
 
 automation:
+  - alias: "Telegram - Bot Command - guest mode toggle"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/guest"
+    action:
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'I would toggle guest mode here, and give you the status'
+          disable_notification: True
+
+
   - alias: "Telegram - Bot Command - temprature"
     <<: *automation
     trigger:
