@@ -71,10 +71,13 @@ automation:
       event_data:
         command: "/guest"
     action:
+      - service: input_boolean.toggle
+        data:
+          entity_id: input_boolean.guest_mode
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
-          message: 'I would toggle guest mode here, and give you the status'
+          message: 'I have set Guest Mode to {{ states.input_boolean.guest_mode.state }}.'
           disable_notification: True
 
 
