@@ -1,0 +1,134 @@
+################################################################
+## package / minimote_a
+##  minimote_a automations
+################################################################
+
+################################################
+## customize
+################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'minimote_a'
+
+      automation: &automation
+        initial_state: true
+
+
+################################################
+## group
+################################################
+
+group:
+  minimote_b:
+    name: Minimote B
+    entities:
+     - automation.minimote_b_button_1__held
+     - automation.minimote_b_button_1__pressed
+     - automation.minimote_b_button_2__held
+     - automation.minimote_b_button_2__pressed
+     - automation.minimote_b_button_3__held
+     - automation.minimote_b_button_3__pressed
+     - automation.minimote_b_button_4__held
+     - automation.minimote_b_button_4__pressed
+
+################################################
+## automation
+################################################
+
+automation:
+  - alias: 'Minimote B: Button 1 - Held'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 1, "action": "held"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.family_room_lamp
+    
+  - alias: 'Minimote B: Button 1 - Pressed'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 1, "action": "pushed"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.ashleys_nightstand
+    
+  - alias: 'Minimote B: Button 2 - Held'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 2, "action": "held"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.family_room_lamp
+    
+  - alias: 'Minimote B: Button 2 - Pressed'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 2, "action": "pushed"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.mikes_nightstand
+    
+  - alias: 'Minimote B: Button 3 - Held'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 3, "action": "held"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.family_room_lamp
+    
+  - alias: 'Minimote B: Button 3 - Pressed'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 3, "action": "pushed"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id:
+          - light.ashleys_nightstand
+          - light.mikes_nightstand
+    
+  - alias: 'Minimote B: Button 4 - Held'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 4, "action": "held"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.family_room_lamp
+    
+  - alias: 'Minimote B: Button 4 - Pressed'
+    <<: *automation
+    trigger:
+      platform: mqtt
+      topic: smartthings/minimote b/button
+      payload: '{"button": 4, "action": "pushed"}'
+    action:
+      service: light.toggle
+      data:
+        entity_id: light.master_bedroom_ceiling_light

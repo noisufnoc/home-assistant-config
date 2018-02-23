@@ -1,9 +1,0 @@
-alias: 'Minimote A: Button 1 - Pressed'
-trigger:
-  platform: mqtt
-  topic: smartthings/minimote a/button
-  payload: '{"button": 1, "action": "pushed"}'
-action:
-  service: light.turn_on
-  data:
-    entity_id: light.family_room_lamp
