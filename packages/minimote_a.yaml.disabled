@@ -1,0 +1,84 @@
+
+alias: 'Minimote A: Button 1 - Held'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 1, "action": "held"}'
+action:
+  service: light.toggle
+  data:
+    entity_id: light.family_room_lamp
+
+alias: 'Minimote A: Button 1 - Pressed'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 1, "action": "pushed"}'
+action:
+  service: light.turn_on
+  data:
+    entity_id: light.family_room_lamp
+
+alias: 'Minimote A: Button 2 - Pressed'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 2, "action": "pushed"}'
+action:
+  service: light.turn_off
+  data:
+    entity_id: light.family_room_lamp
+
+alias: 'Minimote A: Button 3 - Pressed'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 3, "action": "pushed"}'
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data_template:
+    message: >
+        Steven Pressed The Button!
+
+alias: 'Minimote A: Button 4 - Pressed'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 4, "action": "pushed"}'
+action:
+  service: tts.google_say
+  entity_id: media_player.kitchen_home
+  data_template:
+    message: >
+        Don't push the button!
+
+alias: 'Minimote A: Button 2 - Held'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 2, "action": "held"}'
+action:
+  service: light.toggle
+  data:
+    entity_id: light.family_room_lamp
+
+alias: 'Minimote A: Button 3 - Held'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 3, "action": "held"}'
+action:
+  service: light.toggle
+  data:
+    entity_id: light.family_room_lamp
+
+alias: 'Minimote A: Button 4 - Held'
+trigger:
+  platform: mqtt
+  topic: smartthings/minimote a/button
+  payload: '{"button": 4, "action": "held"}'
+action:
+  service: light.toggle
+  data:
+    entity_id: light.family_room_lamp
