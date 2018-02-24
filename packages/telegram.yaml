@@ -183,3 +183,21 @@ automation:
       service: notify.noisufnoc_emoh
       data_template: 
         message: "Home Assistant {{ states.updater.updater.state }} is now available."
+
+
+  - alias: 'Telegram - Notification - Send alert when dishwasher is clean'
+		<<: *automation
+    trigger:
+      - platform: state
+        entity_id: input_select.dishwasher_status
+        to: Clean
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.dishwasher_status
+          state: Clean
+    action:
+      - service: notify.noisufnoc_emoh
+        data:
+          message: 'The Dishwasher is clean!'
