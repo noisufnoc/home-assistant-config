@@ -1,7 +1,0 @@
-platform: mqtt
-name: "Dishwasher Power Override"
-state_topic: "smartthings/Dishwasher/switch"
-command_topic: "smartthings/Dishwasher/switch"
-payload_on: "on"
-payload_off: "off"
-retain: true
