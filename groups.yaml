@@ -115,6 +115,16 @@
      - sensor.sabnzbd_left
      - sensor.sabnzbd_queue
      - sensor.sabnzbd_speed
+
+  travisci:
+    name: Travis-ci
+    entities:
+     - sensor.noisufnochomeassistantconfig_last_build_duration 
+     - sensor.noisufnochomeassistantconfig_last_build_finished_at
+     - sensor.noisufnochomeassistantconfig_last_build_id
+     - sensor.noisufnochomeassistantconfig_last_build_started_at
+     - sensor.noisufnochomeassistantconfig_last_build_state
+     - sensor.noisufnochomeassistantconfig_state
   
   nest_status:
     name: Nest Thermostat Status
@@ -437,6 +447,7 @@
     entities:
       - group.internets
       - group.sabnzbd
+      - group.travisci
       - group.apc_ups_daemon
 
   fitness:
