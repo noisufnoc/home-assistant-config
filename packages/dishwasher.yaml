@@ -94,6 +94,7 @@ switch:
 
 automation:
   - alias: Set dishwasher active when power detected
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.dishwasher_power
@@ -120,6 +121,7 @@ automation:
 # the 'Running' state, mark the Dishwasher as Finished
 
   - alias: Set dishwasher drying when power drops
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.dishwasher_power
@@ -140,6 +142,7 @@ automation:
 # dishwasher as clean
 
   - alias: Set dishwasher clean
+    <<: *automation
     trigger:
       - platform: state
         entity_id: input_select.dishwasher_status
@@ -164,6 +167,7 @@ automation:
 # Dishwasher before the 30 minute timeout has been reached.
 
   - alias: Set Dishwasher dirty when power off
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.dishwasher_power
