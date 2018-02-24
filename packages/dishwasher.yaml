@@ -44,7 +44,6 @@ sensor:
 
 input_select:
   dishwasher_status:
-    <<: *customize
     name: Dishwasher Status
     options:
       - Dirty
