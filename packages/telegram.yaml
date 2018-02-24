@@ -186,7 +186,7 @@ automation:
 
 
   - alias: 'Telegram - Notification - Send alert when dishwasher is clean'
-		<<: *automation
+    <<: *automation
     trigger:
       - platform: state
         entity_id: input_select.dishwasher_status
