@@ -24,14 +24,14 @@ home_status:
 
 # Appliance States
 
-dishwasher_status:
-  name: Dishwasher Status
-  options:
-    - Dirty
-    - Running
-    - Drying
-    - Clean
-  initial: Dirty
+#dishwasher_status:
+#  name: Dishwasher Status
+#  options:
+#    - Dirty
+#    - Running
+#    - Drying
+#    - Clean
+#  initial: Dirty
 
 # Work From Home State
 

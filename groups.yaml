@@ -265,12 +265,12 @@
      - sensor.energy_meter
      - sensor.family_room_lamp_wattage
   
-  dishwasher:
-    name: Dishwasher
-    entities:
-      - sensor.dishwasher_status
-      - sensor.dishwasher_power
-      - switch.dishwasher_power_override
+#  dishwasher:
+#    name: Dishwasher
+#    entities:
+#      - sensor.dishwasher_status
+#      - sensor.dishwasher_power
+#      - switch.dishwasher_power_override
 
 # Views
 
