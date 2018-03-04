@@ -54,8 +54,8 @@ group:
       - automation.telegram__notification__home_assistant_shutdown
       - automation.telegram__notification__home_assistant_startup
       - automation.telegram__notification__home_assistant_update
-      - automation.telegram__notification__send_alert_when_dishwasher_is_clean'
-      - automation.telegram__notification__send_alert_when_washing_machine_is_clean'
+      - automation.telegram__notification__send_alert_when_dishwasher_is_clean
+      - automation.telegram__notification__send_alert_when_washing_machine_is_clean
 
 ################################################
 ### automation
