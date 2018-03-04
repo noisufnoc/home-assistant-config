@@ -44,7 +44,6 @@ notify:
 group:
   telegram_bot:
     name: Telegram Bot - noisufnoc emoh
-    control: hidden
     entities:
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
@@ -55,6 +54,8 @@ group:
       - automation.telegram__notification__home_assistant_shutdown
       - automation.telegram__notification__home_assistant_startup
       - automation.telegram__notification__home_assistant_update
+      - automation.telegram__notification__send_alert_when_dishwasher_is_clean'
+      - automation.telegram__notification__send_alert_when_washing_machine_is_clean'
 
 ################################################
 ### automation
@@ -184,7 +185,6 @@ automation:
       data_template: 
         message: "Home Assistant {{ states.updater.updater.state }} is now available."
 
-
   - alias: 'Telegram - Notification - Send alert when dishwasher is clean'
     <<: *automation
     trigger:
@@ -201,3 +201,20 @@ automation:
       - service: notify.noisufnoc_emoh
         data:
           message: 'The Dishwasher is clean!'
+
+  - alias: 'Telegram - Notification - Send alert when washing machine is clean'
+    <<: *automation
+    trigger:
+      - platform: state
+        entity_id: input_select.washing_machine_status
+        to: Clean
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.washing_machine_status
+          state: Clean
+    action:
+      - service: notify.noisufnoc_emoh
+        data:
+          message: 'The washing machine has finished and is ready to be emptied!'
