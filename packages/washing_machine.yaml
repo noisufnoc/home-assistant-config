@@ -10,6 +10,17 @@
 
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'washing_machine'
+
+      automation: &automation
+        initial_state: true
+
 
 ################################################
 ## input_text
@@ -70,6 +81,7 @@ group:
         
 switch:
   - platform: mqtt
+		<<: *customize
     name: "Washing Machine Power Override"
     state_topic: "smartthings/Washing Machine/switch"
     command_topic: "smartthings/Washing Machine/switch"
@@ -87,6 +99,7 @@ switch:
 
 automation:
   - alias: Set washing machine active when power detected
+		<<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.aeotec_smart_energy_switch_power_25_4
@@ -110,6 +123,7 @@ automation:
           option: Running
    
   - alias: Set washing machine finished when power drops
+		<<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.aeotec_smart_energy_switch_power_25_4
@@ -127,6 +141,7 @@ automation:
           option: Finishing
    
   - alias: Set washing machine clean after timeout
+		<<: *automation
     trigger:
       - platform: state
         entity_id: input_select.washing_machine_status
@@ -146,6 +161,7 @@ automation:
           option: Clean
    
   - alias: Set washing machine dirty when door opens
+		<<: *automation
     trigger:
       - platform: state
         entity_id: input_select.washingmachine_door_status
