@@ -102,8 +102,8 @@ automation:
     <<: *automation
     trigger:
       - platform: numeric_state
-        entity_id: sensor.aeotec_smart_energy_switch_power_25_4
-        above: 10
+        entity_id: sensor.washing_machine_power
+        above: 60
     condition:
       condition: or
       conditions:
@@ -126,7 +126,7 @@ automation:
     <<: *automation
     trigger:
       - platform: numeric_state
-        entity_id: sensor.aeotec_smart_energy_switch_power_25_4
+        entity_id: sensor.washing_machine_power
         below: 6
     condition:
       condition: and
@@ -147,7 +147,7 @@ automation:
         entity_id: input_select.washing_machine_status
         to: Finishing
         for:
-          minutes: 8
+          minutes: 2
     condition:
       condition: and
       conditions:
@@ -164,8 +164,8 @@ automation:
     <<: *automation
     trigger:
       - platform: state
-        entity_id: input_select.washingmachine_door_status
-        to: 'Open'
+        entity_id: input_select.washing_machine_door
+        to: 'on'
     condition:
       condition: and
       conditions:
