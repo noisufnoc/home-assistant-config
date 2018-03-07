@@ -456,6 +456,7 @@
       - group.travisci
       - group.apc_ups_daemon
       - group.homelab_environment
+      - group.fortinet
 
   fitness:
     view: yes
