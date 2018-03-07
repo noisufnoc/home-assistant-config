@@ -22,7 +22,7 @@ homeassistant:
 
     sensor.firewall_cpu:
       <<: *customize
-      icon: mdi:percent
+      icon: mdi:memory
 
 ################################################
 ## binary_sensors
