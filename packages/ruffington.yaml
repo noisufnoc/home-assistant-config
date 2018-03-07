@@ -60,7 +60,7 @@ sensor:
       server_rack_temperature:
         friendly_name: "Server Room Temperature"
         unit_of_measurement: 'ºF'
-        value_template: '{{ states.sensor.server_room_temperature_raw.state}}'
+        value_template: '{{ float(states.sensor.server_room_temperature_raw.state) / 10 }}'
 
 ################################################
 ## group
