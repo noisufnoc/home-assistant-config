@@ -116,6 +116,12 @@
      - sensor.sabnzbd_queue
      - sensor.sabnzbd_speed
 
+  homelab_environment:
+    name: Homelab Environment
+    entities:
+     - sensor.server_room_temperature
+     - sensor.server_rack_temperature
+
   travisci:
     name: Travis-ci
     entities:
@@ -449,6 +455,7 @@
       - group.sabnzbd
       - group.travisci
       - group.apc_ups_daemon
+      - group.homelab_environment
 
   fitness:
     view: yes

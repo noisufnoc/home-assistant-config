@@ -36,6 +36,7 @@ homeassistant:
 
     sensor.server_room_temperature:
       <<: *customize
+      icon: mdi:thermometer
 
 ################################################
 ## binary_sensors
