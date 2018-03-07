@@ -1,7 +1,0 @@
-platform: snmp
-host: 10.0.0.6
-name: Rack Temperature
-unit_of_measurement: "F"
-community: public
-version: 2c
-baseoid: 1.3.6.1.4.1.21239.5.1.2.1.5.1

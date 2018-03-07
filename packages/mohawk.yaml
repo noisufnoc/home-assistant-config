@@ -2,7 +2,7 @@
 ## package / ruffington
 ##  Geist environment monitor SNMP package
 ##
-##  ruffington is remote sensor
+##  mohawk is an in rack sensor
 ################################################################
 
 ################################################
@@ -17,24 +17,24 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'ruffington'
+        package: 'mohawk'
 
       hidden_sensor: &hidden_sensor
         <<: *customize
         hidden: true
 
-      ruffington: &ruffington
+      mohawk: &mohawk
         <<: *customize
-        host: 10.0.0.7
+        host: 10.0.0.6
 
     ################################################
     ## customize / sensor
     ################################################
 
-    sensor.server_room_temperature_raw:
+    sensor.server_rack_temperature_raw:
       <<: *hidden_sensor
 
-    sensor.server_room_temperature:
+    sensor.server_rack_temperature:
       <<: *customize
 
 ################################################
@@ -47,8 +47,8 @@ homeassistant:
 
 sensor:
   - platform: snmp
-    <<: *ruffington
-    name: "Server Room Temperature Raw"
+    <<: *mohawk
+    name: "Server Rack Temperature Raw"
     unit_of_measurement: "F"
     community: public
     version: 2c
@@ -60,10 +60,10 @@ sensor:
 
   - platform: template
     sensors:
-      server_room_temperature:
-        friendly_name: "Server Room Temperature"
+      server_rack_temperature:
+        friendly_name: "Server Rack Temperature"
         unit_of_measurement: 'ºF'
-        value_template: '{{ float(states.sensor.server_room_temperature_raw.state) / 10 }}'
+        value_template: '{{ float(states.sensor.server_rack_temperature_raw.state) / 10 }}'
 
 ################################################
 ## group
