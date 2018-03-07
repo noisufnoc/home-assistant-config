@@ -61,6 +61,7 @@ homeassistant:
 
 group:
   pihole:
+    name: "Ads Blocked"
     entities:
       - sensor.dns_queries_today
       - sensor.domains_being_blocked
