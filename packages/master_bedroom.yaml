@@ -4,6 +4,17 @@
 
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'master_bedroom'
+
+      automation: &automation
+        initial_state: true
+
     sensor.master_bedroom_tv_status:
       icon: mdi:television
 
@@ -16,11 +27,13 @@ homeassistant:
 
 sensor:
   - platform: mqtt
+    <<: *customize
     state_topic: "smartthings/Master Bedroom TV/power"
     name: "Master Bedroom TV Power"
     unit_of_measurement: "W"
       
   - platform: template
+    <<: *customize
     sensors:
       master_bedroom_tv_status:
         value_template: "{{ states.input_select.master_bedroom_tv_status.state}}"
@@ -57,6 +70,7 @@ input_select:
 
 automation:
   - alias: Set MBR TV status on when power detected
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.master_bedroom_tv_power
@@ -68,6 +82,7 @@ automation:
           option: "On"
 
   - alias: Set MBR TV status stand-by when power betwen 1-6W
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.master_bedroom_tv_power
@@ -80,6 +95,7 @@ automation:
           option: "Stand-by"
 
   - alias: Set MBR TV status off when no power
+    <<: *automation
     trigger:
       - platform: numeric_state
         entity_id: sensor.master_bedroom_tv_power

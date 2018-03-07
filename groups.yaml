@@ -461,7 +461,7 @@
   fitness:
     view: yes
     name: "Fitness"
-    icon: mdi:allo
+    icon: mdi:run
     entities:
       - group.fitbit_activities
       - group.fitbit_body_stats
