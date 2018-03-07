@@ -1,0 +1,90 @@
+################################################################
+## package / ruffington
+##  Geist environment monitor SNMP package
+##
+##  ruffington is remote sensor
+################################################################
+
+################################################
+## customize
+################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'ruffington'
+
+      hidden_sensor: &hidden_sensor
+        <<: *customize
+        hidden: true
+
+      ruffington: &ruffington
+        <<: *customize
+        host: 10.0.0.7
+
+    ################################################
+    ## customize / sensor
+    ################################################
+
+    sensor.server_rack_temperature_raw:
+      <<: *hidden_sensor
+
+################################################
+## binary_sensors
+################################################
+
+################################################
+## sensors
+################################################
+
+sensor:
+  - platform: snmp
+    <<: *ruffington
+    name: "Server Room Temperature Raw"
+    unit_of_measurement: "F"
+    community: public
+    version: 2c
+    baseoid: 1.3.6.1.4.1.21239.5.1.2.1.5.1
+
+################################################
+## template_sensors
+################################################
+
+  - platform: template
+    sensors:
+      server_rack_temperature:
+        friendly_name: "Server Room Temperature"
+        unit_of_measurement: 'ºF'
+        value_template: '{{ states.sensor.server_room_temperature_raw.state}}'
+
+################################################
+## group
+################################################
+
+#group:
+#  Homelab:
+#    entities:
+#      - sensor.server_rack_temperature
+#      - sensor.test_snmp
+
+################################################
+## input_text
+################################################
+
+################################################
+## binary_sensor
+################################################
+
+################################################
+## script
+################################################
+        
+################################################
+## automation
+################################################
+
