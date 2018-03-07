@@ -4,6 +4,25 @@
 
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'fortinet'
+
+      fortinet: &fortinet
+        <<: *customize
+        host: 10.0.0.1
+
+    ################################################
+    ## customize / sensor
+    ################################################
+
+    sensor.firewall_cpu:
+      <<: *customize
+      icon: mdi:percent
 
 ################################################
 ## binary_sensors
@@ -15,7 +34,7 @@ homeassistant:
 
 sensor:
   - platform: snmp
-    host: 10.0.0.1
+    <<: *fortinet
     name: "Firewall CPU"
     unit_of_measurement: "%"
     community: public
@@ -25,3 +44,8 @@ sensor:
 ################################################
 ## group
 ################################################
+
+group:
+  Fortinet:
+    entities:
+      - sensor.firewall_cpu
