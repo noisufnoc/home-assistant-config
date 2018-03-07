@@ -457,6 +457,7 @@
       - group.apc_ups_daemon
       - group.homelab_environment
       - group.fortinet
+      - group.pihole
 
   fitness:
     view: yes
