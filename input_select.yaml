@@ -18,6 +18,7 @@ home_status:
     - Home
     - Away
     - Work From Home
+    - Goodnight
     - Night
 #  initial: Unknown
   icon: mdi:home
