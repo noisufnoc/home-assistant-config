@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Mudroom Bench"
+state_topic: "smartthings/Mudroom Bench/switch"
+command_topic: "smartthings/Mudroom Bench/switch"
+brightness_state_topic: "smartthings/Mudroom Bench/level"
+brightness_command_topic: "smartthings/Mudroom Bench/level"
+payload_on: "on"
+payload_off: "off"
+retain: true
