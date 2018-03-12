@@ -52,11 +52,6 @@ switch:
     payload_off: "off"
     retain: true
 
-################################################
-## light
-################################################
-
-light:
   - platform: mqtt
     name: "Master Bedroom Ceiling Fan"
     state_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
@@ -66,7 +61,12 @@ light:
     payload_on: "on"
     payload_off: "off"
     retain: true
-    
+ 
+################################################
+## light
+################################################
+
+light:
   - platform: mqtt
     name: "Master Bedroom Ceiling Light"
     state_topic: "smartthings/Master Bedroom Ceiling Light/switch"
