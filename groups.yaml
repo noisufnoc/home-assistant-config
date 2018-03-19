@@ -255,6 +255,7 @@
     entities:
       - group.family_room_lights
       - group.living_room_lights
+      - group.mudroom_lights
 
   upstairs_lights:
     name: Upstairs Lights
