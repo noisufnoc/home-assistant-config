@@ -21,3 +21,4 @@ usps_cache.sqlite
 ignore/*
 entity_registry.yaml
 ip_bans.yaml
+*.swp

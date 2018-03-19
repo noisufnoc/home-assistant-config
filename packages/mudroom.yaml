@@ -25,12 +25,18 @@ homeassistant:
 ## sensor
 ################################################
 
-sensor:
+################################################
+## binary_sensor
+################################################
+
+binary_sensor:
   - platform: mqtt
     <<: *customize
-    state_topic: "smartthings/Master Bedroom TV/power"
-    name: "Master Bedroom TV Power"
-    unit_of_measurement: "W"
+    state_topic: "smartthings/Mud Room Door/contact"
+    name: "Mud Room Door"
+    payload_on: "open"
+    payload_off: "closed"
+    sensor_class: opening
        
 ################################################
 ## switch
@@ -42,9 +48,12 @@ sensor:
 
 light:
   - platform: mqtt
-    name: "Master Bedroom Ceiling Light"
-    state_topic: "smartthings/Master Bedroom Ceiling Light/switch"
-    command_topic: "smartthings/Master Bedroom Ceiling Light/switch"
+    <<: *customize
+    name: "Mudroom Bench"
+    state_topic: "smartthings/Mudroom Bench/switch"
+    command_topic: "smartthings/Mudroom Bench/switch"
+    brightness_state_topic: "smartthings/Mudroom Bench/level"
+    brightness_command_topic: "smartthings/Mudroom Bench/level"
     payload_on: "on"
     payload_off: "off"
     retain: true
@@ -66,8 +75,6 @@ light:
 ################################################
 
 group:
-  Master Bedroom TV:
+  Mudroom Lights:
     entities:
-      - sensor.master_bedroom_tv_status
-      - sensor.master_bedroom_tv_power
-      - switch.master_bedroom_tv_power_override
+      - sensor.mudroom_bench
