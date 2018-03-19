@@ -54,6 +54,7 @@ group:
       - automation.telegram__notification__home_assistant_shutdown
       - automation.telegram__notification__home_assistant_startup
       - automation.telegram__notification__home_assistant_update
+      - automation.telegram__notification__notify_if_any_exterior_door_open_past_midnight
       - automation.telegram__notification__send_alert_when_dishwasher_is_clean
       - automation.telegram__notification__send_alert_when_washing_machine_is_clean
 
@@ -218,3 +219,17 @@ automation:
       - service: notify.noisufnoc_emoh
         data:
           message: 'The washing machine has finished and is ready to be emptied!'
+
+  - alias: 'Telegram - Notification - Notify if any exterior door open past midnight'
+    <<: *automation
+    trigger:
+      - platform: time
+        at: '00:00:00'
+    condition:
+      condition: state
+      entity_id: 'group.exterior_doors'
+      state: 'on'
+    action:
+      - service: notify.noisufnoc_emoh
+        data:
+          message: "You left a damn door open!"
