@@ -81,10 +81,10 @@ google_assistant:
   project_id: !secret google_project_id
   client_id: !secret google_client_id
   access_token: !secret google_access_token
-  expose_by_default: false
-  entity_config:
-    switch.roomba:
-      name: Roomba
+  expose_by_default: true
+  #  entity_config:
+  #  switch.roomba:
+  #    name: Roomba
 #      aliases:
 #        - bright lights
 #        - entry lights
