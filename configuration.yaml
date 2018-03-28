@@ -28,7 +28,7 @@ device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 script: !include_dir_merge_named script/
 light: !include_dir_list lights/
-#switch: !include_dir_list switches/
+switch: !include_dir_list switches/
 remote: !include remote.yaml
 notify: !include notify.yaml
 logger: !include logger.yaml
