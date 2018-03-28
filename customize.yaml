@@ -82,6 +82,10 @@
    google_assistant_name: Downstairs Lights
    google_assistant_type: switch
 
+ switch.roomba:
+   google_assistant: true
+   google_assistant_name: Roomba
+
  light.amelias_lamp:
    google_assistant: true
    google_assistant_name: Amelias Lamp
