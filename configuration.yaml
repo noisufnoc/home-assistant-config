@@ -85,29 +85,40 @@ google_assistant:
   expose_by_default: false
   entity_config:
     group.downstairs_lights:
+      expose: true
       name: Downstairs Lights
     group.upstairs_lights:
+      expose: true
       name: Upstairs Lights
     light.amelias_lamp:
+      expose: true
       name: Amelias Lamp
       room: Amelia's Bedroom
     light.family_room_lamp:
+      expose: true
       name: Family Room Lamp
       room: Family Room
     light.living_room_lamp:
+      expose: true
       name: Living Room Lamp
       room: Living Room
     light.office_lamp:
+      expose: true
       name: Office Lamp
       room: Office
     light.steveo_light:
+      expose: true
       name: Stevens Night Light
       room: Steven's Bedroom
     light.holiday_1:
+      expose: true
       name: Garland
     light.holiday_2:
+      expose: true
       name: Christmas Tree Front
     light.holiday_3:
+      expose: true
       name: Christmas Tree Back
     switch.roomba:
+      expose: true
       name: Roomba
