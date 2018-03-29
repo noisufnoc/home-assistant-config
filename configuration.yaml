@@ -81,5 +81,33 @@ google_assistant:
   project_id: !secret google_project_id
   client_id: !secret google_client_id
   access_token: !secret google_access_token
-  expose_by_default: true
   api_key: !secret google_homegraph_api_key
+  expose_by_default: false
+  entity_config:
+    group.downstairs_lights:
+      name: Downstairs Lights
+    group.upstairs_lights:
+      name: Upstairs Lights
+    light.amelias_lamp:
+      name: Amelias Lamp
+      room: Amelia's Bedroom
+    light.family_room_lamp:
+      name: Family Room Lamp
+      room: Family Room
+    light.living_room_lamp:
+      name: Living Room Lamp
+      room: Living Room
+    light.office_lamp:
+      name: Office Lamp
+      room: Office
+    light.steveo_light:
+      name: Stevens Night Light
+      room: Steven's Bedroom
+    light.holiday_1:
+      name: Garland
+    light.holiday_2:
+      name: Christmas Tree Front
+    light.holiday_3:
+      name: Christmas Tree Back
+    switch.roomba:
+      name: Roomba

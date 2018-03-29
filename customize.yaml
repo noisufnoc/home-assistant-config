@@ -76,31 +76,3 @@
 
  sensor.mike_to_home:
    icon: mdi:car
- 
- group.downstairs_lights:
-   google_assistant: true
-   google_assistant_name: Downstairs Lights
-
- switch.roomba:
-   google_assistant: true
-   google_assistant_name: Roomba
-
- light.amelias_lamp:
-   google_assistant: true
-   google_assistant_name: Amelias Lamp
-
- light.family_room_lamp:
-   google_assistant: true
-   google_assistant_name: Family Room Lamp
-
- light.living_room_lamp:
-   google_assistant: true
-   google_assistant_name: Living Room Lamp
-
- light.office_lamp:
-   google_assistant: true
-   google_assistant_name: Office Lamp
-
- light.steveo_light:
-   google_assistant: true
-   google_assistant_name: Stevens Night Light

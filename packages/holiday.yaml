@@ -33,22 +33,16 @@ homeassistant:
       <<: *customize
       friendly_name: Garland
       icon: mdi:led-variant-on
-      google_assistant: true
-      google_assistant_name: Garland  
 
     light.holiday_2:
       <<: *customize
       friendly_name: Christmas Tree - Front
       icon: mdi:pine-tree
-      google_assistant: true
-      google_assistant_name: Christmas Tree Front
 
     light.holiday_3:
       <<: *customize
       friendly_name: Christmas Tree - Back
       icon: mdi:pine-tree
-      google_assistant: true
-      google_assistant_name: Christmas Tree Back
 
     ################################################
     ## customize / sensor
