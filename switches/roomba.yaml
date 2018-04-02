@@ -1,5 +1,5 @@
 platform: broadlink
-host: 10.0.0.145
+host: 10.0.0.70
 mac: '34:ea:34:b2:ec:a7'
 timeout: 15
 switches:
