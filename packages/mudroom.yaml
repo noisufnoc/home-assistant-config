@@ -77,4 +77,4 @@ light:
 group:
   Mudroom Lights:
     entities:
-      - sensor.mudroom_bench
+      - light.mudroom_bench
