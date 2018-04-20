@@ -63,6 +63,7 @@ group:
   pihole:
     name: "Ads Blocked"
     entities:
+      - switch.pihole_temp_disable
       - sensor.dns_queries_today
       - sensor.domains_being_blocked
       - sensor.ads_blocked_today
@@ -114,6 +115,17 @@ sensor:
     name: queries_cached
     resource: !secret pi_hole_url
     value_template: '{{ value_json.queries_cached }}'
+
+################################################
+## switch
+################################################
+
+switch:
+  - platform: command_line
+    switches:
+      pihole_temp_disable:
+        command_on: "curl -X GET 'http://192.168.10.11/admin/api.php?enable&auth='"
+        command_off: "curl -X GET 'http://192.168.10.11/admin/api.php?disable=3600&auth='"
 
 ################################################
 ## input_text
