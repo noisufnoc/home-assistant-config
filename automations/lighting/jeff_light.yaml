@@ -1,4 +1,5 @@
 alias: Turn on the light for Jeff
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.sliding_door
