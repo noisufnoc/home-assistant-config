@@ -71,6 +71,10 @@ splunk:
 apcupsd:
   host: apcupsd.noisufnoc.net
 
+octoprint:
+  host: octoprint.noisufnoc.net
+  api_key: !secret octoprint_api_key
+
 #apiai:
 #intent_script: !include intent_script.yaml
 
