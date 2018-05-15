@@ -1,9 +1,20 @@
 ################################################################
-## packages / apcupsd
+## packages / octoprint
 ################################################################
 
 homeassistant:
   customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'octoprint'
+
+      automation: &automation
+        initial_state: true
+
 
 ################################################
 ## binary_sensors
@@ -27,6 +38,21 @@ sensor:
       - Temperatures
       - Job Percentage
         
+################################################
+## switch
+################################################
+
+switch:
+  - platform: mqtt
+    <<: *customize
+    name: "3D Printer Power"
+    state_topic: "stat/3d_printer/POWER"
+    command_topic: "cmnd/3d_printer/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
 ################################################
 ## group
 ################################################
