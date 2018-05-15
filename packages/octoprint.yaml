@@ -60,6 +60,7 @@ switch:
 group:
   OctoPrint:
     entities:
+      - switch.3d_printer_power
       - binary_sensor.octoprint_printing
       - binary_sensor.octoprint_printing_error
       - sensor.octoprint_actual_bed_temp
