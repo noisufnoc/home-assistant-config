@@ -339,6 +339,7 @@
     entities:
       - group.office_lights
       - group.working_from_home_sensor
+      - group.octoprint
       - input_select.work_from_home_status
   
   playroom:
