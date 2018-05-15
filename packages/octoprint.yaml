@@ -15,6 +15,10 @@ homeassistant:
       automation: &automation
         initial_state: true
 
+    switch.3d_printer_power:
+      entity_picture: /local/octoprint.png
+   
+
 
 ################################################
 ## binary_sensors
