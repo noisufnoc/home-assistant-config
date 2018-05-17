@@ -6,3 +6,7 @@
   name: Mike's Location
   still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.mike_taimen.attributes.latitude }},{{ states.device_tracker.mike_taimen.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:red%7Clabel:Mike%7C{{ states.device_tracker.mike_taimen.attributes.latitude }},{{ states.device_tracker.mike_taimen.attributes.longitude }}
   limit_refetch_to_url_change: true
+
+- platform: generic
+  name: 3D Printer Live View
+  still_image_url: http://octoprint.noisufnoc.net/webcam/?action=stream
