@@ -244,6 +244,5 @@ automation:
     action:
       - service: notify.noisufnoc_emoh
         data:
-          message: "3D print is finished!"
           photo:
             - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
