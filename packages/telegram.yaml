@@ -244,6 +244,6 @@ automation:
     action:
       - service: notify.noisufnoc_emoh
         data:
-          messasge: "testing testing!"
+          message: "You left a damn door open!"
           #          photo:
           #  - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
