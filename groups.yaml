@@ -340,6 +340,7 @@
       - group.office_lights
       - group.working_from_home_sensor
       - group.octoprint
+      - camera.3d_printer_live_view
       - input_select.work_from_home_status
   
   playroom:
