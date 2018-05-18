@@ -67,7 +67,7 @@ rest_command:
     url: 'http://octoprint.noisufnoc.net/api/connection'
     headers:
       content-type: application/json
-      X-Api-Key: !secret: octoprint_api_key
+      X-Api-Key: !secret octoprint_api_key
     payload: '{"command":"connect", "port":"/dev/ttyACM0", "baudrate":115200}'
 
 ################################################
