@@ -57,6 +57,7 @@ group:
       - automation.telegram__notification__notify_if_any_exterior_door_open_past_midnight
       - automation.telegram__notification__send_alert_when_dishwasher_is_clean
       - automation.telegram__notification__send_alert_when_washing_machine_is_clean
+      - automation.telegram__notification__notify_when_3d_print_is_finished
 
 ################################################
 ### automation
@@ -233,3 +234,16 @@ automation:
       - service: notify.noisufnoc_emoh
         data:
           message: "You left a damn door open!"
+
+  - alias: 'Telegram - Notification - Notify when 3d print is finished'
+    <<: *automation
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.octoprint_job_percentage
+        above: 99
+    action:
+      - service: notify.noisufnoc_emoh
+        data:
+          message: "3D print is finished!"
+          photo:
+            - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
