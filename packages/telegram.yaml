@@ -244,5 +244,6 @@ automation:
     action:
       - service: notify.noisufnoc_emoh
         data:
-          photo:
-            - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
+          messasge: "testing testing!"
+          #          photo:
+          #  - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
