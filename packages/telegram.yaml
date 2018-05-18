@@ -240,10 +240,13 @@ automation:
     trigger:
       - platform: numeric_state
         entity_id: sensor.octoprint_job_percentage
+        value_template: '{{states.sensor.octoprint_job_percentage.state | int }}'
         above: 99
     action:
       - service: notify.noisufnoc_emoh
         data:
-          message: "You left a damn door open!"
-          #          photo:
-          #  - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
+          message: "Printer is done!"
+          data:
+            photo:
+              - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
+                caption: "Printer is done!"
