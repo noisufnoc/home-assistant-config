@@ -17,8 +17,10 @@ homeassistant:
 
     switch.3d_printer_power:
       entity_picture: /local/octoprint.png
-   
 
+    script.octoprint_api_connect_printer:
+      friendly_name: Connect Printer
+      icon: mdi:toggle-switch
 
 ################################################
 ## binary_sensors
