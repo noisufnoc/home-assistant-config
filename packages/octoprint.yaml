@@ -87,6 +87,7 @@ script:
 
 group:
   OctoPrint:
+    control: hidden
     entities:
       - switch.3d_printer_power
       - script.octoprint_api_connect_printer
