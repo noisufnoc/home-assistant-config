@@ -71,6 +71,15 @@ rest_command:
     payload: '{"command":"connect", "port":"/dev/ttyACM0", "baudrate":115200}'
 
 ################################################
+## script
+################################################
+
+script:
+  octoprint_api_connect_printer:
+    sequence:
+      - service: rest_command.octoprint_connect_printer
+
+################################################
 ## group
 ################################################
 
