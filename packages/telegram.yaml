@@ -45,6 +45,7 @@ group:
   telegram_bot:
     name: Telegram Bot - noisufnoc emoh
     entities:
+      - automation.telegram__bot_command__3dprinter
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
       - automation.telegram__bot_command__temprature
@@ -83,7 +84,6 @@ automation:
           message: 'I have set Guest Mode to {{ states.input_boolean.guest_mode.state }}.'
           disable_notification: True
 
-
   - alias: "Telegram - Bot Command - temprature"
     <<: *automation
     trigger:
@@ -98,7 +98,6 @@ automation:
           message: "The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F"
           disable_notification: True
 
-
   - alias: "Telegram - Bot Command - weather"
     <<: *automation
     trigger:
@@ -112,7 +111,6 @@ automation:
           target: '{{ trigger.event.data.user_id }}'
           message: '{{ states.sensor.dark_sky_hourly_summary.state }}'
           disable_notification: True
-
 
   - alias: "Telegram - Bot Command - args test"
     <<: *automation
@@ -129,6 +127,24 @@ automation:
           target: '{{ trigger.event.data.user_id }}'
           message: 'You tested the command with an arg!'
           disable_notification: True
+
+  - alias: "Telegram - Bot Command - 3dprinter"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/3dprinter"
+    action:
+      - service: switch.toggle
+        data:
+          entity_id: switch.3d_printer_power
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'I have turned the 3D Printer {{ states.switch.3d_printer_power.state }}.'
+          disable_notification: True
+
 
 # Notifications
 # Emojii Unicode - https://apps.timwhitlock.info/emoji/tables/unicode
@@ -250,3 +266,6 @@ automation:
             photo:
               - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
                 caption: "Printer is done!"
+            inline_keyboard:
+              - 'Turn Off Printer:/3dprinter'
+
