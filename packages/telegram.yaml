@@ -142,7 +142,8 @@ automation:
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the 3D Printer {{ states.switch.3d_printer_power.state }}.'
+          #          message: 'I have turned the 3D Printer {{ states.switch.3d_printer_power.state }}.'
+          message: 'I have turned the 3D Printer'
           disable_notification: True
 
 
