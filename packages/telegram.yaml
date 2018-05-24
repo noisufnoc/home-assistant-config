@@ -268,5 +268,6 @@ automation:
               - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
                 caption: "Printer is done!"
             inline_keyboard:
-              - 'Turn Off Printer:/3dprinter'
+              #              - 'Turn Off Printer:/3dprinter'
+              - '/3dprinter'
 
