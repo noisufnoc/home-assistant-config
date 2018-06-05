@@ -132,7 +132,7 @@ automation:
     <<: *automation
     trigger:
       platform: event
-      event_type: telegram_command
+      event_type: telegram_callback
       event_data:
         command: "/3dprinter"
     action:
