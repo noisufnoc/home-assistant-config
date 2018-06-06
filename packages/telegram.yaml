@@ -139,6 +139,7 @@ automation:
       - service: switch.toggle
         data:
           entity_id: switch.3d_printer_power
+      - delay: '00:00:10'
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
