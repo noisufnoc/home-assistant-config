@@ -1,0 +1,14 @@
+alias: Turn on the mudroom bench light
+initial_state: true
+trigger:
+  platform: state
+  entity_id: binary_sensor.mud_room_door
+  to: 'on'
+condition:
+  condition: state
+  entity_id: sun.sun
+  state: 'below_horizon'
+action:
+  service: light.turn_on
+  entity_id: light.mudroom_bench
+
