@@ -23,3 +23,4 @@ entity_registry.yaml
 ip_bans.yaml
 *.swp
 .config_entries.json
+.storage/*
