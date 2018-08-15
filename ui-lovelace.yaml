@@ -61,3 +61,30 @@ views:
         title: Lovelace
         content: >
           Welcome to your **Lovelace UI**.
+
+    # I have no idea what I'm doing
+  - title: Glance
+    id: glance
+
+    cards:
+      - type: entity-filter 
+        entities:
+          - binary_sensor.front_door
+        state_filter:
+          - "on"
+        card:
+          type: glance
+          title: What doors are open?
+          show_state: false
+          show_name: true
+
+      - type: entity-filter
+        entities:
+          - entity: light.office_lamp
+            tap_action: toggle
+        state_filter:
+          - "on"
+        card:
+          type: glance
+          show_state: false
+            
