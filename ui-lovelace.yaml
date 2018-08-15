@@ -65,6 +65,7 @@ views:
     # I have no idea what I'm doing
   - title: Glance
     id: glance
+    icon: mdi:eye
 
     cards:
       - type: entity-filter 
@@ -88,3 +89,15 @@ views:
           type: glance
           show_state: false
             
+  - title: Test
+
+    cards:
+      - type: entities
+        entities:
+          - entity: sensor.front_door_temp
+            name: Lovelace1
+      - type: history-graph
+        entities:
+          - entity: sensor.front_door_temp
+            name: Lovelace2 
+ 
