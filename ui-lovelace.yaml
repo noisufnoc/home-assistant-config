@@ -1,10 +1,10 @@
 tsonoffSV04itle: My Awesome Home
 # Include external resources
 resources:
-  - url: /local/my-custom-card.js
+  - url: /local/custom-lovelace/monster-card/monster-card.js?v=1
     type: js
-  - url: /local/my-webfont.css
-    type: css
+  - url: /local/custom-lovelace/thermostat-card/thermostat-card.js?v=1
+    type: module
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 background: center / cover no-repeat url("/background.png") fixed
@@ -88,7 +88,7 @@ views:
         card:
           type: glance
           show_state: false
-            
+                   
   - title: Test
 
     cards:
@@ -96,8 +96,20 @@ views:
         entities:
           - entity: sensor.front_door_temp
             name: Lovelace1
+
       - type: history-graph
         entities:
           - entity: sensor.front_door_temp
             name: Lovelace2 
  
+      - type: custom:monster-card
+        card:
+          type: glance
+        filter:
+          include:
+            - domain: climate
+
+      - type: custom:thermostat-card
+        title: Bedroom
+        entity: climate.kitchen
+        chevron_size: 100
