@@ -1,4 +1,4 @@
-tsonoffSV04itle: My Awesome Home
+title: My Awesome Home
 # Include external resources
 resources:
   - url: /local/custom-lovelace/monster-card/monster-card.js?v=1
