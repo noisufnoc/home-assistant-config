@@ -80,6 +80,12 @@ octoprint:
 #apiai:
 #intent_script: !include intent_script.yaml
 
+#panel_iframe:
+#  lovelace:
+#    title: 'Lovelace UI'
+#    icon: mdi:motorbike
+#    url: 'https://ha.noisufnoc.com/lovelace'
+
 usps:
   username: !secret usps_username
   password: !secret usps_password
