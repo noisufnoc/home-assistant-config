@@ -19,6 +19,7 @@ recorder:
 http:
   api_password: !secret api_password
   use_x_forwarded_for: True
+  trusted_proxies: 10.0.0.61
   ip_ban_enabled: True
   login_attempts_threshold: 5
 
