@@ -10,6 +10,7 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  themes: !include_dir_merge_named themes
 
 recorder:
   db_url: !secret recorder_db_url
@@ -85,6 +86,12 @@ octoprint:
 #    title: 'Lovelace UI'
 #    icon: mdi:motorbike
 #    url: 'https://ha.noisufnoc.com/lovelace'
+
+weblink:
+  entities:
+    - name: Lovelace UI
+      url: /lovelace
+      icon: mdi:love
 
 usps:
   username: !secret usps_username
