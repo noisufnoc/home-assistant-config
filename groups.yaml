@@ -254,6 +254,7 @@
     name: Backyard Lights
     entities:
       - light.deck_lights
+      - light.back_floodlight
 
 # Rooms by Floor
         
