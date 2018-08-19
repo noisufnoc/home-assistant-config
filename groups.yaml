@@ -237,6 +237,7 @@
     name: Office Lights
     entities:
       - light.office_lamp
+      - light.office_desk_lamp
 
   living_room_lights:
     name: Living Room Lights
