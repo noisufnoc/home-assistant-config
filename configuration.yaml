@@ -127,11 +127,11 @@ google_assistant:
       expose: true
       name: Office Lamp
       room: Office
-     light.office_desk_lamp:
+    light.office_desk_lamp:
       expose: true
       name: Office Desk Lamp
       room: Office
-   light.steveo_light:
+    light.steveo_light:
       expose: true
       name: Stevens Night Light
       room: Steven's Bedroom
