@@ -243,6 +243,12 @@
     entities:
       - light.living_room_lamp
 
+  kitchen_lights:
+    name: Kitchen Lights
+    entities:
+      - light.kitchen_light
+      - light.kitchen_hall_light
+
   backyard_lights:
     name: Backyard Lights
     entities:
@@ -256,6 +262,7 @@
       - group.family_room_lights
       - group.living_room_lights
       - group.mudroom_lights
+      - group.kitchen_lights
 
   upstairs_lights:
     name: Upstairs Lights
@@ -357,6 +364,8 @@
     entities:
      - climate.kitchen
      - group.dishwasher
+     - switch.kitchen_light
+     - switch.kitchen_hall_light
   
   garage:
     view: yes
