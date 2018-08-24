@@ -82,6 +82,16 @@ script:
       - service: rest_command.octoprint_connect_printer
 
 ################################################
+## weblink
+################################################
+
+  #weblink:
+  #  entities:
+  #    - name: OctoPrint UI
+  #      url: http://octoprint.noisufnoc.net
+#      icon: /local/octoprint.png
+
+################################################
 ## group
 ################################################
 
