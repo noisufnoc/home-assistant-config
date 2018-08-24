@@ -44,13 +44,13 @@ homeassistant:
 cover:
   - platform: mqtt
     name: "test"
-    state_topic: "cmnd/2/POWER2"
+    state_topic: "smartthings/Garage Door/contact"
     command_topic: "cmnd/garage_door_opener/POWER1"
     payload_open: "ON"
     payload_close: "ON"
     payload_stop: "ON"
-    state_open: "ON"
-    state_closed: "OFF"
+    state_open: "open"
+    state_closed: "closed"
     optomistic: false
     retain: false
 
