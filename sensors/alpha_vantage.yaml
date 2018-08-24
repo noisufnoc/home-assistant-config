@@ -6,6 +6,6 @@ symbols:
   - symbol: AMZN
     name: Amazon
 foreign_exchange:
-  - name: USD_EUR
-    from: USD
-    to: EUR
+  - name: Bitcoin
+    from: BTC
+    to: USD
