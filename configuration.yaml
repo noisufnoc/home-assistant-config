@@ -65,7 +65,7 @@ cloud:
         - light.holiday_3:
         - switch.roomba:
         - cover.garage_door_opener:
-    entitiy_config:
+    entity_config:
       light.steveo_light:
         name: Stevens Night Light
       light.holiday_1:
