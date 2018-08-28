@@ -54,17 +54,17 @@ cloud:
   google_actions:
     filter:
       include_entities:
-        - light.amelias_lamp:
-        - light.family_room_lamp:
-        - light.living_room_lamp:
-        - light.office_lamp:
-        - light.office_desk_lamp:
-        - light.steveo_light:
-        - light.holiday_1:
-        - light.holiday_2:
-        - light.holiday_3:
-        - switch.roomba:
-        - cover.garage_door_opener:
+        - light.amelias_lamp
+        - light.family_room_lamp
+        - light.living_room_lamp
+        - light.office_lamp
+        - light.office_desk_lamp
+        - light.steveo_light
+        - light.holiday_1
+        - light.holiday_2
+        - light.holiday_3
+        - switch.roomba
+        - cover.garage_door_opener
           #    entity_config:
           #      light.steveo_light:
           #        name: Stevens Night Light
