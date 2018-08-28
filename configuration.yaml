@@ -49,6 +49,34 @@ logbook:
 sun:
 config:
 
+# Trying hass.io cloud for GA integration
+cloud:
+  google_actions:
+    filter:
+      include_entities:
+        - light.amelias_lamp:
+        - light.family_room_lamp:
+        - light.living_room_lamp:
+        - light.office_lamp:
+        - light.office_desk_lamp:
+        - light.steveo_light:
+        - light.holiday_1:
+        - light.holiday_2:
+        - light.holiday_3:
+        - switch.roomba:
+        - cover.garage_door_opener:
+    entitiy_config:
+      light.steveo_light:
+        name: Stevens Night Light
+      light.holiday_1:
+        name: Garland
+      light.holiday_2:
+        name: Christmas Tree Front
+      light.holiday_3:
+        name: Christmas Tree Back
+      cover.garage_door_opener:
+        name: Garage Door
+
 # Things that didnt get put into an included yaml file...
         
 # Text to speech
@@ -98,55 +126,55 @@ usps:
   username: !secret usps_username
   password: !secret usps_password
 
-google_assistant:
-  project_id: !secret google_project_id
-  client_id: !secret google_client_id
-  access_token: !secret google_access_token
-  api_key: !secret google_homegraph_api_key
-  expose_by_default: false
-  entity_config:
-    group.downstairs_lights:
-      expose: true
-      name: Downstairs Lights
-    group.upstairs_lights:
-      expose: true
-      name: Upstairs Lights
-    light.amelias_lamp:
-      expose: true
-      name: Amelias Lamp
-      room: Amelia's Bedroom
-    light.family_room_lamp:
-      expose: true
-      name: Family Room Lamp
-      room: Family Room
-    light.living_room_lamp:
-      expose: true
-      name: Living Room Lamp
-      room: Living Room
-    light.office_lamp:
-      expose: true
-      name: Office Lamp
-      room: Office
-    light.office_desk_lamp:
-      expose: true
-      name: Office Desk Lamp
-      room: Office
-    light.steveo_light:
-      expose: true
-      name: Stevens Night Light
-      room: Steven's Bedroom
-    light.holiday_1:
-      expose: true
-      name: Garland
-    light.holiday_2:
-      expose: true
-      name: Christmas Tree Front
-    light.holiday_3:
-      expose: true
-      name: Christmas Tree Back
-    switch.roomba:
-      expose: true
-      name: Roomba
-    cover.garage_door_opener:
-      expose: true
-      name: Garage Door
+#google_assistant:
+#  project_id: !secret google_project_id
+#  client_id: !secret google_client_id
+#  access_token: !secret google_access_token
+#  api_key: !secret google_homegraph_api_key
+#  expose_by_default: false
+#  entity_config:
+#    group.downstairs_lights:
+#      expose: true
+#      name: Downstairs Lights
+#    group.upstairs_lights:
+#      expose: true
+#      name: Upstairs Lights
+#    light.amelias_lamp:
+#      expose: true
+#      name: Amelias Lamp
+#      room: Amelia's Bedroom
+#    light.family_room_lamp:
+#      expose: true
+#      name: Family Room Lamp
+#      room: Family Room
+#    light.living_room_lamp:
+#      expose: true
+#      name: Living Room Lamp
+#      room: Living Room
+#    light.office_lamp:
+#      expose: true
+#      name: Office Lamp
+#      room: Office
+#    light.office_desk_lamp:
+#      expose: true
+#      name: Office Desk Lamp
+#      room: Office
+#    light.steveo_light:
+#      expose: true
+#      name: Stevens Night Light
+#      room: Steven's Bedroom
+#    light.holiday_1:
+#      expose: true
+#      name: Garland
+#    light.holiday_2:
+#      expose: true
+#      name: Christmas Tree Front
+#    light.holiday_3:
+#      expose: true
+#      name: Christmas Tree Back
+#    switch.roomba:
+#      expose: true
+#      name: Roomba
+#    cover.garage_door_opener:
+#      expose: true
+#      name: Garage Door
