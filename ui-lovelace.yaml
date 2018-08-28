@@ -97,6 +97,10 @@ views:
           - entity: sensor.front_door_temp
             name: Lovelace1
 
+      - type: entities
+        entities:
+          - cover.garage_door_opener
+
       - type: history-graph
         entities:
           - entity: sensor.front_door_temp
@@ -110,6 +114,8 @@ views:
             - domain: climate
 
       - type: custom:thermostat-card
-        title: Bedroom
+        title: Nest
         entity: climate.kitchen
         chevron_size: 100
+
+
