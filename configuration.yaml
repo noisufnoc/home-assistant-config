@@ -147,3 +147,6 @@ google_assistant:
     switch.roomba:
       expose: true
       name: Roomba
+    cover.garage_door_opener:
+      expose: true
+      name: Garage Door
