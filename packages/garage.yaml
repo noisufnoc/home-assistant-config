@@ -43,7 +43,7 @@ homeassistant:
 
 cover:
   - platform: mqtt
-    name: "test"
+    name: "Garage Door Opener"
     state_topic: "smartthings/Garage Door/contact"
     command_topic: "cmnd/garage_door_opener/POWER1"
     payload_open: "ON"
@@ -64,7 +64,7 @@ cover:
       control: hidden
       icon: mdi:garage
       entities:
-        - cover.test
+        - cover.garage_door_opener
 
 ################################################
 ## input boolean
