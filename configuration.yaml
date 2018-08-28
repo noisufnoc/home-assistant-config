@@ -65,17 +65,17 @@ cloud:
         - light.holiday_3
         - switch.roomba
         - cover.garage_door_opener
-          #    entity_config:
-          #      light.steveo_light:
-          #        name: Stevens Night Light
-          #      light.holiday_1:
-          #        name: Garland
-          #      light.holiday_2:
-          #        name: Christmas Tree Front
-          #      light.holiday_3:
-          #        name: Christmas Tree Back
-          #      cover.garage_door_opener:
-          #        name: Garage Door
+    entity_config:
+      light.steveo_light:
+        name: Stevens Night Light
+      light.holiday_1:
+        name: Garland
+      light.holiday_2:
+        name: Christmas Tree Front
+      light.holiday_3:
+        name: Christmas Tree Back
+      cover.garage_door_opener:
+        name: Garage Door
 
 # Things that didnt get put into an included yaml file...
         
