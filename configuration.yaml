@@ -65,6 +65,8 @@ cloud:
         - light.holiday_3
         - switch.roomba
         - cover.garage_door_opener
+        - scene.master_bedroom_normal
+        - script.check_doors
     entity_config:
       light.steveo_light:
         name: Stevens Night Light
@@ -76,6 +78,11 @@ cloud:
         name: Christmas Tree Back
       cover.garage_door_opener:
         name: Garage Door
+      scene.master_bedroom_normal:
+        name: Reset Master Bedroom
+      script.check_doors:
+        name: Check The Doors
+
 
 # Things that didnt get put into an included yaml file...
         
