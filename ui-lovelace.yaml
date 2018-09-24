@@ -3,6 +3,8 @@ title: My Awesome Home
 resources:
   - url: /local/custom-lovelace/monster-card/monster-card.js?v=1
     type: js
+  - url: /local/mini-media-player/mini-media-player.js?v=1
+    type: js
   - url: /local/custom-lovelace/thermostat-card/thermostat-card.js?v=1
     type: module
 
@@ -118,4 +120,16 @@ views:
         entity: climate.kitchen
         chevron_size: 100
 
+      - type: custom:mini-media-player
+        entity: media_player.down_the_stairs
+        icon: 'mdi:cast'
 
+      - type: entities
+        title: Media
+        entities:
+        - entity: media_player.garage
+          type: "custom:mini-media-player"
+          group: true
+        - entity: media_player.kitchen_home
+          type: "custom:mini-media-player"
+          group: true
