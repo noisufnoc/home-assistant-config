@@ -349,6 +349,8 @@
       - group.office_lights
       - group.working_from_home_sensor
       - group.octoprint
+      - group.monoprice_mini_delta
+      - group.prusa_i3_mk3
       - camera.3d_printer_live_view
       - input_select.work_from_home_status
   
