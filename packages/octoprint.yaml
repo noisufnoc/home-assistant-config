@@ -196,7 +196,24 @@ group:
       - sensor.octoprint_target_bed_temp
       - sensor.octoprint_target_tool0_temp 
 
-#  Prusa i3 MK3:
-#    control: hidden
-#    entities:
-#      
+  Prusa i3 MK3:
+    control: hidden
+    entities:
+      - switch.prusa_i3_mk3
+      - sensor.prusa_i3_mk3_current
+      - sensor.prusa_i3_mk3_energy_today
+      - sensor.prusa_i3_mk3_energy_total
+      - sensor.prusa_i3_mk3_energy_yesterday
+      - sensor.prusa_i3_mk3_power
+      - sensor.prusa_i3_mk3_voltage 
+      
+  Monoprice Mini Delta:
+    control: hidden
+    entities:
+      - switch.monoprice_mini_delta
+      - sensor.monoprice_mini_delta_current
+      - sensor.monoprice_mini_delta_energy_today
+      - sensor.monoprice_mini_delta_energy_total
+      - sensor.monoprice_mini_delta_energy_yesterday
+      - sensor.monoprice_mini_delta_power
+      - sensor.monoprice_mini_delta_voltage      
