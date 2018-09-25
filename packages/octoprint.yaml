@@ -106,6 +106,16 @@ sensor:
     value_template: "{{ value_json['ENERGY'].Total }}"
     unit_of_measurement: "kWh"
         
+  - platform: rest
+    resource: 'http://octoprint.noisufnoc.net/api/job'
+    name: 'Octoprint Current File'
+    method: GET
+    headers:
+      X-Api-Key: !secret octoprint_api_key
+    value_template: "{{ value_json.['File'].display }}"
+    
+
+
 ################################################
 ## switch
 ################################################
