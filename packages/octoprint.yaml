@@ -113,9 +113,10 @@ sensor:
     headers:
       X-Api-Key: !secret octoprint_api_key
     json_attributes:
-      - File.['display']
-    value_template: "{{ value_json.value }}"
+      - job['file']['display']
+    value_template: "{{ value_json['job']['file']['name'] }}"
     
+
 
 
 ################################################
@@ -201,6 +202,7 @@ group:
       - script.octoprint_api_connect_printer
       - binary_sensor.octoprint_printing
       - binary_sensor.octoprint_printing_error
+      - sensor.octoprint_current_file
       - sensor.octoprint_actual_bed_temp
       - sensor.octoprint_actual_tool0_temp
       - sensor.octoprint_current_state
