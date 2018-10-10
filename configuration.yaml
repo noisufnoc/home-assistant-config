@@ -105,6 +105,10 @@ splunk:
   token: !secret splunk_token
   host: hec.noisufnoc.net
 
+statsd:
+  #  host: hec.noisufnoc.net
+  host: 10.0.0.20
+
 apcupsd:
   host: apcupsd.noisufnoc.net
 
