@@ -22,15 +22,30 @@ homeassistant:
       friendly_name: Connect Printer
       icon: mdi:toggle-switch
 
+    script.octoprint_pmk3_api_connect_printer:
+      friendly_name: Connect Prusa i3 MK3
+      icon: mdi:toggle-switch
+
+    script.octoprint_mpmd_api_connect_printer:
+      friendly_name: Connect Monoprice Mini Delta
+      icon: mdi:toggle-switch
+
 ################################################
 ## binary_sensors
 ################################################
 
 binary_sensor:
   - platform: octoprint
+    name: Prusa i3 MK3
     monitored_conditions:
       - Printing
       - Printing Error
+  - platform: octoprint
+    name: Monoprice Mini Delta
+    monitored_conditions:
+      - Printing
+      - Printing Error
+
 
 ################################################
 ## sensors
@@ -38,7 +53,13 @@ binary_sensor:
 
 sensor:
   - platform: octoprint
-    name: OctoPrint
+    name: Prusa i3 MK3
+    monitored_conditions:
+      - Current State
+      - Temperatures
+      - Job Percentage
+  - platform: octoprint
+    name: Monoprice Mini Delta
     monitored_conditions:
       - Current State
       - Temperatures
@@ -107,8 +128,18 @@ sensor:
     unit_of_measurement: "kWh"
         
   - platform: rest
-    resource: 'http://octoprint.noisufnoc.net/api/job'
-    name: 'Octoprint Current File'
+    resource: 'http://octoprint.noisufnoc.net/pmk3/api/job'
+    name: 'Prusa i3 MK3 Current File'
+    method: GET
+    headers:
+      X-Api-Key: !secret octoprint_api_key
+    json_attributes:
+      - job['file']['display']
+    value_template: "{{ value_json['job']['file']['name'] }}"
+         
+  - platform: rest
+    resource: 'http://octoprint.noisufnoc.net/mpmd/api/job'
+    name: 'Monoprince Mini Delta Current File'
     method: GET
     headers:
       X-Api-Key: !secret octoprint_api_key
@@ -116,9 +147,6 @@ sensor:
       - job['file']['display']
     value_template: "{{ value_json['job']['file']['name'] }}"
     
-
-
-
 ################################################
 ## switch
 ################################################
@@ -171,6 +199,24 @@ rest_command:
       X-Api-Key: !secret octoprint_api_key
     payload: '{"command":"connect", "port":"/dev/ttyACM0", "baudrate":115200}'
 
+  octoprint_pmk3_connect_printer:
+    method: POST
+    url: 'http://octoprint.noisufnoc.net/pmk3/api/connection'
+    headers:
+      content-type: application/json
+      X-Api-Key: !secret octoprint_api_key
+#    payload: '{"command":"connect", "port":"/dev/pmk3", "baudrate":115200}'
+    payload: '{"command":"connect", "port":"/dev/pmk3"}'
+
+  octoprint_mpmd_connect_printer:
+    method: POST
+    url: 'http://octoprint.noisufnoc.net/mpmd/api/connection'
+    headers:
+      content-type: application/json
+      X-Api-Key: !secret octoprint_api_key
+#    payload: '{"command":"connect", "port":"/dev/mpmd", "baudrate":115200}'
+    payload: '{"command":"connect", "port":"/dev/mpmd"}'
+
 ################################################
 ## script
 ################################################
@@ -180,14 +226,25 @@ script:
     sequence:
       - service: rest_command.octoprint_connect_printer
 
+  octoprint_pmk3_api_connect_printer:
+    sequence:
+      - service: rest_command.octoprint_pmk3_connect_printer
+
+  octoprint_mpmd_api_connect_printer:
+    sequence:
+      - service: rest_command.octoprint_mpmd_connect_printer
+
 ################################################
 ## weblink
 ################################################
 
-  #weblink:
-  #  entities:
-  #    - name: OctoPrint UI
-  #      url: http://octoprint.noisufnoc.net
+weblink:
+  entities:
+    - name: Prusa i3 MK3 OctoPrint UI
+      url: http://octoprint.noisufnoc.net/pmk3
+#      icon: /local/octoprint.png
+    - name: Monoprice Mini Delta OctoPrint UI
+      url: http://octoprint.noisufnoc.net/mpmd
 #      icon: /local/octoprint.png
 
 ################################################
@@ -203,6 +260,8 @@ group:
       - binary_sensor.octoprint_printing
       - binary_sensor.octoprint_printing_error
       - sensor.octoprint_current_file
+      - sensor.prusa_i3_mk3_current_file
+      - sensor.monoprice_mini_delta_current_file
       - sensor.octoprint_actual_bed_temp
       - sensor.octoprint_actual_tool0_temp
       - sensor.octoprint_current_state
@@ -214,6 +273,8 @@ group:
     control: hidden
     entities:
       - switch.prusa_i3_mk3
+      - weblink.prusa_i3_mk3_octoprint_ui
+      - script.octoprint_pmk3_api_connect_printer
       - sensor.prusa_i3_mk3_current
       - sensor.prusa_i3_mk3_energy_today
       - sensor.prusa_i3_mk3_energy_total
@@ -225,6 +286,8 @@ group:
     control: hidden
     entities:
       - switch.monoprice_mini_delta
+      - weblink.monoprice_mini_delta_octoprint_ui
+      - script.octoprint_mpmd_api_connect_printer
       - sensor.monoprice_mini_delta_current
       - sensor.monoprice_mini_delta_energy_today
       - sensor.monoprice_mini_delta_energy_total

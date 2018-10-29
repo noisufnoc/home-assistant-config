@@ -8,5 +8,9 @@
   limit_refetch_to_url_change: true
 
 - platform: mjpeg
-  name: 3D Printer Live View
-  mjpeg_url: http://octoprint.noisufnoc.net/webcam/?action=stream
+  name: MPMD 3D Printer Live View
+  mjpeg_url: http://octoprint.noisufnoc.net/webcam_mpmd/?action=stream
+
+- platform: mjpeg
+  name: Prusa 3D Printer Live View
+  mjpeg_url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=stream
