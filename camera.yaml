@@ -9,8 +9,10 @@
 
 - platform: mjpeg
   name: MPMD 3D Printer Live View
+  still_image_url: http://octoprint.noisufnoc.net/webcam_mpmd/?action=snapshot
   mjpeg_url: http://octoprint.noisufnoc.net/webcam_mpmd/?action=stream
 
 - platform: mjpeg
   name: Prusa 3D Printer Live View
+  still_image_url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=snapshot
   mjpeg_url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=stream
