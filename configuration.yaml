@@ -113,12 +113,14 @@ apcupsd:
   host: apcupsd.noisufnoc.net
 
 octoprint:
-  - host: octoprint.noisufnoc.net/pmk3
+  - host: octoprint.noisufnoc.net
+    path: pmk3
     api_key: !secret octoprint_api_key
     name: Prusa i3 MK3
     bed: true
     number_of_tools: 1
-  - host: octoprint.noisufnoc.net/mpmd
+  - host: octoprint.noisufnoc.net
+    path: mpmd
     api_key: !secret octoprint_api_key
     name: Monoprice Mini Delta
     bed: true
