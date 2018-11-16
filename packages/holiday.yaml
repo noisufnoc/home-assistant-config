@@ -44,6 +44,10 @@ homeassistant:
       friendly_name: Christmas Tree - Back
       icon: mdi:pine-tree
 
+    light.mini_christmas_tree:
+      <<: *customize
+      icon: mdi:pine-tree
+
     ################################################
     ## customize / sensor
     ################################################
@@ -68,6 +72,7 @@ group:
       - light.holiday_1
       - light.holiday_2
       - light.holiday_3
+      - light.mini_christmas_tree
 
   Cheerlights:  
     control: hidden
@@ -128,6 +133,16 @@ light:
     command_topic: "smartthings/Front Yard Lights/switch"
     payload_on: "on"
     payload_off: "off"
+    retain: true
+
+  - platform: mqtt
+    name: "Mini Christmas Tree"
+    command_topic: "cmnd/mini_led_tree/power"
+    state_topic: "stat/mini_led_tree/POWER"
+    rgb_state_topic: "stat/mini_led_tree/color"
+    rgb_command_topic: "cmnd/mini_led_tree/color"
+    brightness_state_topic: "stat/mini_led_tree/dimmer"
+    brightness_command_topic: "cmnd/mini_led_tree/dimmer"
     retain: true
 
 #  - platform: mqtt
