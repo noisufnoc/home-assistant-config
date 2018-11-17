@@ -63,16 +63,17 @@ cloud:
         - light.living_room_lamp
         - light.office_lamp
         - light.office_desk_lamp
-        - light.steveo_light
         - light.holiday_1
         - light.holiday_2
         - light.holiday_3
+        - light.mini_christmas_tree
+        - light.stevens_starlight
         - switch.roomba
         - cover.garage_door_opener
         - scene.master_bedroom_normal
         - script.check_doors
     entity_config:
-      light.steveo_light:
+      light.stevens_starlight:
         name: Stevens Night Light
       light.holiday_1:
         name: Garland

@@ -220,7 +220,7 @@
   steven_bedroom_lights:
     name: Steven's Bedroom Lights
     entities:
-      - light.steveo_light
+      - light.stevens_starlight
 
   amelia_bedroom_lights:
     name: Amelia's Bedroom Lights

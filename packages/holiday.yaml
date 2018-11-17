@@ -143,6 +143,22 @@ light:
     rgb_command_topic: "cmnd/mini_led_tree/color"
     brightness_state_topic: "stat/mini_led_tree/dimmer"
     brightness_command_topic: "cmnd/mini_led_tree/dimmer"
+    brightness_scale: 100
+    effect_state_topic: "stat/mini_led_tree/RESULT"
+    effect_command_topic: "cmnd/mini_led_tree/scheme"
+    effect_value_template: "{{ value_json.scheme }}"
+    effect_list:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
     retain: true
 
 #  - platform: mqtt

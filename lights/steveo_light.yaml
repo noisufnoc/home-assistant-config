@@ -1,9 +1,25 @@
-platform: mqtt_json  
-name: "Steve-o Light"  
-state_topic: "noisufnoc/steveo_light"  
-command_topic: "noisufnoc/steveo_light/set"  
-brightness: true  
-flash: true  
-rgb: true  
-optimistic: false  
-qos: 0  
+platform: mqtt
+name: "Steven's Starlight"
+command_topic: "cmnd/steveo_light/power"
+state_topic: "stat/steveo_light/POWER"
+rgb_state_topic: "stat/steveo_light/color"
+rgb_command_topic: "cmnd/steveo_light/color"
+brightness_state_topic: "stat/steveo_light/dimmer"
+brightness_command_topic: "cmnd/steveo_light/dimmer"
+brightness_scale: 100
+effect_state_topic: "stat/steveo_light/RESULT"
+effect_command_topic: "cmnd/steveo_light/scheme"
+effect_value_template: "{{ value_json.scheme }}"
+effect_list:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+retain: true
