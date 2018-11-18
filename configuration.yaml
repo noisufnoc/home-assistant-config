@@ -69,6 +69,8 @@ cloud:
         - light.mini_christmas_tree
         - light.stevens_starlight
         - switch.roomba
+        - switch.prusa_i3_mk3
+        - switch.monoprice_mini_delta
         - cover.garage_door_opener
         - scene.master_bedroom_normal
         - script.check_doors
@@ -81,6 +83,10 @@ cloud:
         name: Christmas Tree Front
       light.holiday_3:
         name: Christmas Tree Back
+      switch.prusa_i3_mk3:
+        name: Prusa
+      switch.monoprice_mini_delta:
+        name: Mini Delta
       cover.garage_door_opener:
         name: Garage Door
       scene.master_bedroom_normal:
