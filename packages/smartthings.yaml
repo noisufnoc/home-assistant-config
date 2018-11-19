@@ -89,3 +89,158 @@
 #################################################
 ### automation
 #################################################
+#
+#platform: mqtt
+#state_topic: "smartthings/Motion Sensor/motion"
+#name: "Mud Room Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Utility Room Leak Sensor/water"
+#name: "Utility Room Leak Sensor"
+#payload_on: "wet"
+#payload_off: "dry"
+#sensor_class: moisture
+#
+#platform: mqtt
+#state_topic: "smartthings/Aeon Multisensor 6/motion"
+#name: "Multisensor Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Front Door/contact"
+#name: "Front Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Garage Door/contact"
+#name: "Garage Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Garage Rear Door/contact"
+#name: "Garage Rear Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Door/contact"
+#name: "Office Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Sliding Glass Door/contact"
+#name: "Sliding Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Family Room Motion/motion"
+#name: "Family Room Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Desk Motion/motion"
+#name: "Office Desk Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Motion/motion"
+#name: "Office Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#
+#platform: mqtt
+#state_topic: "smartthings/Motion Sensor/motion"
+#name: "Mud Room Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Utility Room Leak Sensor/water"
+#name: "Utility Room Leak Sensor"
+#payload_on: "wet"
+#payload_off: "dry"
+#sensor_class: moisture
+#
+#platform: mqtt
+#state_topic: "smartthings/Aeon Multisensor 6/motion"
+#name: "Multisensor Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Front Door/contact"
+#name: "Front Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Garage Door/contact"
+#name: "Garage Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Garage Rear Door/contact"
+#name: "Garage Rear Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Door/contact"
+#name: "Office Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Sliding Glass Door/contact"
+#name: "Sliding Door"
+#payload_on: "open"
+#payload_off: "closed"
+#sensor_class: opening
+#
+#platform: mqtt
+#state_topic: "smartthings/Family Room Motion/motion"
+#name: "Family Room Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Desk Motion/motion"
+#name: "Office Desk Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
+#
+#platform: mqtt
+#state_topic: "smartthings/Office Motion/motion"
+#name: "Office Motion Sensor"
+#payload_on: "active"
+#payload_off: "inactive"
+#sensor_class: motion
