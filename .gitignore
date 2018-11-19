@@ -25,3 +25,4 @@ ip_bans.yaml
 .config_entries.json
 .storage/*
 .cloud/*
+disabled/*
