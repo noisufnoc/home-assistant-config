@@ -20,11 +20,11 @@ homeassistant:
 
     script.octoprint_pmk3_api_connect_printer:
       friendly_name: Connect Prusa i3 MK3
-      icon: mdi:toggle-switch
+      entity_picture: /local/octoprint.png
 
     script.octoprint_mpmd_api_connect_printer:
       friendly_name: Connect Monoprice Mini Delta
-      icon: mdi:toggle-switch
+      entity_picture: /local/octoprint.png
 
 ################################################
 ## binary_sensors

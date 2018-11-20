@@ -172,6 +172,14 @@
     control: hidden
     entities:
      - binary_sensor.office_door
+
+  money:
+    name: Cash Money
+    control: hidden
+    entities:
+      - sensor.splunk
+      - sensor.amazon
+      - sensor.bitcoin
   
 #  minimote_b:
 #    name: Minimote B
