@@ -18,10 +18,6 @@ homeassistant:
     switch.3d_printer_power:
       entity_picture: /local/octoprint.png
 
-    script.octoprint_api_connect_printer:
-      friendly_name: Connect Printer
-      icon: mdi:toggle-switch
-
     script.octoprint_pmk3_api_connect_printer:
       friendly_name: Connect Prusa i3 MK3
       icon: mdi:toggle-switch
@@ -154,15 +150,6 @@ sensor:
 switch:
   - platform: mqtt
     <<: *customize
-    name: "3D Printer Power"
-    state_topic: "stat/3d_printer/POWER"
-    command_topic: "cmnd/3d_printer/power"
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-    qos: 1
-
-  - platform: mqtt
     name: Prusa i3 MK3
     command_topic: "cmnd/prusa/POWER"
     state_topic: "stat/prusa/POWER"
@@ -175,6 +162,7 @@ switch:
     retain: true
 
   - platform: mqtt
+    <<: *customize
     name: Monoprice Mini Delta
     command_topic: "cmnd/mini_delta/POWER"
     state_topic: "stat/mini_delta/POWER"
@@ -191,21 +179,12 @@ switch:
 ################################################
 
 rest_command:
-  octoprint_connect_printer:
-    method: POST
-    url: 'http://octoprint.noisufnoc.net/api/connection'
-    headers:
-      content-type: application/json
-      X-Api-Key: !secret octoprint_api_key
-    payload: '{"command":"connect", "port":"/dev/ttyACM0", "baudrate":115200}'
-
   octoprint_pmk3_connect_printer:
     method: POST
     url: 'http://octoprint.noisufnoc.net/pmk3/api/connection'
     headers:
       content-type: application/json
       X-Api-Key: !secret octoprint_api_key
-#    payload: '{"command":"connect", "port":"/dev/pmk3", "baudrate":115200}'
     payload: '{"command":"connect", "port":"/dev/pmk3"}'
 
   octoprint_mpmd_connect_printer:
@@ -214,7 +193,6 @@ rest_command:
     headers:
       content-type: application/json
       X-Api-Key: !secret octoprint_api_key
-#    payload: '{"command":"connect", "port":"/dev/mpmd", "baudrate":115200}'
     payload: '{"command":"connect", "port":"/dev/mpmd"}'
 
 ################################################
@@ -222,10 +200,6 @@ rest_command:
 ################################################
 
 script:
-  octoprint_api_connect_printer:
-    sequence:
-      - service: rest_command.octoprint_connect_printer
-
   octoprint_pmk3_api_connect_printer:
     sequence:
       - service: rest_command.octoprint_pmk3_connect_printer
@@ -242,10 +216,9 @@ weblink:
   entities:
     - name: Prusa i3 MK3 OctoPrint UI
       url: http://octoprint.noisufnoc.net/pmk3
-#      icon: /local/octoprint.png
+        
     - name: Monoprice Mini Delta OctoPrint UI
       url: http://octoprint.noisufnoc.net/mpmd
-#      icon: /local/octoprint.png
 
 ################################################
 ## group
