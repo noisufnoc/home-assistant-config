@@ -281,6 +281,17 @@ group:
       - sensor.prusa_i3_mk3_energy_yesterday
       - sensor.prusa_i3_mk3_power
       - sensor.prusa_i3_mk3_voltage 
+      - binary_sensor.prusa_i3_mk3_printing
+      - binary_sensor.prusa_i3_mk3_printing_error
+      - sensor.prusa_i3_mk3_actual_bed_temp
+      - sensor.prusa_i3_mk3_actual_tool0_temp
+      - sensor.prusa_i3_mk3_current_file
+      - sensor.prusa_i3_mk3_current_state
+      - sensor.prusa_i3_mk3_job_percentage
+      - sensor.prusa_i3_mk3_target_bed_temp
+      - sensor.prusa_i3_mk3_target_tool0_temp
+      - sensor.prusa_i3_mk3_time_elapsed
+      - sensor.prusa_i3_mk3_time_remaining
       
   Monoprice Mini Delta:
     control: hidden
@@ -294,3 +305,13 @@ group:
       - sensor.monoprice_mini_delta_energy_yesterday
       - sensor.monoprice_mini_delta_power
       - sensor.monoprice_mini_delta_voltage      
+      - binary_sensor.monoprice_mini_delta_printing
+      - binary_sensor.monoprice_mini_delta_printing_error
+      - sensor.monoprice_mini_delta_actual_bed_temp
+      - sensor.monoprice_mini_delta_actual_tool0_temp
+      - sensor.monoprice_mini_delta_current_state
+      - sensor.monoprice_mini_delta_job_percentage
+      - sensor.monoprice_mini_delta_target_bed_temp
+      - sensor.monoprice_mini_delta_target_tool0_temp
+      - sensor.monoprice_mini_delta_time_elapsed
+      - sensor.monoprice_mini_delta_time_remaining
