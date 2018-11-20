@@ -252,23 +252,6 @@ weblink:
 ################################################
 
 group:
-  OctoPrint:
-    control: hidden
-    entities:
-      - switch.3d_printer_power
-      - script.octoprint_api_connect_printer
-      - binary_sensor.octoprint_printing
-      - binary_sensor.octoprint_printing_error
-      - sensor.octoprint_current_file
-      - sensor.prusa_i3_mk3_current_file
-      - sensor.monoprice_mini_delta_current_file
-      - sensor.octoprint_actual_bed_temp
-      - sensor.octoprint_actual_tool0_temp
-      - sensor.octoprint_current_state
-      - sensor.octoprint_job_percentage
-      - sensor.octoprint_target_bed_temp
-      - sensor.octoprint_target_tool0_temp 
-
   Prusa i3 MK3:
     control: hidden
     entities:
@@ -283,13 +266,13 @@ group:
       - sensor.prusa_i3_mk3_voltage 
       - binary_sensor.prusa_i3_mk3_printing
       - binary_sensor.prusa_i3_mk3_printing_error
+      - sensor.prusa_i3_mk3_target_bed_temp
       - sensor.prusa_i3_mk3_actual_bed_temp
+      - sensor.prusa_i3_mk3_target_tool0_temp
       - sensor.prusa_i3_mk3_actual_tool0_temp
       - sensor.prusa_i3_mk3_current_file
       - sensor.prusa_i3_mk3_current_state
       - sensor.prusa_i3_mk3_job_percentage
-      - sensor.prusa_i3_mk3_target_bed_temp
-      - sensor.prusa_i3_mk3_target_tool0_temp
       - sensor.prusa_i3_mk3_time_elapsed
       - sensor.prusa_i3_mk3_time_remaining
       
@@ -307,11 +290,12 @@ group:
       - sensor.monoprice_mini_delta_voltage      
       - binary_sensor.monoprice_mini_delta_printing
       - binary_sensor.monoprice_mini_delta_printing_error
+      - sensor.monoprice_mini_delta_target_bed_temp
       - sensor.monoprice_mini_delta_actual_bed_temp
       - sensor.monoprice_mini_delta_actual_tool0_temp
+      - sensor.monoprice_mini_delta_target_tool0_temp
+      - sensor.monoprice_mini_delta_current_file
       - sensor.monoprice_mini_delta_current_state
       - sensor.monoprice_mini_delta_job_percentage
-      - sensor.monoprice_mini_delta_target_bed_temp
-      - sensor.monoprice_mini_delta_target_tool0_temp
       - sensor.monoprice_mini_delta_time_elapsed
       - sensor.monoprice_mini_delta_time_remaining
