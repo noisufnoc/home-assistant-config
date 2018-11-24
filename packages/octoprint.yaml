@@ -135,7 +135,7 @@ sensor:
          
   - platform: rest
     resource: 'http://octoprint.noisufnoc.net/mpmd/api/job'
-    name: 'Monoprince Mini Delta Current File'
+    name: 'Monoprice Mini Delta Current File'
     method: GET
     headers:
       X-Api-Key: !secret octoprint_api_key

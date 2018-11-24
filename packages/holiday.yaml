@@ -31,12 +31,12 @@ homeassistant:
 
     light.holiday_1:
       <<: *customize
-      friendly_name: Garland
+      friendly_name: Holiday 1
       icon: mdi:led-variant-on
 
     light.holiday_2:
       <<: *customize
-      friendly_name: Christmas Tree - Front
+      friendly_name: Garland
       icon: mdi:pine-tree
 
     light.holiday_3:
