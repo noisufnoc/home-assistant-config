@@ -42,7 +42,7 @@ group:
   rf433mhz_sensors:
     control: hidden
     entities:
-      - binary_sensor.433mhz_sensor_1
+      - binary_sensor.garage_attic_door
       - binary_sensor.433mhz_sensor_2
       - binary_sensor.433mhz_sensor_3
         
@@ -53,7 +53,7 @@ group:
 binary_sensor:
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
-    name: '433Mhz Sensor 1'
+    name: 'Garage Attic Door'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "14850A"
     payload_off: "14850E"
