@@ -1,0 +1,205 @@
+################################################################
+## packages / tasmota status
+################################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## binary_sensors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'tasmota_status'
+
+
+################################################
+## binary_sensors
+################################################
+
+################################################
+## sensors
+################################################
+
+sensor:
+  - platform: mqtt
+    name: "amelia_lamp"
+    state_topic: "stat/amelia_lamp/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/amelia_lamp/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "family_room_lamp"
+    state_topic: "stat/family_room_lamp/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/family_room_lamp/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "garage_door_opener"
+    state_topic: "stat/garage_door_opener/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/garage_door_opener/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "holiday_1"
+    state_topic: "stat/holiday_1/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/holiday_1/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "holiday_2"
+    state_topic: "stat/holiday_2/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/holiday_2/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "landscape_lights"
+    state_topic: "stat/landscape_lights/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/landscape_lights/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "living_room_lamp"
+    state_topic: "stat/living_room_lamp/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/living_room_lamp/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "mini_delta"
+    state_topic: "stat/mini_delta/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/mini_delta/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "mini_led_tree"
+    state_topic: "stat/mini_led_tree/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/mini_led_tree/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "office_desk_lamp"
+    state_topic: "stat/office_desk_lamp/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/office_desk_lamp/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "office_lamp"
+    state_topic: "stat/office_lamp/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/office_lamp/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "prusa"
+    state_topic: "stat/prusa/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/prusa/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "record_player"
+    state_topic: "stat/record_player/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/record_player/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "rf_bridge"
+    state_topic: "stat/rf_bridge/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/rf_bridge/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "steveo_light"
+    state_topic: "stat/steveo_light/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/steveo_light/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+        
+################################################
+## automations
+################################################
+
+automation:
+- alias: "Sonoff state on HA start-up"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/STATUS"
+        payload: "2"
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER1"
+        payload: ""
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER2"
+        payload: "" 
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER3"
+        payload: ""
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER4"
+        payload: ""
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER5"
+        payload: ""
+
+################################################
+## group
+################################################
+
+#group:
+  #Tasmota:
+    #entities:
+      #- sensor.foo
+      #- sensor.bar
+
