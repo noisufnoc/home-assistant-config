@@ -47,6 +47,7 @@ group:
     entities:
       - automation.telegram__bot_callback__3dprinter
       - automation.telegram__bot_callback__prusa
+      - automation.telegram__bot_callback__mpmd
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
       - automation.telegram__bot_command__temprature
@@ -59,7 +60,8 @@ group:
       - automation.telegram__notification__notify_if_any_exterior_door_open_past_midnight
       - automation.telegram__notification__send_alert_when_dishwasher_is_clean
       - automation.telegram__notification__send_alert_when_washing_machine_is_clean
-      - automation.telegram__notification__notify_when_3d_print_is_finished
+      - automation.telegram__notification__notify_when_mpmd_3d_print_is_finished
+      - automation.telegram__notification__notify_when_prusa_3d_print_is_finished
 
 ################################################
 ### automation
@@ -130,6 +132,24 @@ automation:
           disable_notification: True
 
 # Bot Callbacks
+
+  - alias: "Telegram - Bot Callback - mpmd"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_callback
+      event_data:
+        command: "/mpmdpower"
+    action:
+      - service: switch.toggle
+        data:
+          entity_id: switch.monoprice_mini_delta
+      - delay: '00:00:05'
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'I have turned the Monoprice Mini Delta Printer {{ states("switch.monoprice_mini_delta") }}.'
+          disable_notification: True
 
   - alias: "Telegram - Bot Callback - prusa"
     <<: *automation
@@ -273,7 +293,25 @@ automation:
         data:
           message: "You left a damn door open!"
 
-  - alias: 'Telegram - Notification - Notify when 3d print is finished'
+  - alias: 'Telegram - Notification - Notify when mpmd 3d print is finished'
+    <<: *automation
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.monoprice_mini_delta_job_percentage
+        value_template: '{{states.sensor.monoprice_mini_delta_job_percentage.state | int }}'
+        above: 99
+    action:
+      - service: notify.noisufnoc_emoh
+        data:
+          message: "Monoprice Mini Delta is done!"
+          data:
+            photo:
+              - url: http://octoprint.noisufnoc.net/webcam_mpmd/?action=snapshot
+                caption: "Monoprice Mini Delta is done!"
+            inline_keyboard:
+              - 'Toggle Monoprice Mini Delta:/mpmdpower'
+
+  - alias: 'Telegram - Notification - Notify when prusa 3d print is finished'
     <<: *automation
     trigger:
       - platform: numeric_state
@@ -283,7 +321,7 @@ automation:
     action:
       - service: notify.noisufnoc_emoh
         data:
-          message: "Printer is done!"
+          message: "Prusa Printer is done!"
           data:
             photo:
               - url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=snapshot
