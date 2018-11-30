@@ -1,0 +1,11 @@
+platform: alpha_vantage
+api_key: !secret alpha_vantage_api_key
+symbols:
+  - symbol: SPLK
+    name: Splunk
+  - symbol: AMZN
+    name: Amazon
+foreign_exchange:
+  - name: Bitcoin
+    from: BTC
+    to: USD
