@@ -135,18 +135,16 @@ automation:
       platform: event
       event_type: telegram_callback
       event_data:
-        command: "/fooo"
+        command: "/prusapower"
     action:
       - service: switch.toggle
         data:
-          entity_id: switch.office_desk_lamp
-          #entity_id: switch.prusa_i3_mk3
+          entity_id: switch.prusa_i3_mk3
       - delay: '00:00:05'
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.office_desk_lamp") }}.'
-          #message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
+          message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
           disable_notification: True
 
   - alias: "Telegram - Bot Command - 3dprinter"
@@ -164,7 +162,8 @@ automation:
       - service: telegram_bot.send_message
         data_template:
           target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the 3D Printer {{ states("switch.3d_printer_power") }}.'
+          message: 'I have turned the 3D Printer.'
+          #message: 'I have turned the 3D Printer {{ states("switch.3d_printer_power") }}.'
           disable_notification: True
 
 # Notifications
@@ -288,4 +287,4 @@ automation:
               - url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=snapshot
                 caption: "Prusa is done!"
             inline_keyboard:
-              - 'Toggle Prusa i3 MK3:/prusa'
+              - 'Toggle Prusa i3 MK3:/prusapower'
