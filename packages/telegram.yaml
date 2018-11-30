@@ -48,6 +48,7 @@ group:
       - automation.telegram__bot_command__3dprinter
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
+      - automation.telegram__bot_command__prusa
       - automation.telegram__bot_command__temprature
       - automation.telegram__bot_command__weather
       - automation.telegram__notification__ashley_is_home
@@ -126,6 +127,26 @@ automation:
         data_template:
           target: '{{ trigger.event.data.user_id }}'
           message: 'You tested the command with an arg!'
+          disable_notification: True
+
+  - alias: "Telegram - Bot Command - prusa"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_callback
+      event_data:
+        command: "/fooo"
+    action:
+      - service: switch.toggle
+        data:
+          entity_id: switch.office_desk_lamp
+          #entity_id: switch.prusa_i3_mk3
+      - delay: '00:00:05'
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.office_desk_lamp") }}.'
+          #message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
           disable_notification: True
 
   - alias: "Telegram - Bot Command - 3dprinter"
@@ -255,8 +276,8 @@ automation:
     <<: *automation
     trigger:
       - platform: numeric_state
-        entity_id: sensor.octoprint_job_percentage
-        value_template: '{{states.sensor.octoprint_job_percentage.state | int }}'
+        entity_id: sensor.prusa_i3_mk3_job_percentage
+        value_template: '{{states.sensor.prusa_i3_mk3_job_percentage.state | int }}'
         above: 99
     action:
       - service: notify.noisufnoc_emoh
@@ -264,7 +285,7 @@ automation:
           message: "Printer is done!"
           data:
             photo:
-              - url: http://octoprint.noisufnoc.net:8080/?action=snapshot
-                caption: "Printer is done!"
+              - url: http://octoprint.noisufnoc.net/webcam_pmk3/?action=snapshot
+                caption: "Prusa is done!"
             inline_keyboard:
-              - 'Toggle Printer:/3dprinter'
+              - 'Toggle Prusa i3 MK3:/prusa'
