@@ -45,9 +45,9 @@ group:
   telegram_bot:
     name: Telegram Bot - noisufnoc emoh
     entities:
-      - automation.telegram__bot_callback__3dprinter
       - automation.telegram__bot_callback__prusa
       - automation.telegram__bot_callback__mpmd
+      - automation.telegram__bot_command__3dprinter
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
       - automation.telegram__bot_command__temprature
@@ -131,6 +131,20 @@ automation:
           message: 'You tested the command with an arg!'
           disable_notification: True
 
+  - alias: "Telegram - Bot Command - 3dprinter"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/3dprinter"
+    action:
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'Youre asking about the printers'
+          disable_notification: True
+
 # Bot Callbacks
 
   - alias: "Telegram - Bot Callback - mpmd"
@@ -169,24 +183,6 @@ automation:
           message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
           disable_notification: True
 
-  - alias: "Telegram - Bot Callback - 3dprinter"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_callback
-      event_data:
-        command: "/3dprinter"
-    action:
-      - service: switch.toggle
-        data:
-          entity_id: switch.3d_printer_power
-      - delay: '00:00:05'
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the 3D Printer.'
-          #message: 'I have turned the 3D Printer {{ states("switch.3d_printer_power") }}.'
-          disable_notification: True
 
 # Notifications
 # Emojii Unicode - https://apps.timwhitlock.info/emoji/tables/unicode
