@@ -45,10 +45,10 @@ group:
   telegram_bot:
     name: Telegram Bot - noisufnoc emoh
     entities:
-      - automation.telegram__bot_command__3dprinter
+      - automation.telegram__bot_callback__3dprinter
+      - automation.telegram__bot_callback__prusa
       - automation.telegram__bot_command__args_test
       - automation.telegram__bot_command__guest_mode_toggle
-      - automation.telegram__bot_command__prusa
       - automation.telegram__bot_command__temprature
       - automation.telegram__bot_command__weather
       - automation.telegram__notification__ashley_is_home
@@ -129,7 +129,9 @@ automation:
           message: 'You tested the command with an arg!'
           disable_notification: True
 
-  - alias: "Telegram - Bot Command - prusa"
+# Bot Callbacks
+
+  - alias: "Telegram - Bot Callback - prusa"
     <<: *automation
     trigger:
       platform: event
@@ -147,7 +149,7 @@ automation:
           message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
           disable_notification: True
 
-  - alias: "Telegram - Bot Command - 3dprinter"
+  - alias: "Telegram - Bot Callback - 3dprinter"
     <<: *automation
     trigger:
       platform: event
