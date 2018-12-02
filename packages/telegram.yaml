@@ -183,6 +183,25 @@ automation:
           message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
           disable_notification: True
 
+  - alias: "Telegram - Bot Callback - testcallback"
+    <<: *automation
+    trigger:
+      platform: event
+      event_type: telegram_callback
+      event_data:
+        command: "/testcallback"
+    action:
+      - service: light.toggle
+        data:
+          entity_id: light.office_desk_lamp
+      - delay: '00:00:05'
+      - service: telegram_bot.send_message
+        data_template:
+          target: '{{ trigger.event.data.user_id }}'
+          message: 'I have tested something for you.'
+          disable_notification: True
+
+
 
 # Notifications
 # Emojii Unicode - https://apps.timwhitlock.info/emoji/tables/unicode
