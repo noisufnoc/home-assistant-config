@@ -1,0 +1,54 @@
+################################################################
+## packages / living_room
+################################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'living_room'
+
+      automation: &automation
+        initial_state: true
+
+################################################
+## sensor
+################################################
+
+################################################
+## switch
+################################################
+
+################################################
+## light
+################################################
+#light:
+#  - platform: mqtt
+#    name: "China Cabinet Light"
+#    command_topic: "cmnd/china_cabinet/power"
+#    state_topic: "stat/china_cabinet/POWER"
+#    rgb_state_topic: "stat/china_cabinet/color"
+#    rgb_command_topic: "cmnd/china_cabinet/color"
+#    brightness_state_topic: "stat/china_cabinet/dimmer"
+#    brightness_command_topic: "cmnd/china_cabinet/dimmer"
+#    brightness_scale: 100
+
+################################################
+## input_select
+################################################
+
+################################################
+## automation
+################################################
+
+################################################
+## scene
+################################################
+
+################################################
+## group
+################################################

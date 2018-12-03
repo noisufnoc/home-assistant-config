@@ -60,7 +60,7 @@ cloud:
   google_actions:
     filter:
       include_entities:
-        - climate.d1mini_
+        - climate.d1_mini
         - light.amelias_lamp
         - light.family_room_lamp
         - light.living_room_lamp
