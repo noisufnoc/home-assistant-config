@@ -41,8 +41,8 @@ homeassistant:
 
     light.holiday_3:
       <<: *customize
-      friendly_name: Christmas Tree - Back
-      icon: mdi:pine-tree
+      friendly_name: Front Yard Display
+      icon: mdi:led-variant-on
 
     light.mini_christmas_tree:
       <<: *customize

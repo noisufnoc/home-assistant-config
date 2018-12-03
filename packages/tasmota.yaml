@@ -157,7 +157,24 @@ sensor:
     payload_available: "Online"
     payload_not_available: "Offline"
 
-        
+  - platform: mqtt
+    name: "china_cabinet"
+    state_topic: "stat/china_cabinet/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/china_cabinet/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "d1mini01"
+    state_topic: "stat/d1mini01/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/d1mini01/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
 ################################################
 ## automations
 ################################################

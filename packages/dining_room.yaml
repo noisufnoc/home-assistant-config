@@ -1,0 +1,70 @@
+################################################################
+## packages / dining_room
+################################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## node anchors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'dining_room'
+
+      automation: &automation
+        initial_state: true
+
+################################################
+## sensor
+################################################
+
+################################################
+## switch
+################################################
+
+################################################
+## light
+################################################
+light:
+  - platform: mqtt
+    name: "China Cabinet Light"
+    command_topic: "cmnd/china_cabinet/power"
+    state_topic: "stat/china_cabinet/POWER"
+    rgb_state_topic: "stat/china_cabinet/color"
+    rgb_command_topic: "cmnd/china_cabinet/color"
+    brightness_state_topic: "stat/china_cabinet/dimmer"
+    brightness_command_topic: "cmnd/china_cabinet/dimmer"
+    brightness_scale: 100
+    effect_state_topic: "stat/china_cabinet/RESULT"
+    effect_command_topic: "cmnd/china_cabinet/scheme"
+    effect_value_template: "{{ value_json.scheme }}"
+    effect_list:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+    retain: true
+
+################################################
+## input_select
+################################################
+
+################################################
+## automation
+################################################
+
+################################################
+## scene
+################################################
+
+################################################
+## group
+################################################
