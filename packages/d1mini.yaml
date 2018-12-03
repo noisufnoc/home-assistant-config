@@ -13,10 +13,9 @@ homeassistant:
       customize: &customize
         package: 'd1mini'
 
+    input_boolean.fake_heater:
+      hidden: true
 
-################################################
-## binary_sensors
-################################################
 
 ################################################
 ## sensors
@@ -33,4 +32,24 @@ sensor:
     name: 'd1mini01 Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.AM2301.Humidity }}'
+
+
+################################################
+## climate
+################################################
+climate:
+  - platform: generic_thermostat
+    name: D1 Mini
+    heater: input_boolean.fake_heater
+    target_sensor: sensor.d1mini01_temperature
+    initial_operation_mode: "off"
+
+################################################
+## input_boolean
+################################################
+
+input_boolean:
+  fake_heater:
+    name: "Fake Heater for simulated thermostats"
+
 
