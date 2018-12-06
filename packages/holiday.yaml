@@ -68,7 +68,9 @@ homeassistant:
 
 group:
   holiday_lights:
+    control: hidden
     entities:
+      - switch.holiday_lights
       - light.holiday_1
       - light.holiday_2
       - light.holiday_3
@@ -179,5 +181,13 @@ light:
 ################################################
         
 ################################################
-## automation
+## switch
 ################################################
+
+switch:
+  - platform: mqtt
+    name: "Holiday Lights"
+    command_topic: "noisufnoc/holiday/power"
+    payload_on: "on"
+    payload_off: "off"
+
