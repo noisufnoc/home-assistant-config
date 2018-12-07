@@ -43,7 +43,7 @@ group:
     control: hidden
     entities:
       - binary_sensor.garage_attic_door
-      - binary_sensor.433mhz_sensor_2
+      - binary_sensor.deep_freeze_door
       - binary_sensor.433mhz_sensor_3
         
 ################################################
@@ -63,7 +63,7 @@ binary_sensor:
     retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
-    name: '433Mhz Sensor 2'
+    name: 'Deep Freeze Door'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "130B0A"
     payload_off: "130B0E"
