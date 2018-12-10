@@ -74,6 +74,12 @@ group:
       - light.holiday_1
       - light.holiday_2
       - light.holiday_3
+      - light.holiday_4
+      - light.holiday_5
+      - light.holiday_6
+      - light.holiday_7
+      - light.holiday_8
+      - light.holiday_3_st
       - light.mini_christmas_tree
 
   Cheerlights:  
@@ -131,6 +137,60 @@ light:
 
   - platform: mqtt
     name: "Holiday 3"
+    state_topic: "stat/holiday_3/POWER"
+    command_topic: "cmnd/holiday_3/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 4"
+    state_topic: "stat/holiday_4/POWER"
+    command_topic: "cmnd/holiday_4/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 5"
+    state_topic: "stat/holiday_5/POWER"
+    command_topic: "cmnd/holiday_5/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 6"
+    state_topic: "stat/holiday_6/POWER"
+    command_topic: "cmnd/holiday_6/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 7"
+    state_topic: "stat/holiday_7/POWER"
+    command_topic: "cmnd/holiday_7/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 8"
+    state_topic: "stat/holiday_8/POWER"
+    command_topic: "cmnd/holiday_8/power"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+    qos: 1
+
+  - platform: mqtt
+    name: "Holiday 3 ST"
     state_topic: "smartthings/Front Yard Lights/switch"
     command_topic: "smartthings/Front Yard Lights/switch"
     payload_on: "on"
@@ -162,15 +222,6 @@ light:
       - 9
       - 10
     retain: true
-
-#  - platform: mqtt
-#    name: "Holiday 3"
-#    state_topic: "stat/holiday_3/POWER"
-#    command_topic: "cmnd/holiday_3/power"
-#    payload_on: "ON"
-#    payload_off: "OFF"
-#    retain: true
-#    qos: 1
 
 ################################################
 ## binary_sensor
