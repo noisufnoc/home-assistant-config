@@ -39,7 +39,7 @@ homeassistant:
       friendly_name: Garland
       icon: mdi:pine-tree
 
-    light.holiday_3:
+    light.holiday_3_st:
       <<: *customize
       friendly_name: Front Yard Display
       icon: mdi:led-variant-on
