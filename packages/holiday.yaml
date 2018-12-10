@@ -121,6 +121,9 @@ light:
     name: "Holiday 1"
     state_topic: "stat/holiday_1/POWER"
     command_topic: "cmnd/holiday_1/power"
+    availability_topic: "tele/holiday_1/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -130,6 +133,9 @@ light:
     name: "Holiday 2"
     state_topic: "stat/holiday_2/POWER"
     command_topic: "cmnd/holiday_2/power"
+    availability_topic: "tele/holiday_2/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -139,6 +145,9 @@ light:
     name: "Holiday 3"
     state_topic: "stat/holiday_3/POWER"
     command_topic: "cmnd/holiday_3/power"
+    availability_topic: "tele/holiday_3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -148,6 +157,9 @@ light:
     name: "Holiday 4"
     state_topic: "stat/holiday_4/POWER"
     command_topic: "cmnd/holiday_4/power"
+    availability_topic: "tele/holiday_4/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -157,6 +169,9 @@ light:
     name: "Holiday 5"
     state_topic: "stat/holiday_5/POWER"
     command_topic: "cmnd/holiday_5/power"
+    availability_topic: "tele/holiday_5/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -166,6 +181,9 @@ light:
     name: "Holiday 6"
     state_topic: "stat/holiday_6/POWER"
     command_topic: "cmnd/holiday_6/power"
+    availability_topic: "tele/holiday_6/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -175,6 +193,9 @@ light:
     name: "Holiday 7"
     state_topic: "stat/holiday_7/POWER"
     command_topic: "cmnd/holiday_7/power"
+    availability_topic: "tele/holiday_7/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
@@ -184,6 +205,9 @@ light:
     name: "Holiday 8"
     state_topic: "stat/holiday_8/POWER"
     command_topic: "cmnd/holiday_8/power"
+    availability_topic: "tele/holiday_8/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
