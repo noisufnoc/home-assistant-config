@@ -22,6 +22,7 @@ recorder:
 
 http:
   api_password: !secret api_password
+  base_url: https://ha.noisufnoc.com
   use_x_forwarded_for: true
   trusted_proxies: 
     - 10.0.0.61 
@@ -213,3 +214,7 @@ weblink:
 #    cover.garage_door_opener:
 #      expose: true
 #      name: Garage Door
+
+#owntracks:
+#  max_gps_accuracy: 200
+#  mqtt_topic: "owntracks/#"

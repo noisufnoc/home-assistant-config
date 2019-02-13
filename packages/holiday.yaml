@@ -31,13 +31,43 @@ homeassistant:
 
     light.holiday_1:
       <<: *customize
-      friendly_name: Holiday 1
+      friendly_name: Family Room Tree
       icon: mdi:led-variant-on
 
     light.holiday_2:
       <<: *customize
       friendly_name: Garland
       icon: mdi:pine-tree
+
+    light.holiday_3:
+      <<: *customize
+      friendly_name: Dining Room Window
+      icon: mdi:led-variant-on
+
+    light.holiday_4:
+      <<: *customize
+      friendly_name: Living Room Window
+      icon: mdi:led-variant-on
+
+    light.holiday_5:
+      <<: *customize
+      friendly_name: Master Bedroom Window
+      icon: mdi:led-variant-on
+
+    light.holiday_6:
+      <<: *customize
+      friendly_name: Amelia Bedroom Window
+      icon: mdi:led-variant-on
+
+    light.holiday_7:
+      <<: *customize
+      friendly_name: Steven Bedroom Window
+      icon: mdi:led-variant-on
+
+    light.holiday_8:
+      <<: *customize
+      friendly_name: Living Room Tree
+      icon: mdi:led-variant-on
 
     light.holiday_3_st:
       <<: *customize
@@ -266,6 +296,8 @@ switch:
   - platform: mqtt
     name: "Holiday Lights"
     command_topic: "noisufnoc/holiday/power"
+    state_topic: "noisufnoc/holiday/power"
     payload_on: "on"
     payload_off: "off"
+    retain: true
 
