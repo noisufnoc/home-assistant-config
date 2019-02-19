@@ -3,4 +3,4 @@ state_topic: "smartthings/Family Room Motion/motion"
 name: "Family Room Motion Sensor"
 payload_on: "active"
 payload_off: "inactive"
-sensor_class: motion
+device_class: motion

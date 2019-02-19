@@ -3,4 +3,4 @@ state_topic: "smartthings/Sliding Glass Door/contact"
 name: "Sliding Door"
 payload_on: "open"
 payload_off: "closed"
-sensor_class: opening
+device_class: opening

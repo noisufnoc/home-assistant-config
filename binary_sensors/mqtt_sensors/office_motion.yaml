@@ -3,4 +3,4 @@ state_topic: "smartthings/Office Motion/motion"
 name: "Office Motion Sensor"
 payload_on: "active"
 payload_off: "inactive"
-sensor_class: motion
+device_class: motion

@@ -16,7 +16,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'washing_machine'
+  #        package: 'washing_machine'
 
       automation: &automation
         initial_state: true
@@ -36,7 +36,7 @@ binary_sensor:
     name: "Washing Machine Door"
     payload_on: "open"
     payload_off: "closed"
-    sensor_class: opening
+    device_class: opening
 
 ################################################
 ## sensors
@@ -81,7 +81,7 @@ group:
         
 switch:
   - platform: mqtt
-    <<: *customize
+  #  <<: *customize
     name: "Washing Machine Power Override"
     state_topic: "smartthings/Washing Machine/switch"
     command_topic: "smartthings/Washing Machine/switch"

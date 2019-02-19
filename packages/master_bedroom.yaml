@@ -10,7 +10,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'master_bedroom'
+      #  package: 'master_bedroom'
 
       automation: &automation
         initial_state: true
@@ -27,13 +27,13 @@ homeassistant:
 
 sensor:
   - platform: mqtt
-    <<: *customize
+  # <<: *customize
     state_topic: "smartthings/Master Bedroom TV/power"
     name: "Master Bedroom TV Power"
     unit_of_measurement: "W"
       
   - platform: template
-    <<: *customize
+  # <<: *customize
     sensors:
       master_bedroom_tv_status:
         value_template: "{{ states.input_select.master_bedroom_tv_status.state}}"

@@ -10,7 +10,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'mudroom'
+  #        package: 'mudroom'
 
       automation: &automation
         initial_state: true
@@ -31,12 +31,12 @@ homeassistant:
 
 binary_sensor:
   - platform: mqtt
-    <<: *customize
+  #  <<: *customize
     state_topic: "smartthings/Mud Room Door/contact"
     name: "Mud Room Door"
     payload_on: "open"
     payload_off: "closed"
-    sensor_class: opening
+    device_class: opening
        
 ################################################
 ## switch
@@ -48,7 +48,7 @@ binary_sensor:
 
 light:
   - platform: mqtt
-    <<: *customize
+  #  <<: *customize
     name: "Mudroom Bench"
     state_topic: "smartthings/Mudroom Bench/switch"
     command_topic: "smartthings/Mudroom Bench/switch"

@@ -3,4 +3,4 @@ state_topic: "smartthings/Utility Room Leak Sensor/water"
 name: "Utility Room Leak Sensor"
 payload_on: "wet"
 payload_off: "dry"
-sensor_class: moisture
+device_class: moisture

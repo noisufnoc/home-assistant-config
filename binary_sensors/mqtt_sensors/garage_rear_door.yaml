@@ -3,4 +3,4 @@ state_topic: "smartthings/Garage Rear Door/contact"
 name: "Garage Rear Door"
 payload_on: "open"
 payload_off: "closed"
-sensor_class: opening
+device_class: opening

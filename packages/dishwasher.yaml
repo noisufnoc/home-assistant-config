@@ -14,7 +14,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'dishwasher'
+  #        package: 'dishwasher'
 
       automation: &automation
         initial_state: true
@@ -33,7 +33,7 @@ homeassistant:
 
 sensor:
   - platform: mqtt
-    <<: *customize
+  #  <<: *customize
     state_topic: "smartthings/Dishwasher/power"
     name: "Dishwasher Power"
     unit_of_measurement: "W"
@@ -70,7 +70,7 @@ group:
         
 switch:
   - platform: mqtt
-    <<: *customize
+  #  <<: *customize
     name: "Dishwasher Power Override"
     state_topic: "smartthings/Dishwasher/switch"
     command_topic: "smartthings/Dishwasher/switch"
