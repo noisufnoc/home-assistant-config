@@ -58,7 +58,7 @@ binary_sensor:
     payload_on: "14850A"
     payload_off: "14850E"
     device_class: "door"
-    optimistic: false
+#    optimistic: false
     qos: 1
     retain: false 
   - platform: mqtt
@@ -68,7 +68,7 @@ binary_sensor:
     payload_on: "130B0A"
     payload_off: "130B0E"
     device_class: "door"
-    optimistic: false
+#    optimistic: false
     qos: 1
     retain: false 
   - platform: mqtt
@@ -78,7 +78,7 @@ binary_sensor:
     payload_on: "someoncode"
     payload_off: "someoffcode"
     device_class: "door"
-    optimistic: false
+#    optimistic: false
     qos: 1
     retain: false 
 
