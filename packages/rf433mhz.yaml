@@ -58,9 +58,7 @@ binary_sensor:
     payload_on: "14850A"
     payload_off: "14850E"
     device_class: "door"
-#    optimistic: false
     qos: 1
-#    retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: 'Deep Freeze Door'
@@ -68,9 +66,7 @@ binary_sensor:
     payload_on: "130B0A"
     payload_off: "130B0E"
     device_class: "door"
-#    optimistic: false
     qos: 1
-#    retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: '433Mhz Sensor 3'
@@ -78,50 +74,36 @@ binary_sensor:
     payload_on: "someoncode"
     payload_off: "someoffcode"
     device_class: "door"
-#    optimistic: false
     qos: 1
-#    retain: false 
 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: 'Kids Bathroom Toilet'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "928B11"
-#    payload_off: "someoffcode"
     device_class: "moisture"
-#    optimistic: false
     qos: 1
-#    retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: 'Kids Bathroom Sink'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "858B11"
-#    payload_off: "someoffcode"
     device_class: "moisture"
-#    optimistic: false
     qos: 1
-#    retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: 'Master Bathroom Left Sink'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "6F1422"
-#    payload_off: "someoffcode"
     device_class: "moisture"
-#    optimistic: false
     qos: 1
-#    retain: false 
   - platform: mqtt
     state_topic: "tele/rf_bridge/RESULT"
     name: 'Master Bathroom Right Sink'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "088A11"
-#    payload_off: "someoffcode"
     device_class: "moisture"
-#    optimistic: false
     qos: 1
-#    retain: false 
 
 ################################################
 ## script
