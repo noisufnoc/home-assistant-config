@@ -1,5 +1,5 @@
 platform: mqtt
-name: "Amelia's Lamp"
+name: "Amelia Lamp"
 state_topic: "stat/amelia_lamp/POWER"
 command_topic: "cmnd/amelia_lamp/power"
 payload_on: "ON"

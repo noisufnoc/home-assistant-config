@@ -1,5 +1,5 @@
 platform: mqtt
-name: "Steven's Starlight"
+name: "Steven Starlight"
 command_topic: "cmnd/steveo_light/power"
 state_topic: "stat/steveo_light/POWER"
 rgb_state_topic: "stat/steveo_light/color"
