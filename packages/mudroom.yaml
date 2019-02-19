@@ -36,7 +36,7 @@ binary_sensor:
     name: "Mud Room Door"
     payload_on: "open"
     payload_off: "closed"
-    device_class: opening
+    device_class: door
        
 ################################################
 ## switch
