@@ -57,6 +57,7 @@ cover:
 ## group
 ################################################
 
+group:
     garage_doors:
       name: Garage Doors
       view: no
