@@ -51,7 +51,6 @@ cover:
     payload_stop: "ON"
     state_open: "open"
     state_closed: "closed"
-    optomistic: false
     retain: false
 
 ################################################
