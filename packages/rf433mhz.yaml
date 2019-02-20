@@ -38,13 +38,13 @@ homeassistant:
 ## group
 ################################################
 
-group:
-  rf433mhz_sensors:
-    control: hidden
-    entities:
-      - binary_sensor.garage_attic_door
-      - binary_sensor.deep_freeze_door
-      - binary_sensor.433mhz_sensor_3
+  #group:
+  #  rf433mhz_sensors:
+  #    control: hidden
+  #    entities:
+  #      - binary_sensor.garage_attic_door
+  #      - binary_sensor.deep_freeze_door
+  #      - binary_sensor.433mhz_sensor_3
         
 ################################################
 ## binary_sensor
@@ -102,6 +102,27 @@ binary_sensor:
     name: 'Master Bathroom Right Sink'
     value_template: '{{value_json.RfReceived.Data}}'
     payload_on: "088A11"
+    device_class: "moisture"
+    qos: 1
+  - platform: mqtt
+    state_topic: "tele/rf_bridge/RESULT"
+    name: 'Master Bathroom Toilet'
+    value_template: '{{value_json.RfReceived.Data}}'
+    payload_on: "F38A11"
+    device_class: "moisture"
+    qos: 1
+  - platform: mqtt
+    state_topic: "tele/rf_bridge/RESULT"
+    name: 'Kitchen Sink'
+    value_template: '{{value_json.RfReceived.Data}}'
+    payload_on: "638911"
+    device_class: "moisture"
+    qos: 1
+  - platform: mqtt
+    state_topic: "tele/rf_bridge/RESULT"
+    name: 'Powder Room Sink'
+    value_template: '{{value_json.RfReceived.Data}}'
+    payload_on: "9D8A11"
     device_class: "moisture"
     qos: 1
 
