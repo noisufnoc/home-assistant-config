@@ -55,6 +55,7 @@ history:
 logbook:
 sun:
 config:
+system_health:
 
 # Trying hass.io cloud for GA integration
 cloud:
