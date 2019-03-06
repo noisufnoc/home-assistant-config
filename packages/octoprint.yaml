@@ -124,21 +124,21 @@ sensor:
     unit_of_measurement: "kWh"
         
   - platform: rest
-    resource: 'http://octoprint.noisufnoc.net/pmk3/api/job'
+    resource: 'https://pmk3.noisufnoc.net/api/job'
     name: 'Prusa i3 MK3 Current File'
     method: GET
     headers:
-      X-Api-Key: !secret octoprint_api_key
+      X-Api-Key: !secret pmk3_octoprint_api_key
     json_attributes:
       - job['file']['display']
     value_template: "{{ value_json['job']['file']['name'] }}"
          
   - platform: rest
-    resource: 'http://octoprint.noisufnoc.net/mpmd/api/job'
+    resource: 'https://mpmd.noisufnoc.net/api/job'
     name: 'Monoprice Mini Delta Current File'
     method: GET
     headers:
-      X-Api-Key: !secret octoprint_api_key
+      X-Api-Key: !secret mpmd_octoprint_api_key
     json_attributes:
       - job['file']['display']
     value_template: "{{ value_json['job']['file']['name'] }}"
@@ -181,19 +181,19 @@ switch:
 rest_command:
   octoprint_pmk3_connect_printer:
     method: POST
-    url: 'http://octoprint.noisufnoc.net/pmk3/api/connection'
+    url: 'https://pmk3.noisufnoc.net/api/connection'
     headers:
       content-type: application/json
-      X-Api-Key: !secret octoprint_api_key
-    payload: '{"command":"connect", "port":"/dev/pmk3"}'
+      X-Api-Key: !secret pmk3_octoprint_api_key
+    payload: '{"command":"connect", "port":"/dev/ttyPMK3"}'
 
   octoprint_mpmd_connect_printer:
     method: POST
-    url: 'http://octoprint.noisufnoc.net/mpmd/api/connection'
+    url: 'https://mpmd.noisufnoc.net/api/connection'
     headers:
       content-type: application/json
-      X-Api-Key: !secret octoprint_api_key
-    payload: '{"command":"connect", "port":"/dev/mpmd"}'
+      X-Api-Key: !secret mpmd_octoprint_api_key
+    payload: '{"command":"connect", "port":"/dev/ttyMPMD"}'
 
 ################################################
 ## script
@@ -215,10 +215,10 @@ script:
 weblink:
   entities:
     - name: Prusa i3 MK3 OctoPrint UI
-      url: http://octoprint.noisufnoc.net/pmk3
+      url: https://pmk3.noisufnoc.com
         
     - name: Monoprice Mini Delta OctoPrint UI
-      url: http://octoprint.noisufnoc.net/mpmd
+      url: https://mpmd.noisufnoc.com
 
 ################################################
 ## group
