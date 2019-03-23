@@ -1,0 +1,5 @@
+platform: group
+name: "Front Porch Lights"
+entities:
+  - light.front_porch_light_left
+  - light.front_porch_light_right

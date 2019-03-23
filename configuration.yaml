@@ -41,11 +41,16 @@ light: !include_dir_list lights/
 switch: !include_dir_list switches/
 remote: !include remote.yaml
 notify: !include notify.yaml
-logger: !include logger.yaml
+#logger: !include logger.yaml
 camera: !include camera.yaml
 zone: !include_dir_list zone/
 automation: !include_dir_list automations/
 input_select: !include input_select.yaml
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.smartthings: debug
 
 # Enables
 updater:
@@ -56,6 +61,7 @@ logbook:
 sun:
 config:
 system_health:
+stream:
 
 # Trying hass.io cloud for GA integration
 cloud:

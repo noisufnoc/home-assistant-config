@@ -4,9 +4,9 @@
 
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 
-#default: info
-default: error
-logs:
+default: info
+#default: debug
+#logs:
 #  custom_components.telegram: debug
 #  homeassistant.components.climate.ecobee: warn
 #  homeassistant.components.sensor.command_line: warn
@@ -16,7 +16,7 @@ logs:
 #  homeassistant.components.http: debug
 #  homeassistant.components.mqtt: debug
 #  homeassistant.components.remote: debug
-  homeassistant.components.snmp: debug
+#  homeassistant.components.snmp: debug
 #  homeassistant.components.sensor.apcupsd: error
 #  homeassistant.components.sensor.yweather: warn
 #  homeassistant.components.notify.telegram: warn
@@ -29,4 +29,5 @@ logs:
 #  requests.exceptions: fatal
 #  requests.exceptions.ConnectTimeout: fatal
 #  requests.packages: fatal
-  homeassistant.components.octoprint: debug
+#  homeassistant.components.octoprint: debug
+  homeassistant.components.smartthings: debug
