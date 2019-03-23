@@ -62,6 +62,7 @@ sun:
 config:
 system_health:
 stream:
+speedtestdotnet:
 
 # Trying hass.io cloud for GA integration
 cloud:
