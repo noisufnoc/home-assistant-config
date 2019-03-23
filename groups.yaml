@@ -370,33 +370,33 @@
     entities:
       - media_player.playroom
         
-  kitchen:
-    view: yes
-    name: "Kitchen"
-    icon: mdi:stove
-    entities:
-     - climate.kitchen
-     - group.dishwasher
-     - switch.kitchen_light
-     - switch.kitchen_hall_light
+    # kitchen:
+    # kiview: yes
+    # kiname: "Kitchen"
+    # kiicon: mdi:stove
+    # kientities:
+    # ki - climate.kitchen
+    # ki - group.dishwasher
+    # ki - switch.kitchen_light
+    # ki - switch.kitchen_hall_light
   
-  garage:
-    view: yes
-    name: "Garage"
-    icon: mdi:garage
-    entities:
-     - media_player.garage
-     - binary_sensor.garage_door
-     - binary_sensor.garage_rear_door
-     - sensor.garage_door_temp
-  
-  outside:
-    view: yes
-    name: "Outside"
-    icon: mdi:tree
-    entities:
-      - light.deck_lights
-
+    # garage:
+    # gaview: yes
+    # ganame: "Garage"
+    # gaicon: mdi:garage
+    # gaentities:
+    # ga - media_player.garage
+    # ga - binary_sensor.garage_door
+    # ga - binary_sensor.garage_rear_door
+    # ga - sensor.garage_door_temp
+       #  
+       #  outside:
+       #    view: yes
+       #    name: "Outside"
+       #    icon: mdi:tree
+       #    entities:
+       #      - light.deck_lights
+       #
   utility_room:
     view: yes
     name: "Utility Room"

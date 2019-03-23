@@ -27,3 +27,8 @@ sensors:
             float(states.sensor.utility_room_temp.state) +
             float(states.sensor.motion_sensor_temp.state) +
             float(states.sensor.kitchen_thermostat_temperature.state)) / 6) | round(0) }}
+
+  washing_machine_power:
+    friendly_name: "Washing Machine Power"
+    unit_of_measurement: 'W'
+    value_template: "{{ state_attr('switch.dishwasher_power','current_power_w') }}"
