@@ -20,11 +20,11 @@ homeassistant:
         package: 'ruffington'
 
       hidden_sensor: &hidden_sensor
-        <<: *customize
+    #    <<: *customize
         hidden: true
 
       ruffington: &ruffington
-        <<: *customize
+    #    <<: *customize
         host: 10.0.0.7
 
     ################################################
@@ -49,6 +49,7 @@ homeassistant:
 sensor:
   - platform: snmp
     <<: *ruffington
+    host: 10.0.0.7
     name: "Server Room Temperature Raw"
     unit_of_measurement: "F"
     community: public

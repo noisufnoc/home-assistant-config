@@ -20,11 +20,11 @@ homeassistant:
         package: 'mohawk'
 
       hidden_sensor: &hidden_sensor
-        <<: *customize
+  #        <<: *customize
         hidden: true
 
       mohawk: &mohawk
-        <<: *customize
+  #      <<: *customize
         host: 10.0.0.6
 
     ################################################
