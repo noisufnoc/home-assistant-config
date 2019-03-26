@@ -1,7 +1,0 @@
-platform: mqtt
-name: "Back Floodlight"
-state_topic: "smartthings/Back Floodlight/switch"
-command_topic: "smartthings/Back Floodlight/switch"
-payload_on: "on"
-payload_off: "off"
-retain: true
