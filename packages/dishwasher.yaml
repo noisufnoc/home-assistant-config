@@ -31,12 +31,12 @@ homeassistant:
 ## sensors
 ################################################
 
-sensor:
-  - platform: mqtt
-  #  <<: *customize
-    state_topic: "smartthings/Dishwasher/power"
-    name: "Dishwasher Power"
-    unit_of_measurement: "W"
+  #sensor:
+  #  - platform: mqtt
+  #  #  <<: *customize
+  #    state_topic: "smartthings/Dishwasher/power"
+  #    name: "Dishwasher Power"
+  #    unit_of_measurement: "W"
 
 ################################################
 ## input_select
@@ -56,27 +56,27 @@ input_select:
 ## group
 ################################################
        
-group:
-  dishwasher:
-    name: Dishwasher
-    entities:
-      - sensor.dishwasher_status
-      - sensor.dishwasher_power
-      - switch.dishwasher_power_override
+  #group:
+  #  dishwasher:
+  #    name: Dishwasher
+  #    entities:
+  #      - sensor.dishwasher_status
+  #      - sensor.dishwasher_power
+  #      - switch.dishwasher_power_override
 
 ################################################
 ## switches
 ################################################
         
-switch:
-  - platform: mqtt
-  #  <<: *customize
-    name: "Dishwasher Power Override"
-    state_topic: "smartthings/Dishwasher/switch"
-    command_topic: "smartthings/Dishwasher/switch"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
+  #switch:
+  #  - platform: mqtt
+  #  #  <<: *customize
+  #    name: "Dishwasher Power Override"
+  #    state_topic: "smartthings/Dishwasher/switch"
+  #    command_topic: "smartthings/Dishwasher/switch"
+  #    payload_on: "on"
+  #    payload_off: "off"
+  #    retain: true
 
 ################################################
 ## script
