@@ -30,23 +30,23 @@ homeassistant:
 ## binary_sensors
 ################################################
 
-binary_sensor:
-  - platform: mqtt
-    state_topic: "smartthings/Washing Machine Door/contact"
-    name: "Washing Machine Door"
-    payload_on: "open"
-    payload_off: "closed"
-    device_class: opening
+  #binary_sensor:
+  #  - platform: mqtt
+  #    state_topic: "smartthings/Washing Machine Door/contact"
+  #    name: "Washing Machine Door"
+  #    payload_on: "open"
+  #    payload_off: "closed"
+  #    device_class: opening
 
 ################################################
 ## sensors
 ################################################
 
-sensor:
-  - platform: mqtt
-    state_topic: "smartthings/Washing Machine/power"
-    name: "Washing Machine Power"
-    unit_of_measurement: "W"
+  #sensor:
+  #  - platform: mqtt
+  #    state_topic: "smartthings/Washing Machine/power"
+  #    name: "Washing Machine Power"
+  #    unit_of_measurement: "W"
 
 ################################################
 ## input_select
@@ -79,15 +79,15 @@ group:
 ## switches
 ################################################
         
-switch:
-  - platform: mqtt
-  #  <<: *customize
-    name: "Washing Machine Power Override"
-    state_topic: "smartthings/Washing Machine/switch"
-    command_topic: "smartthings/Washing Machine/switch"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
+  #switch:
+  #  - platform: mqtt
+  #  #  <<: *customize
+  #    name: "Washing Machine Power Override"
+  #    state_topic: "smartthings/Washing Machine/switch"
+  #    command_topic: "smartthings/Washing Machine/switch"
+  #    payload_on: "on"
+  #    payload_off: "off"
+  #    retain: true
 
 ################################################
 ## script
