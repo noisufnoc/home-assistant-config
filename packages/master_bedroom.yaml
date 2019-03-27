@@ -26,12 +26,12 @@ homeassistant:
 ################################################
 
 sensor:
-  - platform: mqtt
-  # <<: *customize
-    state_topic: "smartthings/Master Bedroom TV/power"
-    name: "Master Bedroom TV Power"
-    unit_of_measurement: "W"
-      
+  #  - platform: mqtt
+  #  # <<: *customize
+  #    state_topic: "smartthings/Master Bedroom TV/power"
+  #    name: "Master Bedroom TV Power"
+  #    unit_of_measurement: "W"
+  #      
   - platform: template
   # <<: *customize
     sensors:
@@ -43,38 +43,38 @@ sensor:
 ## switch
 ################################################
 
-switch:
-  - platform: mqtt
-    name: "Master Bedroom TV Power Override"
-    state_topic: "smartthings/Master Bedroom TV/switch"
-    command_topic: "smartthings/Master Bedroom TV/switch"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
-
-  - platform: mqtt
-    name: "Master Bedroom Ceiling Fan"
-    state_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
-    command_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
-    brightness_state_topic: "smartthings/Master Bedroom Ceiling Fan/level"
-    brightness_command_topic: "smartthings/Master Bedroom Ceiling Fan/level"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
+  #switch:
+  #  - platform: mqtt
+  #    name: "Master Bedroom TV Power Override"
+  #    state_topic: "smartthings/Master Bedroom TV/switch"
+  #    command_topic: "smartthings/Master Bedroom TV/switch"
+  #    payload_on: "on"
+  #    payload_off: "off"
+  #    retain: true
+  #
+  #  - platform: mqtt
+  #    name: "Master Bedroom Ceiling Fan"
+  #    state_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
+  #    command_topic: "smartthings/Master Bedroom Ceiling Fan/switch"
+  #    brightness_state_topic: "smartthings/Master Bedroom Ceiling Fan/level"
+  #    brightness_command_topic: "smartthings/Master Bedroom Ceiling Fan/level"
+  #    payload_on: "on"
+  #    payload_off: "off"
+  #    retain: true
  
 ################################################
 ## light
 ################################################
 
-light:
-  - platform: mqtt
-    name: "Master Bedroom Ceiling Light"
-    state_topic: "smartthings/Master Bedroom Ceiling Light/switch"
-    command_topic: "smartthings/Master Bedroom Ceiling Light/switch"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
-
+  #light:
+  #  - platform: mqtt
+  #    name: "Master Bedroom Ceiling Light"
+  #    state_topic: "smartthings/Master Bedroom Ceiling Light/switch"
+  #    command_topic: "smartthings/Master Bedroom Ceiling Light/switch"
+  #    payload_on: "on"
+  #    payload_off: "off"
+  #    retain: true
+  #
 ################################################
 ## input_select
 ################################################
@@ -173,15 +173,15 @@ scene:
 ## group
 ################################################
 
-group:
-  Master Bedroom TV:
-    entities:
-      - sensor.master_bedroom_tv_status
-      - sensor.master_bedroom_tv_power
-      - switch.master_bedroom_tv_power_override
-
-  Master Bedroom Scenes:
-    entities:
-      - scene.master_bedroom_normal
-      - scene.sexy_time
-      - scene.story_time
+  #group:
+  #  Master Bedroom TV:
+  #    entities:
+  #      - sensor.master_bedroom_tv_status
+  #      - sensor.master_bedroom_tv_power
+  #      - switch.master_bedroom_tv_power_override
+  #
+  #  Master Bedroom Scenes:
+  #    entities:
+  #      - scene.master_bedroom_normal
+  #      - scene.sexy_time
+  #      - scene.story_time
