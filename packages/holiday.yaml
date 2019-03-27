@@ -243,13 +243,13 @@ light:
     retain: true
     qos: 1
 
-  - platform: mqtt
-    name: "Holiday 3 ST"
-    state_topic: "smartthings/Front Yard Lights/switch"
-    command_topic: "smartthings/Front Yard Lights/switch"
-    payload_on: "on"
-    payload_off: "off"
-    retain: true
+#  - platform: mqtt
+#    name: "Holiday 3 ST"
+#    state_topic: "smartthings/Front Yard Lights/switch"
+#    command_topic: "smartthings/Front Yard Lights/switch"
+#    payload_on: "on"
+#    payload_off: "off"
+#    retain: true
 
   - platform: mqtt
     name: "Mini Christmas Tree"
