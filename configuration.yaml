@@ -32,7 +32,7 @@ http:
 
 # Includes
 alarm_control_panel: !include alarm_control_panel.yaml
-binary_sensor: !include_dir_list binary_sensors/
+#binary_sensor: !include_dir_list binary_sensors/
 sensor: !include_dir_list sensors/
 device_tracker: !include device_tracker.yaml
 #group: !include groups.yaml
