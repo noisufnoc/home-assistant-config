@@ -85,7 +85,7 @@ cloud:
         - switch.roomba
         - switch.prusa_i3_mk3
         - switch.monoprice_mini_delta
-        - cover.garage_door_opener
+        - cover.garage_door
         - scene.master_bedroom_normal
         - script.check_doors
     entity_config:
@@ -101,7 +101,7 @@ cloud:
         name: Prusa
       switch.monoprice_mini_delta:
         name: Mini Delta
-      cover.garage_door_opener:
+      cover.garage_doorr:
         name: Garage Door
       scene.master_bedroom_normal:
         name: Reset Master Bedroom
