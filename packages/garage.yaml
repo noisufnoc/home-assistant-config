@@ -33,38 +33,68 @@ homeassistant:
     ## customize / cover
     ################################################
 
-    cover.test:
-      device_class: garage
-      friendly_name: Garage
+    #    cover.test:
+    #      device_class: garage
+    #      friendly_name: Garage
 
 ################################################
 ## cover
 ################################################
 
+    #cover:
+    #  - platform: mqtt
+    #    name: "Garage Door Opener"
+    ##    state_topic: "smartthings/Garage Door/contact"
+    #    command_topic: "cmnd/garage_door_opener/POWER1"
+    #    payload_open: "ON"
+    #    payload_close: "ON"
+    #    payload_stop: "ON"
+    #    state_open: "open"
+    #    state_closed: "closed"
+    #    retain: false
+
 cover:
+  - platform: template
+    covers:
+      garage_door:
+        friendly_name: "Garage Door"
+        value_template: "{{ states('binary_sensor.garage_door_contact') }}"
+        open_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door
+        close_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door
+        stop_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door
+        icon_template: >-
+          {% if states('sensor.garage_door')|float > 0 %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}
+
+################################################
+## switch
+################################################
+
+switch:
   - platform: mqtt
-    name: "Garage Door Opener"
-#    state_topic: "smartthings/Garage Door/contact"
+    name: "Garage Door"
+    state_topic: "stat/garage_door_opener/RESULT"
+    value_template: "{{ value_json.POWER1 }}"
     command_topic: "cmnd/garage_door_opener/POWER1"
-    payload_open: "ON"
-    payload_close: "ON"
-    payload_stop: "ON"
-    state_open: "open"
-    state_closed: "closed"
+    availability_topic: "tele/garage_door_opener/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
     retain: false
-
-################################################
-## group
-################################################
-
-#group:
-#    garage_doors:
-#      name: Garage Doors
-#      view: no
-#      control: hidden
-#      icon: mdi:garage
-#      entities:
-#        - cover.garage_door_opener
 
 ################################################
 ## input boolean
