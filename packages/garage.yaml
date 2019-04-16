@@ -58,7 +58,8 @@ cover:
     covers:
       garage_door:
         friendly_name: "Garage Door"
-        value_template: "{{ states('binary_sensor.garage_door_contact') }}"
+        value_template: {{ states('binary_sensor.garage_door_contact') }}
+        #value_template: "{{ states('binary_sensor.garage_door_contact') }}"
         open_cover:
           service: switch.turn_on
           data:
