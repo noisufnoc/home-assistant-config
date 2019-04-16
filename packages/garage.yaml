@@ -108,6 +108,20 @@ switch:
 ## light
 ################################################
 
+light:
+  - platform: mqtt
+    name: "Garage Opener Light"
+    state_topic: "stat/garage_door_opener/RESULT"
+    value_template: "{{ value_json.POWER2 }}"
+    command_topic: "cmnd/garage_door_opener/POWER2"
+    availability_topic: "tele/garage_door_opener/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
 # put sonoff light control here
 
 ################################################
