@@ -73,8 +73,8 @@ cloud:
         - light.amelias_lamp
         - light.china_cabinet_light
         - light.family_room_lamp
-        - light.family_room_table_lamp
         - light.living_room_lamp
+        - light.living_room_table_lamp
         - light.office_lamp
         - light.office_desk_lamp
         - light.holiday_1
