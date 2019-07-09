@@ -41,27 +41,27 @@ notify:
 ## group
 ################################################
 
-group:
-  telegram_bot:
-    name: Telegram Bot - noisufnoc emoh
-    entities:
-#      - automation.telegram__bot_callback__prusa
-#      - automation.telegram__bot_callback__mpmd
-#      - automation.telegram__bot_command__3dprinter
-#      - automation.telegram__bot_command__args_test
-#      - automation.telegram__bot_command__guest_mode_toggle
-#      - automation.telegram__bot_command__temprature
-#      - automation.telegram__bot_command__weather
-      - automation.telegram__notification__ashley_is_home
-      - automation.telegram__notification__mike_is_home
-      - automation.telegram__notification__home_assistant_shutdown
-      - automation.telegram__notification__home_assistant_startup
-      - automation.telegram__notification__home_assistant_update
-      - automation.telegram__notification__notify_if_any_exterior_door_open_past_midnight
-      - automation.telegram__notification__send_alert_when_dishwasher_is_clean
-      - automation.telegram__notification__send_alert_when_washing_machine_is_clean
-      - automation.telegram__notification__notify_when_mpmd_3d_print_is_finished
-      - automation.telegram__notification__notify_when_prusa_3d_print_is_finished
+  #group:
+  #  telegram_bot:
+  #    name: Telegram Bot - noisufnoc emoh
+  #    entities:
+  ##      - automation.telegram__bot_callback__prusa
+  ##      - automation.telegram__bot_callback__mpmd
+  ##      - automation.telegram__bot_command__3dprinter
+  ##      - automation.telegram__bot_command__args_test
+  ##      - automation.telegram__bot_command__guest_mode_toggle
+  ##      - automation.telegram__bot_command__temprature
+  ##      - automation.telegram__bot_command__weather
+  #      - automation.telegram__notification__ashley_is_home
+  #      - automation.telegram__notification__mike_is_home
+  #      - automation.telegram__notification__home_assistant_shutdown
+  #      - automation.telegram__notification__home_assistant_startup
+  #      - automation.telegram__notification__home_assistant_update
+  #      - automation.telegram__notification__notify_if_any_exterior_door_open_past_midnight
+  #      - automation.telegram__notification__send_alert_when_dishwasher_is_clean
+  #      - automation.telegram__notification__send_alert_when_washing_machine_is_clean
+  #      - automation.telegram__notification__notify_when_mpmd_3d_print_is_finished
+  #      - automation.telegram__notification__notify_when_prusa_3d_print_is_finished
 
 ################################################
 ### automation
