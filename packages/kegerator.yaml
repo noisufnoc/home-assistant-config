@@ -1,0 +1,66 @@
+################################################################
+## packages / kegerator
+##    power monitoring of the kegerator
+################################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## binary_sensors
+    ################################################
+
+    package.node_anchors:
+      customize: &customize
+        package: 'kegerator'
+
+################################################
+## sensors
+################################################
+sensor:
+  - platform: mqtt
+    name: Kegerator Voltage
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Voltage }}"
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: Kegerator Current
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Current }}"
+    unit_of_measurement: "A"
+  - platform: mqtt
+    name: Kegerator Power
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Power }}"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: Kegerator Energy Today
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Today }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: Kegerator Energy Yesterday
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Yesterday }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: Kegerator Energy Total
+    state_topic: "tele/kegerator/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Total }}"
+    unit_of_measurement: "kWh"
+
+################################################
+## switch
+################################################
+
+switch:
+  - platform: mqtt
+    name: Kegerator Control
+    command_topic: "cmnd/kegerator/POWER"
+    state_topic: "stat/kegerator/POWER"
+    availability_topic: "tele/kegerator/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
