@@ -45,13 +45,13 @@ group:
   telegram_bot:
     name: Telegram Bot - noisufnoc emoh
     entities:
-      - automation.telegram__bot_callback__prusa
-      - automation.telegram__bot_callback__mpmd
-      - automation.telegram__bot_command__3dprinter
-      - automation.telegram__bot_command__args_test
-      - automation.telegram__bot_command__guest_mode_toggle
-      - automation.telegram__bot_command__temprature
-      - automation.telegram__bot_command__weather
+#      - automation.telegram__bot_callback__prusa
+#      - automation.telegram__bot_callback__mpmd
+#      - automation.telegram__bot_command__3dprinter
+#      - automation.telegram__bot_command__args_test
+#      - automation.telegram__bot_command__guest_mode_toggle
+#      - automation.telegram__bot_command__temprature
+#      - automation.telegram__bot_command__weather
       - automation.telegram__notification__ashley_is_home
       - automation.telegram__notification__mike_is_home
       - automation.telegram__notification__home_assistant_shutdown
@@ -68,138 +68,138 @@ group:
 #################################################
 
 # Bot Commands
-
-automation:
-  - alias: "Telegram - Bot Command - guest mode toggle"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_command
-      event_data:
-        command: "/guest"
-    action:
-      - service: input_boolean.toggle
-        data:
-          entity_id: input_boolean.guest_mode
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'I have set Guest Mode to {{ states.input_boolean.guest_mode.state }}.'
-          disable_notification: True
-
-  - alias: "Telegram - Bot Command - temprature"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_command
-      event_data:
-        command: "/temp"
-    action:
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: "The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F"
-          disable_notification: True
-
-  - alias: "Telegram - Bot Command - weather"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_command
-      event_data:
-        command: "/weather"
-    action:
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: '{{ states.sensor.dark_sky_hourly_summary.state }}'
-          disable_notification: True
-
-  - alias: "Telegram - Bot Command - args test"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_command
-      event_data:
-        command: '/test'
-        args:
-          - 'arg'
-    action:
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'You tested the command with an arg!'
-          disable_notification: True
-
-  - alias: "Telegram - Bot Command - 3dprinter"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_command
-      event_data:
-        command: "/3dprinter"
-    action:
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'Youre asking about the printers'
-          disable_notification: True
-
-# Bot Callbacks
-
-  - alias: "Telegram - Bot Callback - mpmd"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_callback
-      event_data:
-        command: "/mpmdpower"
-    action:
-      - service: switch.toggle
-        data:
-          entity_id: switch.monoprice_mini_delta
-      - delay: '00:00:05'
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the Monoprice Mini Delta Printer {{ states("switch.monoprice_mini_delta") }}.'
-          disable_notification: True
-
-  - alias: "Telegram - Bot Callback - prusa"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_callback
-      event_data:
-        command: "/prusapower"
-    action:
-      - service: switch.toggle
-        data:
-          entity_id: switch.prusa_i3_mk3
-      - delay: '00:00:05'
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
-          disable_notification: True
-
-  - alias: "Telegram - Bot Callback - testcallback"
-    <<: *automation
-    trigger:
-      platform: event
-      event_type: telegram_callback
-      event_data:
-        command: "/testcallback"
-    action:
-      - service: light.toggle
-        data:
-          entity_id: light.office_desk_lamp
-      - delay: '00:00:05'
-      - service: telegram_bot.send_message
-        data_template:
-          target: '{{ trigger.event.data.user_id }}'
-          message: 'I have tested something for you.'
-          disable_notification: True
+#
+#automation:
+#  - alias: "Telegram - Bot Command - guest mode toggle"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_command
+#      event_data:
+#        command: "/guest"
+#    action:
+#      - service: input_boolean.toggle
+#        data:
+#          entity_id: input_boolean.guest_mode
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'I have set Guest Mode to {{ states.input_boolean.guest_mode.state }}.'
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Command - temprature"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_command
+#      event_data:
+#        command: "/temp"
+#    action:
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: "The average temprature in the house is currently {{ states.sensor.home_avg_temp.state }}°F"
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Command - weather"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_command
+#      event_data:
+#        command: "/weather"
+#    action:
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: '{{ states.sensor.dark_sky_hourly_summary.state }}'
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Command - args test"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_command
+#      event_data:
+#        command: '/test'
+#        args:
+#          - 'arg'
+#    action:
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'You tested the command with an arg!'
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Command - 3dprinter"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_command
+#      event_data:
+#        command: "/3dprinter"
+#    action:
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'Youre asking about the printers'
+#          disable_notification: True
+#
+## Bot Callbacks
+#
+#  - alias: "Telegram - Bot Callback - mpmd"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_callback
+#      event_data:
+#        command: "/mpmdpower"
+#    action:
+#      - service: switch.toggle
+#        data:
+#          entity_id: switch.monoprice_mini_delta
+#      - delay: '00:00:05'
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'I have turned the Monoprice Mini Delta Printer {{ states("switch.monoprice_mini_delta") }}.'
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Callback - prusa"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_callback
+#      event_data:
+#        command: "/prusapower"
+#    action:
+#      - service: switch.toggle
+#        data:
+#          entity_id: switch.prusa_i3_mk3
+#      - delay: '00:00:05'
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'I have turned the Prusa i3 MK3 Printer {{ states("switch.prusa_i3_mk3") }}.'
+#          disable_notification: True
+#
+#  - alias: "Telegram - Bot Callback - testcallback"
+#    <<: *automation
+#    trigger:
+#      platform: event
+#      event_type: telegram_callback
+#      event_data:
+#        command: "/testcallback"
+#    action:
+#      - service: light.toggle
+#        data:
+#          entity_id: light.office_desk_lamp
+#      - delay: '00:00:05'
+#      - service: telegram_bot.send_message
+#        data_template:
+#          target: '{{ trigger.event.data.user_id }}'
+#          message: 'I have tested something for you.'
+#          disable_notification: True
 
 
 

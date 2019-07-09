@@ -1,4 +1,0 @@
-platform: mopar
-username: !secret mopar_username
-password: !secret mopar_password
-pin: !secret mopar_pin
