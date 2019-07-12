@@ -26,3 +26,4 @@ ip_bans.yaml
 .storage/*
 .cloud/*
 disabled/*
+custom_components/hacs
