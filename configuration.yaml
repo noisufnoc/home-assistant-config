@@ -225,3 +225,6 @@ weblink:
 #owntracks:
 #  max_gps_accuracy: 200
 #  mqtt_topic: "owntracks/#"
+#
+hacs:
+  token !secret hacs_token
