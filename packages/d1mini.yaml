@@ -42,7 +42,7 @@ climate:
     name: D1 Mini
     heater: input_boolean.fake_heater
     target_sensor: sensor.d1mini01_temperature
-    initial_operation_mode: "off"
+    initial_hvac_mode: "off"
 
 ################################################
 ## input_boolean
