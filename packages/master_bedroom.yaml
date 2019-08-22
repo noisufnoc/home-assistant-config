@@ -154,7 +154,7 @@ scene:
             state: on
             transition: 2
             brightness_pct: 25
-        light.master_bedroom_ceiling_light:
+        switch.master_bedroom_ceiling_light:
             state: off
   - name: Story Time
     entities:
@@ -166,7 +166,7 @@ scene:
             state: on
             transition: 2
             brightness_pct: 100
-        light.master_bedroom_ceiling_light:
+        switch.master_bedroom_ceiling_light:
             state: on
 
 ################################################
