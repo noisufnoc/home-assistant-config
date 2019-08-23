@@ -31,3 +31,4 @@ default: info
 #  requests.packages: fatal
 #  homeassistant.components.octoprint: debug
   homeassistant.components.smartthings: debug
+  homeassistant.components.telegram_bot: debug
