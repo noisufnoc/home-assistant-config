@@ -37,6 +37,7 @@ sensor: !include_dir_list sensors/
 device_tracker: !include device_tracker.yaml
 #group: !include groups.yaml
 script: !include_dir_merge_named script/
+scene: !include_dir_list scenes/
 light: !include_dir_list lights/
 switch: !include_dir_list switches/
 remote: !include remote.yaml
@@ -88,6 +89,7 @@ cloud:
         - switch.monoprice_mini_delta
         - cover.garage_door
         - scene.master_bedroom_normal
+        - scene.bedtime
         - script.check_doors
     entity_config:
       light.stevens_starlight:
