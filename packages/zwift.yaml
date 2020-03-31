@@ -1,0 +1,141 @@
+################################################################
+## packages / wahoo_zwift_fan
+##    power monitoring of my zwift_fan
+################################################################
+
+homeassistant:
+  customize:
+    ################################################
+    ## binary_sensors
+    ################################################
+
+################################################
+## sensors
+################################################
+
+sensor:
+  - platform: mqtt
+    name: Zwift Fan Voltage
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Voltage }}"
+    unit_of_measurement: "V"
+
+  - platform: mqtt
+    name: Zwift Fan Current
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Current }}"
+    unit_of_measurement: "A"
+
+  - platform: mqtt
+    name: Zwift Fan Power
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Power }}"
+    unit_of_measurement: "W"
+
+  - platform: mqtt
+    name: Zwift Fan Energy Today
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Today }}"
+    unit_of_measurement: "kWh"
+
+  - platform: mqtt
+    name: Zwift Fan Energy Yesterday
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Yesterday }}"
+    unit_of_measurement: "kWh"
+
+  - platform: mqtt
+    name: Zwift Fan Energy Total
+    state_topic: "tele/zwift_fan/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Total }}"
+    unit_of_measurement: "kWh"
+
+  - platform: template
+    sensors:
+      zwift_ftp:
+        friendly_name: "Zwift FTP"
+        entity_id: sensor.zwift_online_1477332
+        unit_of_measurement: 'watts'
+        value_template: "{{states.sensor.zwift_online_1477332.attributes.ftp}}"
+
+      zwift_ftp_wkg:
+        friendly_name: "Zwift FTP W/kg"
+        entity_id: sensor.zwift_power_1477332
+        unit_of_measurement: 'W/kg'
+        value_template: "{{ (states('sensor.zwift_ftp') | float) / (states('sensor.weight') | float / 2.205)}}"
+       
+      zwift_wkg:
+        friendly_name: "Zwift W/kg"
+        entity_id: sensor.zwift_power_1477332
+        unit_of_measurement: 'W/kg'
+        value_template: "{{ (states('sensor.zwift_power_1477332') | float) / (states('sensor.weight') | float / 2.205)}}"
+          
+      zwift_power_zone:
+        friendly_name: "Zwift Power Zone"   
+        entity_id: sensor.zwift_power_1477332
+        value_template: >-
+          {% set ftp = states('sensor.zwift_ftp') | float %}
+          {% set power = states('sensor.zwift_power_1477332') | float %}
+          {% set zone1 = ftp | float * 0.55 %}
+          {% set zone2 = ftp | float * 0.76 %}
+          {% set zone3 = ftp | float * 0.90 %}
+          {% set zone4 = ftp | float * 1.05 %}
+          {% set zone5 = ftp | float * 1.2 %}
+          {% set zone6 = ftp | float * 1.5 %}
+          
+          {% if power < 1 %}Off
+          {% elif zone1 > power %}Active Recovery
+          {% elif zone2 > power %}Endurance
+          {% elif zone3 > power %}Tempo
+          {% elif zone4 > power %}Threshold
+          {% elif zone5 > power %}VO2 Max
+          {% elif zone6 > power %}Anaerobic capacity
+          {% elif zone6 < power %}Neuromuscular Power{% endif %}
+
+################################################
+## input_datetime
+################################################
+
+input_datetime:
+  zwift_last_online:
+    name: Zwift Last Online
+    has_date: true
+    has_time: true
+  zwift_last_offline:
+    name: Zwift Last Offline
+    has_date: true
+    has_time: true
+
+################################################
+## switch
+################################################
+
+switch:
+  - platform: mqtt
+    name: Wahoo KICKR
+    command_topic: "cmnd/kickr/POWER"
+    state_topic: "stat/kickr/POWER"
+    availability_topic: "tele/kickr/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+      
+  - platform: mqtt
+    name: Zwift Fan
+    command_topic: "cmnd/zwift_fan/POWER"
+    state_topic: "stat/zwift_fan/POWER"
+    availability_topic: "tele/zwift_fan/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+
+input_boolean:
+  zwift_override:
+    name: Zwift LED Override
+    initial: off

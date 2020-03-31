@@ -1,0 +1,3 @@
+platform: zwift
+username: !secret zwift_username
+password: !secret zwift_password

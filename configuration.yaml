@@ -21,7 +21,7 @@ recorder:
   purge_keep_days: 5
 
 http:
-  api_password: !secret api_password
+  #  api_password: !secret api_password
   base_url: https://ha.noisufnoc.com
   use_x_forwarded_for: true
   trusted_proxies: 
@@ -71,7 +71,8 @@ cloud:
     filter:
       include_entities:
         - climate.d1_mini
-        - light.amelias_lamp
+        - light.amelia_lamp
+        - light.amelia_orb
         - light.china_cabinet_light
         - light.family_room_lamp
         - light.living_room_lamp
@@ -87,13 +88,21 @@ cloud:
         - switch.roomba
         - switch.prusa_i3_mk3
         - switch.monoprice_mini_delta
+        - switch.zwift_fan
         - cover.garage_door
         - scene.master_bedroom_normal
-        - scene.bedtime
+        - scene.good_morning_scene
+        - scene.good_night_scene
+        - scene.work_scene
+        - scene.tv_scene
         - script.check_doors
     entity_config:
       light.stevens_starlight:
         name: Stevens Night Light
+      light.amelia_orb:
+        name: Amelias Orb
+      light.amelia_lamp:
+        name: Amelias Lamp
       light.holiday_1:
         name: Garland
       light.holiday_2:
@@ -131,7 +140,8 @@ mqtt:
 
 splunk:
   token: !secret splunk_token
-  host: hec.noisufnoc.net
+  host: 10.0.0.20
+  #host: hec.noisufnoc.net
 
 statsd:
   #  host: hec.noisufnoc.net

@@ -13,13 +13,13 @@ homeassistant:
     ## node anchors
     ################################################
 
-    package.node_anchors:
-      customize: &customize
-        package: 'pihole'
+    # package.node_anchors:
+    #   customize: &customize
+    #     package: 'pihole'
 
-      hidden: &hidden
-        <<: *customize
-        hidden: true
+    #   hidden: &hidden
+    #     <<: *customize
+    #     hidden: true
 
     ################################################
     ## customize / sensor
@@ -83,7 +83,8 @@ group:
 sensor:
   - platform: rest
     name: dns_queries_today
-    resource: !secret pi_hole_url
+    #resource: !secret pi_hole_url
+    resource: http://pihole.noisufnoc.net/admin/api.php
     value_template: '{{ value_json.dns_queries_today }}'
   
   - platform: rest
@@ -115,6 +116,22 @@ sensor:
     name: queries_cached
     resource: !secret pi_hole_url
     value_template: '{{ value_json.queries_cached }}'
+
+  - platform: rest
+    name: rest_test_test
+    resource: https://webhook.site/84cdc7b1-f60e-4ec3-aa0d-41f3a0d88a26
+#    value_template: '{{ value_json.queries_cached }}'
+
+  - platform: rest
+    name: splunk_test_test
+    resource: http://splunk.noisufnoc.net:8088/services/collector/health
+    value_template: '{{ value_json.text }}'
+
+  - platform: rest
+    name: ifconfig_test
+    resource: http://ifconfig.me/ip
+    value_template: '{{ value_json.text }}'
+
 
 ################################################
 ## switch

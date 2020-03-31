@@ -6,12 +6,12 @@ sensors:
   dishwasher_status:
     value_template: '{{ states.input_select.dishwasher_status.state}}'
     friendly_name: 'Dishwasher Status'
-  home_avg_temp:
-    friendly_name: "Home Avg Temp"
-    unit_of_measurement: 'ºF'
-    value_template: >
-       {{ ((float(states.sensor.upstairs_avg_temp.state) +
-            float(states.sensor.downstairs_avg_temp.state)) / 2) | round(0) }}
+#  home_avg_temp:
+#    friendly_name: "Home Avg Temp"
+#    unit_of_measurement: 'ºF'
+#    value_template: >
+#       {{ ((float(states.sensor.upstairs_avg_temp.state) +
+#            float(states.sensor.downstairs_avg_temp.state)) / 2) | round(0) }}
   upstairs_avg_temp:
     friendly_name: "Upstairs Avg Temp"
     unit_of_measurement: 'ºF'
