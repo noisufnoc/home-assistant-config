@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Amelia Orb"
+state_topic: "stat/amelia_orb/POWER"
+command_topic: "cmnd/amelia_orb/power"
+payload_on: "ON"
+payload_off: "OFF"
+retain: true
+qos: 1

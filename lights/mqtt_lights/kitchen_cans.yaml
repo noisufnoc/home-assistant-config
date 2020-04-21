@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Kitchen Can Lights"
+state_topic: "stat/kitchen_cans/POWER"
+command_topic: "cmnd/kitchen_cans/POWER"
+availability_topic: "tele/kitchen_cans/LWT"
+brightness_state_topic: "stat/kitchen_cans/RESULT"
+brightness_command_topic: "cmnd/kitchen_cans/Dimmer"
+brightness_scale: 100
+brightness_value_template: "{{ value_json.Dimmer }}"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false

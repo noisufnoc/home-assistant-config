@@ -64,6 +64,7 @@ config:
 system_health:
 stream:
 speedtestdotnet:
+mobile_app:
 
 # Trying hass.io cloud for GA integration
 cloud:
@@ -75,6 +76,8 @@ cloud:
         - light.amelia_orb
         - light.china_cabinet_light
         - light.family_room_lamp
+        - light.kitchen_can_lights
+        - light.kitchen_island_lights
         - light.living_room_lamp
         - light.living_room_table_lamp
         - light.office_lamp
