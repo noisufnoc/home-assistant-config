@@ -174,11 +174,11 @@ octoprint:
 #    icon: mdi:motorbike
 #    url: 'https://ha.noisufnoc.com/lovelace'
 
-weblink:
-  entities:
-    - name: Lovelace UI
-      url: /lovelace
-      icon: mdi:love
+#weblink:
+#  entities:
+#    - name: Lovelace UI
+#      url: /lovelace
+#      icon: mdi:love
 
 #usps:
 #  username: !secret usps_username

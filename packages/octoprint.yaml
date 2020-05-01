@@ -212,13 +212,13 @@ script:
 ## weblink
 ################################################
 
-weblink:
-  entities:
-    - name: Prusa i3 MK3 OctoPrint UI
-      url: https://pmk3.noisufnoc.com
-        
-    - name: Monoprice Mini Delta OctoPrint UI
-      url: https://mpmd.noisufnoc.com
+#weblink:
+#  entities:
+#    - name: Prusa i3 MK3 OctoPrint UI
+#      url: https://pmk3.noisufnoc.com
+#        
+#    - name: Monoprice Mini Delta OctoPrint UI
+#      url: https://mpmd.noisufnoc.com
 
 ################################################
 ## group
