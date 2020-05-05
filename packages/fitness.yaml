@@ -95,6 +95,7 @@ input_number:
     name: Weight Goal
     min: 0
     max: 300
+    step: 0.1
     unit_of_measurement: lbs
     mode: box
   ftp_goal:
