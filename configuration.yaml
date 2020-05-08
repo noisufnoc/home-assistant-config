@@ -65,6 +65,7 @@ system_health:
 stream:
 speedtestdotnet:
 mobile_app:
+breaking_changes:
 
 # Trying hass.io cloud for GA integration
 cloud:
