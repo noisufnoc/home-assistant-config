@@ -1,0 +1,11 @@
+platform: mqtt
+name: "Deck String Lights"
+state_topic: "stat/deck_string_lights/POWER"
+command_topic: "cmnd/deck_string_lights/POWER"
+availability_topic: "tele/deck_string_lights/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false

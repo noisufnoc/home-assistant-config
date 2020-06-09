@@ -1,5 +1,0 @@
-platform: group
-name: "Front Garage Lights"
-entities:
-  - light.front_garage_light_left
-  - light.front_garage_light_right

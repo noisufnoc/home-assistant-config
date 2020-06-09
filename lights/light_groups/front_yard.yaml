@@ -1,7 +1,0 @@
-platform: group
-name: "Front Yard Lights"
-entities:
-  - light.front_garage_light_left
-  - light.front_garage_light_right
-  - light.front_porch_light_left
-  - light.front_porch_light_right

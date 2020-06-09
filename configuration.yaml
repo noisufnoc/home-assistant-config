@@ -65,7 +65,7 @@ system_health:
 stream:
 speedtestdotnet:
 mobile_app:
-breaking_changes:
+#breaking_changes:
 
 # Trying hass.io cloud for GA integration
 cloud:
@@ -243,11 +243,11 @@ octoprint:
 #  max_gps_accuracy: 200
 #  mqtt_topic: "owntracks/#"
 #
-hacs:
-  token: !secret hacs_token
-  appdaemon: true
-  python_script: true
-  theme: true
+#hacs:
+#  token: !secret hacs_token
+#  appdaemon: true
+#  python_script: true
+#  theme: true
 
 # Telegram Bot
 telegram_bot:
