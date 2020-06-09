@@ -76,6 +76,7 @@ cloud:
         - light.amelia_lamp
         - light.amelia_orb
         - light.china_cabinet_light
+        - light.deck_string_lights
         - light.family_room_lamp
         - light.kitchen_can_lights
         - light.kitchen_hall_light
