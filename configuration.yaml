@@ -73,6 +73,7 @@ cloud:
     filter:
       include_entities:
         - climate.d1_mini
+        - climate.office
         - light.amelia_lamp
         - light.amelia_orb
         - light.china_cabinet_light

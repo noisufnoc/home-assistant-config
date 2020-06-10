@@ -1,6 +1,6 @@
 ################################################################
-## packages / d1mini test
-##    testing sensors on a d1mini
+## packages / virtual thermostats
+##    virtual thermostats for Google Assistant
 ################################################################
 
 homeassistant:
@@ -11,7 +11,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'd1mini'
+        package: 'virtual_thermostats'
 
     input_boolean.fake_heater:
       hidden: true
@@ -43,6 +43,14 @@ climate:
     heater: input_boolean.fake_heater
     target_sensor: sensor.d1mini01_temperature
     initial_hvac_mode: "off"
+
+climate:
+  - platform: generic_thermostat
+    name: Office
+    heater: input_boolean.fake_heater
+    target_sensor: sensor.zwift_temperature
+    initial_hvac_mode: "off"
+
 
 ################################################
 ## input_boolean
