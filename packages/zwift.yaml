@@ -113,9 +113,9 @@ input_datetime:
 switch:
   - platform: mqtt
     name: Wahoo KICKR
-    command_topic: "cmnd/kickr/POWER"
-    state_topic: "stat/kickr/POWER"
-    availability_topic: "tele/kickr/LWT"
+    command_topic: "cmnd/cerberus/POWER1"
+    state_topic: "stat/cerberus/POWER1"
+    availability_topic: "tele/cerberus/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -149,9 +149,9 @@ switch:
 
   - platform: mqtt
     name: Zwift Fan 1
-    command_topic: "cmnd/zwift_fan_1/POWER"
-    state_topic: "stat/zwift_fan_1/POWER"
-    availability_topic: "tele/zwift_fan_1/LWT"
+    command_topic: "cmnd/cerberus/POWER2"
+    state_topic: "stat/cerberus/POWER2"
+    availability_topic: "tele/cerberus/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
