@@ -91,6 +91,8 @@ cloud:
         - light.holiday_3
         - light.mini_christmas_tree
         - light.stevens_starlight
+        - sensor.aeon_multisensor_6_temperature_measurement
+        - sensor.zwift_temperature
         - switch.holiday_lights
         - switch.roomba
         - switch.prusa_i3_mk3
@@ -116,6 +118,10 @@ cloud:
         name: Christmas Tree Front
       light.holiday_3:
         name: Christmas Tree Back
+      sensor.aeon_multisensor_6_temperature_measurement:
+        name: Master Bathroom Temperature
+      sensor.zwift_temperature:
+        name: Pain Cave Temperature
       switch.prusa_i3_mk3:
         name: Prusa
       switch.monoprice_mini_delta:

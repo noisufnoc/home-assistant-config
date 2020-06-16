@@ -76,3 +76,6 @@
 
  sensor.mike_to_home:
    icon: mdi:car
+
+ sensor.zwift_temperature:
+   device_class: temperature
