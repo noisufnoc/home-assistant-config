@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Eli Lamp"
+state_topic: "stat/eli_lamp/POWER"
+command_topic: "cmnd/eli_lamp/power"
+payload_on: "ON"
+payload_off: "OFF"
+retain: true
+qos: 1
