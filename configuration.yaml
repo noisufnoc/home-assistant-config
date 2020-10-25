@@ -136,6 +136,10 @@ cloud:
         name: Reset Master Bedroom
       script.check_doors:
         name: Check The Doors
+      switch.google_assistant_home:
+        room: System
+      switch.google_assistant_away:
+        room: System
 
 
 # Things that didnt get put into an included yaml file...

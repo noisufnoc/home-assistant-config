@@ -45,6 +45,7 @@ switch:
   - platform: template
     switches:
       google_assistant_away:
+        friendly_name: "Google Assistant Away"
         value_template: "{{ is_state('input_boolean.google_assistant_away', 'on') }}"
         turn_on:
           - service: input_boolean.turn_on
@@ -52,7 +53,8 @@ switch:
         turn_off:
           - service: input_boolean.turn_off
             entity_id: input_boolean.google_assistant_away
-       google_assistant_home:
+      google_assistant_home:
+        friendly_name: "Google Assistant Home"
         value_template: "{{ is_state('input_boolean.google_assistant_home', 'on') }}"
         turn_on:
           - service: input_boolean.turn_on
