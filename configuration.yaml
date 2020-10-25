@@ -103,6 +103,7 @@ cloud:
         - scene.master_bedroom_normal
         - scene.good_morning_scene
         - scene.good_night_scene
+        - scene.sexy_time_scene
         - scene.work_scene
         - scene.tv_scene
         - script.check_doors

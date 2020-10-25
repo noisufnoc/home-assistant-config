@@ -24,6 +24,8 @@ scene:
     entities: {}
   - name: Good Morning Scene
     entities: {}
+  - name: Sexy Time Scene
+    entities: {}
   - name: Work Scene
     entities: {}
 
