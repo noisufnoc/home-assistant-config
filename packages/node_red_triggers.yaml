@@ -30,7 +30,7 @@ scene:
     entities: {}
 
 ################################################
-## binary_sensor
+## input_boolean
 ################################################
 
 input_boolean:
@@ -38,8 +38,28 @@ input_boolean:
   google_assistant_home:
 
 ################################################
-## script
+## switch
 ################################################
+
+switch:
+  - platform: template
+    switches:
+      google_assistant_away:
+        value_template: "{{ is_state('input_boolean.google_assistant_away', 'on') }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            entity_id: input_boolean.google_assistant_away
+        turn_off:
+          - service: input_boolean.turn_off
+            entity_id: input_boolean.google_assistant_away
+       google_assistant_home:
+        value_template: "{{ is_state('input_boolean.google_assistant_home', 'on') }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            entity_id: input_boolean.google_assistant_home
+        turn_off:
+          - service: input_boolean.turn_off
+            entity_id: input_boolean.google_assistant_home
         
 ################################################
 ## automation
