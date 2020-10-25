@@ -74,6 +74,8 @@ cloud:
       include_entities:
         - climate.d1_mini
         - climate.office
+        - input_boolean.google_assistant_home
+        - input_boolean.google_assistant_away
         - light.amelia_lamp
         - light.amelia_orb
         - light.china_cabinet_light
