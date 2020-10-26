@@ -112,10 +112,13 @@ cloud:
     entity_config:
       light.stevens_starlight:
         name: Stevens Night Light
+        room: Stevens Room
       light.amelia_orb:
         name: Amelias Orb
+        room: Amelias Room
       light.amelia_lamp:
         name: Amelias Lamp
+        room: Amelias Room
       light.holiday_1:
         name: Garland
       light.holiday_2:
@@ -124,8 +127,10 @@ cloud:
         name: Christmas Tree Back
       sensor.aeon_multisensor_6_temperature_measurement:
         name: Master Bathroom Temperature
+        room: Master Bathroom
       sensor.zwift_temperature:
         name: Pain Cave Temperature
+        room: Office
       switch.prusa_i3_mk3:
         name: Prusa
         room: Office
