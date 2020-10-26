@@ -128,8 +128,10 @@ cloud:
         name: Pain Cave Temperature
       switch.prusa_i3_mk3:
         name: Prusa
+        room: Office
       switch.monoprice_mini_delta:
         name: Mini Delta
+        room: Office
       cover.garage_doorr:
         name: Garage Door
       scene.master_bedroom_normal:
