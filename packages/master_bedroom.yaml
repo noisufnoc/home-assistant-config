@@ -144,18 +144,6 @@ scene:
             state: on
             transition: 2
             brightness_pct: 60
-  - name: Sexy Time
-    entities:
-        light.mikes_nightstand:
-            state: on
-            transition: 2
-            brightness_pct: 25
-        light.ashleys_nightstand:
-            state: on
-            transition: 2
-            brightness_pct: 25
-        switch.master_bedroom_ceiling_light:
-            state: off
   - name: Story Time
     entities:
         light.mikes_nightstand:
