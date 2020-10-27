@@ -113,18 +113,38 @@ cloud:
       light.stevens_starlight:
         name: Stevens Night Light
         room: Stevens Room
+      light.deck_string_lights:
+        name: Deck String Lights
+        room: Outdoor
       light.amelia_orb:
         name: Amelias Orb
         room: Amelias Room
       light.amelia_lamp:
         name: Amelias Lamp
         room: Amelias Room
+      light.eli_lamp:
+        name: Eli Lamp
+        room: Elis Bedroom
       light.holiday_1:
         name: Garland
       light.holiday_2:
         name: Christmas Tree Front
       light.holiday_3:
         name: Christmas Tree Back
+      light.family_room_lamp:
+        room: Family Room
+      light.kitchen_can_lights:
+        room: Kitchen
+      light.kitchen_hall_light:
+        room: Kitchen
+      light.kitchen_island_lights:
+        room: Kitchen
+      light.living_room_table_lamp:
+        room: Living Room
+      light.office_lamp:
+        room: Office
+      light.office_desk_lamp:
+        room: Office
       sensor.aeon_multisensor_6_temperature_measurement:
         name: Master Bathroom Temperature
         room: Master Bathroom
