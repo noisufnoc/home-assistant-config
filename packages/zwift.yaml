@@ -1,6 +1,6 @@
 ################################################################
-## packages / wahoo_zwift_fan
-##    power monitoring of my zwift_fan
+## packages / zwift
+##    zwift controls
 ################################################################
 
 homeassistant:
@@ -112,46 +112,10 @@ input_datetime:
 
 switch:
   - platform: mqtt
-    name: Wahoo KICKR
-    command_topic: "cmnd/cerberus/POWER1"
-    state_topic: "stat/cerberus/POWER1"
-    availability_topic: "tele/cerberus/LWT"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    retain: true
-      
-  - platform: mqtt
-    name: Wahoo KICKR New
-    command_topic: "cmnd/kickr_new/POWER"
-    state_topic: "stat/kickr_new/POWER"
-    availability_topic: "tele/kickr_new/LWT"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    retain: true
-     
-  - platform: mqtt
-    name: Zwift Fan
-    command_topic: "cmnd/zwift_fan/POWER"
-    state_topic: "stat/zwift_fan/POWER"
-    availability_topic: "tele/zwift_fan/LWT"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    retain: true
-
-  - platform: mqtt
     name: Zwift Fan 1
-    command_topic: "cmnd/cerberus/POWER2"
-    state_topic: "stat/cerberus/POWER2"
-    availability_topic: "tele/cerberus/LWT"
+    command_topic: "cmnd/zwift_plugs/POWER1"
+    state_topic: "stat/zwift_plugs/POWER1"
+    availability_topic: "tele/zwift_plugs/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -161,9 +125,9 @@ switch:
 
   - platform: mqtt
     name: Zwift Fan 2
-    command_topic: "cmnd/zwift_fan_2/POWER"
-    state_topic: "stat/zwift_fan_2/POWER"
-    availability_topic: "tele/zwift_fan_2/LWT"
+    command_topic: "cmnd/zwift_plugs/POWER2"
+    state_topic: "stat/zwift_plugs/POWER2"
+    availability_topic: "tele/zwift_plugs/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -171,6 +135,21 @@ switch:
     payload_not_available: "Offline"
     retain: true
 
+  - platform: mqtt
+    name: Wahoo KICKR
+    command_topic: "cmnd/zwift_plugs/POWER3"
+    state_topic: "stat/zwift_plugs/POWER3"
+    availability_topic: "tele/zwift_plugs/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+ 
+################################################
+## input_boolean
+################################################
 
 input_boolean:
   zwift_override:
