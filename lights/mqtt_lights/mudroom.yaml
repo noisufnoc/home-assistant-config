@@ -1,0 +1,11 @@
+platform: mqtt
+name: "Mudroom Light"
+state_topic: "stat/mudroom/POWER"
+command_topic: "cmnd/mudroom/POWER"
+availability_topic: "tele/mudroom/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false
