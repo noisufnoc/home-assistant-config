@@ -78,6 +78,7 @@ cloud:
         - light.amelia_orb
         - light.china_cabinet_light
         - light.deck_string_lights
+        - light.dining_room_light
         - light.eli_lamp
         - light.family_room_lamp
         - light.kitchen_can_lights
@@ -85,6 +86,7 @@ cloud:
         - light.kitchen_island_lights
         - light.living_room_lamp
         - light.living_room_table_lamp
+        - light.mudroom_light
         - light.office_lamp
         - light.office_desk_lamp
         - light.holiday_1
